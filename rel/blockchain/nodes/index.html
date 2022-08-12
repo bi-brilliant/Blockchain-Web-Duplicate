@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="./css/stylesheet.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+
+    <link rel="icon" href="../../../assets/icon.png" />
+    <title>TRONSCAN | TRON BlockChain Explorer | 波场区块链浏览器</title>
+  </head>
+  <body>
+    <div class="bg"></div>
+
+    <!-- Nav Start -->
+    <div class="nav-container sticky navbar" id="navbar">
+      <div class="nav-logo">
+        <a href="../../../index.html">
+          <img
+            src="../../../assets/logo.svg"
+            alt="Logo Tron"
+            class="logo-tron"
+          />
+        </a>
+      </div>
+      <div class="nav-link">
+        <a class="link-list" href="../../../index.html">Home</a>
+        <a class="link-list list-chain" id="hovChain" href="#"
+          >Blockchain
+
+          <div class="menu-chain">
+            <div>
+              <div id="databox-nodes" class="chain-bg-hover">
+                <a href="#" class="text-nodes">Nodes</a>
+              </div>
+              <div id="databox-blocks" class="chain-bg-hover">
+                <a href="#" class="text-blocks">Blocks</a>
+              </div>
+              <div id="databox-transaction" class="chain-bg-hover">
+                <a href="#" class="text-transaction">Transaction</a>
+              </div>
+              <div id="databox-transfers" class="chain-bg-hover">
+                <a href="#" class="text-transfers">Transfers</a>
+              </div>
+              <div id="databox-accounts" class="chain-bg-hover">
+                <a href="#" class="text-accounts">Accounts</a>
+              </div>
+              <div id="databox-contracts" class="chain-bg-hover">
+                <a href="#" class="text-contracts">Contracts</a>
+              </div>
+              <div id="databox-deployment" class="chain-bg-hover">
+                <a href="#" class="text-juststable">Contract Deployment</a>
+              </div>
+              <div id="databox-verification" class="chain-bg-hover">
+                <a href="#" class="text-verification">Contract Verification</a>
+              </div>
+            </div>
+          </div>
+        </a>
+        <div class="h-line-nav-active"></div>
+
+        <a class="link-list list-token" id="hovTokens" href="#"
+          >Tokens
+          <div class="menu-tokens">
+            <div>
+              <div id="databox-tracker" class="tokens-bg-hover">
+                <a href="#" class="text-tracker">Token Tracker</a>
+              </div>
+              <div id="databox-tokens">
+                <p class="text-tokens">Hot Tokens</p>
+              </div>
+              <div id="databox-usdt" class="tokens-bg-hover">
+                <img class="logo-databox" src="../../../assets/usdtlogo.png" />
+                <a href="#" class="text-databox">USDT </a>
+                <p class="capt-databox">Tehter Stablecoin On TRON</p>
+              </div>
+              <div id="databox-usdd" class="tokens-bg-hover">
+                <img class="logo-databox" src="../../../assets/usddlogo.png" />
+                <a href="#" class="text-databox">USDD </a>
+                <p class="capt-databox">Decentralized USD</p>
+              </div>
+              <div id="databox-usdc" class="tokens-bg-hover">
+                <img class="logo-databox" src="../../../assets/usdclogo.png" />
+                <a href="#" class="text-databox">USDC </a>
+                <p class="capt-databox">USD Coin Stablecoin</p>
+              </div>
+              <div id="databox-tusd" class="tokens-bg-hover">
+                <img class="logo-databox" src="../../../assets/tusdlogo.png" />
+                <a href="#" class="text-databox">TUSD </a>
+                <p class="capt-databox">TrueUSD Stablecoin</p>
+              </div>
+              <div id="databox-usdj" class="tokens-bg-hover">
+                <img class="logo-databox" src="../../../assets/usdjlogo.png" />
+                <a href="#" class="text-databox">USDJ</a>
+                <p class="capt-databox">JustDeFi Stablecoin</p>
+              </div>
+              <div id="databox-jst" class="tokens-bg-hover">
+                <img class="logo-databox" src="../../../assets/jstlogo.png" />
+                <a href="#" class="text-databox">JST</a>
+                <p class="capt-databox">JustDeFi Governance Token</p>
+              </div>
+              <div id="databox-btt" class="tokens-bg-hover">
+                <img class="logo-databox" src="../../../assets/jstlogo.png" />
+                <a href="#" class="text-databox">BTT</a>
+                <p class="capt-databox">Official BitTorrent Token</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a class="link-list list-data" id="hovData" href="#"
+          >Data
+          <div class="menu-data">
+            <div>
+              <div id="databox-chart">
+                <a href="#" class="text-chart">Charts</a>
+              </div>
+              <div id="databox-stats">
+                <a href="#" class="text-stats">Top Statistic</a>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a class="link-list list-governace" id="hovGov" href="#"
+          >Governace
+          <div class="menu-gov">
+            <div>
+              <div id="databox-representative">
+                <a href="#" class="text-representative">Representative</a>
+              </div>
+              <div id="databox-votes">
+                <a href="#" class="text-votes">Votes</a>
+              </div>
+              <div id="databox-proposals">
+                <a href="#" class="text-proposals">Proposals</a>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a class="link-list list-eco" id="hovEco" href="#"
+          >TRON Ecosystem
+          <div class="menu-eco">
+            <div>
+              <div id="databox-sun">
+                <a href="#" class="text-sun">SUN</a>
+              </div>
+              <div id="databox-justlend">
+                <a href="#" class="text-justlend">JustLend</a>
+              </div>
+              <div id="databox-bttc">
+                <a href="#" class="text-bttc">BTTC</a>
+              </div>
+              <div id="databox-apenft">
+                <a href="#" class="text-apenft"
+                  >APENFT<i class="apenft-icon"></i
+                ></a>
+              </div>
+              <div id="databox-winklink">
+                <a href="#" class="text-winklink">WINKLink</a>
+              </div>
+              <div id="databox-juststable">
+                <a href="#" class="text-juststable">JustStable</a>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a class="link-list list-more" id="hovMore" href="#"
+          >More
+          <div class="menu-more">
+            <div>
+              <div id="databox-resource">
+                <p class="text-resource">Development Resources</p>
+              </div>
+              <div id="databox-whitepaper" class="chain-bg-hover">
+                <a href="#" class="text-whitepaper">TRON Whitepaper V2.O</a>
+              </div>
+              <div id="databox-arch" class="chain-bg-hover">
+                <a href="#" class="text-arch">TRON Architecture</a>
+              </div>
+              <div id="databox-api" class="chain-bg-hover">
+                <a href="#" class="text-api">TRONSCAN API</a>
+              </div>
+              <div id="databox-network" class="chain-bg-hover">
+                <a href="#" class="text-network">SUN Network</a>
+              </div>
+              <div id="databox-trongrid" class="chain-bg-hover">
+                <a href="#" class="text-trongrid">TronGrid</a>
+              </div>
+              <div id="databox-tools">
+                <p class="text-tools">Tools</p>
+              </div>
+              <div id="databox-viewtransaction" class="chain-bg-hover">
+                <a href="#" class="text-viewtransaction">View Transaction</a>
+              </div>
+              <div id="databox-encode" class="chain-bg-hover">
+                <a href="#" class="text-encode">Encode Convert Tool</a>
+              </div>
+              <div id="databox-record" class="chain-bg-hover">
+                <a href="#" class="text-record">Record Token</a>
+              </div>
+              <div id="databox-sign" class="chain-bg-hover">
+                <a href="#" class="text-sign">Sign & Verify</a>
+              </div>
+              <div id="databox-support">
+                <p class="text-support">Support & Help</p>
+              </div>
+              <div id="databox-guide" class="chain-bg-hover">
+                <a href="#" class="text-guide">Beginner's Guide</a>
+              </div>
+              <div id="databox-faq" class="chain-bg-hover">
+                <a href="#" class="text-faq">FAQ</a>
+              </div>
+              <div id="databox-forum" class="chain-bg-hover">
+                <a href="#" class="text-forum">TRONDAO Forum</a>
+              </div>
+              <div id="databox-service">
+                <p class="text-service">Service</p>
+              </div>
+              <div id="databox-markets" class="chain-bg-hover">
+                <a href="#" class="text-markets">Markets</a>
+              </div>
+              <div id="databox-btfs" class="chain-bg-hover">
+                <a href="#" class="text-btfs">BTFS</a>
+              </div>
+              <div id="databox-etf" class="chain-bg-hover">
+                <a href="#" class="text-etf">TRON ETF</a>
+              </div>
+              <div id="databox-tronlending" class="chain-bg-hover">
+                <a href="#" class="text-tronlending">TronLending</a>
+              </div>
+              <div id="databox-dappradar" class="chain-bg-hover">
+                <a href="#" class="text-dappradar">Dappradar</a>
+              </div>
+              <div id="databox-trx" class="chain-bg-hover">
+                <a href="#" class="text-trx">List TRX On Exchange</a>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="nav-login">
+        <a class="btn-connect" href="#">Connect Wallet</a>
+        <a class="btn-reg" href="../../login/index.html">Register</a>
+        <div class="v-line"></div>
+        <a class="btn-login" href="../../login/index.html">Login</a>
+        <div class="btn-net" id="hovNet">
+          <a href="#">
+            <img
+              class="net-logo-hov"
+              src="../../../../assets/netlogoHover.png"
+            />
+            <img class="net-logo" src="../../../../assets/netlogo.png" />
+          </a>
+        </div>
+        <div class="menu-net">
+          <div>
+            <div id="databox-nile">
+              <a href="#" class="text-nile">NILE TESTNET</a>
+            </div>
+            <div id="databox-shasta">
+              <a href="#" class="text-shasta">SHASTA TESTNET</a>
+            </div>
+          </div>
+        </div>
+        <div class="menu-toggle">
+          <img src="../../../../assets/dragWrapper.svg" alt="" />
+        </div>
+      </div>
+      <div class="nav-toggle-phone">
+        <div class="btn-toggle">
+          <button>
+            <img src="../../../assets/dragWrapper.svg" />
+          </button>
+          <div class="menu-dropdown-toggle">
+            <ul class="sub-wrapper-toggle">
+              <li class="sub-dropdown-toggle">Home</li>
+              <li class="sub-dropdown-toggle">
+                Blockchain
+                <img
+                  class="dropdown-icon-toggle"
+                  src="../../../assets/dropDwonIcon.svg"
+                />
+                <ul class="subrel-wrapper-toggle">
+                  <li class="subrel-dropdown-toggle">
+                    <a href="../../blockchain/nodes/index.html">Nodes</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle"><a href="#">Blocks</a></li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">Transactions</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">Transfers</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">Accounts</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">Contracts</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">Contract Deployment</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">Contract Verification</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="sub-dropdown-toggle">
+                Tokens
+                <img
+                  class="dropdown-icon-toggle"
+                  src="../../../assets/dropDwonIcon.svg"
+                />
+                <ul class="subrel-wrapper-toggle">
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">Token Tracker</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle sdt-token">
+                    <a href="#">Hot Tokens</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <img
+                      class="sdt-token-img"
+                      src="../../../assets/usdtlogo.png"
+                    /><a href="#">USDT</a>
+                    <p class="sdt-token-p">Tether Stablecoin On TRON</p>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <img
+                      class="sdt-token-img"
+                      src="../../../assets/usddlogo.png"
+                    /><a href="#">USDD</a>
+                    <p class="sdt-token-p">Decentralized USD</p>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <img
+                      class="sdt-token-img"
+                      src="../../../assets/usdclogo.png"
+                    /><a href="#">USDC</a>
+                    <p class="sdt-token-p">USD Coin Stablecoin</p>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <img
+                      class="sdt-token-img"
+                      src="../../../assets/tusdlogo.png"
+                    /><a href="#">TUSD</a>
+                    <p class="sdt-token-p">TrueUSD Stablecoin</p>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <img
+                      class="sdt-token-img"
+                      src="../../../assets/usdjlogo.png"
+                    /><a href="#">USDJ</a>
+                    <p class="sdt-token-p">JustDeFi Stablecoin</p>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <img
+                      class="sdt-token-img"
+                      src="../../../assets/jstlogo.png"
+                    /><a href="#">JST</a>
+                    <p class="sdt-token-p">JustDefi Governance Token</p>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <img
+                      class="sdt-token-img"
+                      src="../../../assets/bttlogo.png"
+                    /><a href="#">BTT</a>
+                    <p class="sdt-token-p">Official BitTorrent Token</p>
+                  </li>
+                </ul>
+              </li>
+              <li class="sub-dropdown-toggle">
+                Data
+                <img
+                  class="dropdown-icon-toggle"
+                  src="../../../assets/dropDwonIcon.svg"
+                />
+                <ul class="subrel-wrapper-toggle">
+                  <li class="subrel-dropdown-toggle"><a href="#">Charts</a></li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">Top Statistics</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="sub-dropdown-toggle">
+                Governance
+                <img
+                  class="dropdown-icon-toggle"
+                  src="../../../assets/dropDwonIcon.svg"
+                />
+                <ul class="subrel-wrapper-toggle">
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">Representatives</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle"><a href="#">Votes</a></li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">Proposals</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="sub-dropdown-toggle">
+                TRON Ecosystem
+                <img
+                  class="dropdown-icon-toggle"
+                  src="../../../assets/dropDwonIcon.svg"
+                />
+                <ul class="subrel-wrapper-toggle">
+                  <li class="subrel-dropdown-toggle"><a href="#">SUN</a></li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">JustLend DAO</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle"><a href="#">BTTC</a></li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">APENFT</a
+                    ><img
+                      class="apenft-subrel"
+                      src="../../../assets/apenft.svg"
+                    />
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">WINKLink</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">JustStable</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="sub-dropdown-toggle">
+                More
+                <img
+                  class="dropdown-icon-toggle"
+                  src="../../../assets/dropDwonIcon.svg"
+                />
+                <ul class="subrel-wrapper-toggle swt-more">
+                  <li class="subrel-dropdown-toggle sdt-more">
+                    <a href="#">Development Resources</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">TRON Whitepaper V2.O</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">TRON Architecture</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">TRONSCAN API</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">SUN Network</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">TronGrid</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle sdt-more">
+                    <a href="#">Tools</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">View Transaction</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">Encode Convert Tool</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">Record Token</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">Sign & Verify</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle sdt-more">
+                    <a href="#">Support & Help</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">Beginner's Guide</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle"><a href="#">FAQ</a></li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">TRONDAO Forum</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle sdt-more">
+                    <a href="#">Service</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">Markets</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle"><a href="#">BTFS</a></li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">TRON ETF</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">TronLending</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">Dappradar</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">List TRX On Exchanges</a>
+                  </li>
+                </ul>
+              </li>
+              <div class="h-line-dropdown-toggle"></div>
+              <li class="sub-dropdown-toggle">
+                Explorers
+                <img
+                  class="dropdown-icon-toggle"
+                  src="../../../assets/dropDwonIcon.svg"
+                />
+                <ul class="subrel-wrapper-toggle">
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">NILE TESTNET</a>
+                  </li>
+                  <li class="subrel-dropdown-toggle">
+                    <a href="#">SHASTA TESTNET</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Nav End -->
+
+    <!-- Search Start -->
+    <form class="form">
+      <span class="logo-search">
+        <img
+          class="logo-search-inline"
+          src="../../../../assets/searchLogo.svg"
+          alt=""
+        />
+      </span>
+      <input
+        class="search"
+        type="text"
+        placeholder=" Search by Account / TXN Hash / Token / Block"
+        required
+      />
+      <div class="v-line-search"></div>
+      <div class="selector">
+        <select>
+          <option class="filter-title-search">All Filters</option>
+          <option class="filter-dropdown-search" value="0">Tokens</option>
+          <option class="filter-dropdown-search" value="1">Accounts</option>
+          <option class="filter-dropdown-search" value="2">Contracts</option>
+          <option class="filter-dropdown-search" value="3">Txn Hashes</option>
+          <option class="filter-dropdown-search" value="4">Blocks</option>
+          <option class="filter-dropdown-search" value="5">Websites</option>
+        </select>
+      </div>
+    </form>
+    <!-- Search End -->
+
+    <!-- Nodes Section Start -->
+    <div class="nodes-section">
+      <div class="nodes-count">
+        <p class="title-nodes-count">Nodes</p>
+        <div class="box-nodes-count">
+          <p class="main-count-nodes-count">6,575</p>
+          <p class="sub-count-nodes-count">Nodes</p>
+          <p class="main-count-nodes-count2">United States</p>
+          <p class="sub-count-nodes-count2">Region with the most nodes</p>
+        </div>
+      </div>
+      <div class="nodes-distribution">
+        <p>Distribution</p>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.3154775579815!2d106.74601831485384!3d-6.088132495591367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a1d5c925f5907%3A0x683230ea6359721b!2sMozart%20signature!5e0!3m2!1sid!2sid!4v1659505100410!5m2!1sid!2sid"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+    <div class="nodes-ranking">
+      <p class="title-nodes-ranking">Nodes Ranking</p>
+      <p class="subtitle-nodes-ranking">Ranked by country and region</p>
+      <div class="canvas-bg">
+        <canvas id="chartRankingNodes"></canvas>
+      </div>
+    </div>
+    <!-- Nodes Section End -->
+
+    <!-- Footer Section Start -->
+    <div class="h-line-footer-section"></div>
+    <div class="footer-main-section">
+      <div class="footer-left-section">
+        <div class="footer-left-ecosystem">
+          <p class="left-ecosystem-title">TRON Ecosystem</p>
+          <a class="left-ecosystem-tron" href="#">Tron.network</a>
+          <a class="left-ecosystem-wallet" href="#">Wallet</a>
+          <a class="left-ecosystem-lending" href="#">TronLending</a>
+        </div>
+        <div class="footer-left-developer">
+          <p class="left-developer-title">Developers</p>
+          <a class="left-developer-git" href="#">Github</a>
+          <a class="left-developer-java" href="#">java-tron</a>
+          <a class="left-developer-doc" href="#">Documentation</a>
+          <a class="left-developer-hub" href="#">Developer Hub</a>
+        </div>
+        <div class="footer-left-about">
+          <p class="left-about-us">About Us</p>
+          <a class="left-about-info" href="#">Team Info</a>
+          <a class="left-about-supp" href="#">Support Center</a>
+          <a class="left-about-priv" href="#">Privacy Policy</a>
+          <a class="left-about-terms" href="#">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-right-section">
+        <div class="footer-right-logo">
+          <img src="../../../../assets/logo.svg" />
+          <p>The best blockchain explorer of TRON</p>
+        </div>
+        <div class="footer-right-social">
+          <a class="tele-footer" href="#"
+            ><img src="../../../../assets/telegramLogo.svg"
+          /></a>
+          <a class="twitter-footer" href="#"
+            ><img src="../../../../assets/twitterLogo.svg"
+          /></a>
+          <a class="medium-footer" href="#"
+            ><img src="../../../../assets/mediumLogo.svg"
+          /></a>
+          <a class="discord-footer" href="#"
+            ><img src="../../../../assets/discordLogo.svg"
+          /></a>
+          <a class="forum-footer" href="#"
+            ><img src="../../../../assets/forumLogo.svg"
+          /></a>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Section End -->
+
+    <div style="background-color: #f6f7fa; height: 100%"></div>
+    <script src="./script/index.js"></script>
+  </body>
+</html>

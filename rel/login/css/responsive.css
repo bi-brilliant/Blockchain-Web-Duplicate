@@ -1,0 +1,278 @@
+/* Tablet View */
+@media (min-width: 426px) and (max-width: 768px) {
+  .bg {
+    background-image: url(../../../assets/bgBody.png);
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    z-index: -999;
+  }
+
+  /* From Section Start */
+  .form {
+    position: relative;
+    left: 20px;
+    top: -500px;
+    width: 100px;
+    height: 70px;
+  }
+  .logo-search {
+    position: relative;
+    left: 0px;
+    padding: 15px 15px;
+    position: absolute;
+  }
+  .search {
+    margin-left: 0px;
+    left: 50px;
+    width: 560px;
+  }
+  .selector {
+    left: 610px;
+    height: 55px;
+  }
+  .v-line-search {
+    left: 609px;
+  }
+  /* Form Section End */
+
+  /* Login Section Start */
+  .login-section {
+    left: 20px;
+    width: 730px;
+    height: 100%;
+  }
+  .login-email-button-email,
+  .login-phone-button-email {
+    left: 70px;
+    width: 300px;
+  }
+  .login-email-button-phone,
+  .login-phone-button-phone {
+    left: 400px;
+    width: 300px;
+  }
+  .v-line-login-section {
+    border-left: #717171 2px solid;
+    height: 40px;
+    position: absolute;
+    top: 22px;
+    left: 370px;
+  }
+  .login-phone-form-sec form,
+  .login-email-form-sec form {
+    position: relative;
+    left: -320px;
+  }
+  .login-email-forgot-pass {
+    left: -320px;
+  }
+
+  .login-email-sign-up {
+    left: 200px;
+  }
+  /* Login Section End */
+
+  /* Footer Section Start */
+  /* Footer Section Start */
+  .h-line-footer-section,
+  .footer-main-section {
+    top: 880px;
+  }
+
+  .footer-left-ecosystem {
+    left: 10px;
+    top: 25px;
+  }
+  .footer-left-about {
+    left: 130px;
+    top: 25px;
+  }
+  .footer-left-developer {
+    left: 10px;
+    top: 180px;
+  }
+  .footer-right-section {
+    width: 170px;
+    height: 100px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+  .footer-right-logo img {
+    right: 0px;
+  }
+  .footer-right-logo p {
+    right: 0px;
+    text-align: right;
+  }
+  .footer-right-social {
+    right: 0px;
+    text-align: right;
+  }
+  .footer-right-social a {
+    margin-left: 10px;
+  }
+  /* Footer Section End */
+  /* Footer Section End */
+
+  /* BG Color Manipulation Section Start */
+  /* .bg-manipulation {
+    height: 5100px;
+    width: 1530px;
+  } */
+  /* BG Color Manipulation Section End */
+}
+
+/* Mobile View */
+@media (max-width: 426px) {
+  /* Nav Toggle Section Start */
+  .btn-toggle {
+    display: block;
+  }
+  .nav-container {
+    position: fixed;
+    top: 0px;
+    z-index: 999;
+  }
+  .nav-container .nav-link {
+    display: none;
+  }
+  .nav-login .btn-connect,
+  .btn-net {
+    display: none;
+  }
+  .nav-login .btn-reg,
+  .nav-login .btn-login {
+    top: 7px;
+  }
+  .nav-login .v-line {
+    top: 5px;
+  }
+
+  /* Nav Toggle Section End */
+
+  /* Seeach Section Start */
+  .form {
+    display: none;
+  }
+  /* Searh Section End */
+
+  /* Login Section Start */
+  .login-section {
+    position: absolute;
+    left: 20px;
+    top: 80px;
+    width: 375px;
+  }
+  .login-phone-sec,
+  .login-email-sec {
+    position: relative;
+    top: 0px;
+    height: 430px;
+  }
+  .login-email-sec {
+    position: relative;
+    top: -430px;
+  }
+  .login-phone-button-email,
+  .login-email-button-email {
+    top: 10px;
+    left: 0px;
+    width: 180px;
+  }
+  .login-phone-button-email p,
+  .login-email-button-email p {
+    font-size: 12px;
+  }
+  .login-phone-button-phone,
+  .login-email-button-phone {
+    top: 10px;
+    left: 190px;
+    width: 180px;
+  }
+  .login-phone-button-phone p,
+  .login-email-button-phone p {
+    font-size: 12px;
+  }
+  .v-line-login-section {
+    left: 180px;
+  }
+  .login-phone-form-sec,
+  .login-email-form-sec {
+    position: relative;
+    left: 20px;
+    top: 10px;
+  }
+  .login-email-form-sec {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+  }
+  .login-phone-input-email,
+  .login-email-input-email {
+    width: 340px;
+    padding: 0px 20px;
+  }
+  .login-email-input-password {
+    width: 340px;
+  }
+  .login-email-button-login,
+  .login-phone-button-login {
+    width: 340px;
+  }
+  .login-phone-input-password {
+    width: 191px;
+  }
+  .login-phone-send-code {
+    left: 190px;
+    width: 150px;
+  }
+  .login-email-sign-up {
+    width: 50px;
+    top: 290px;
+    left: 290px;
+  }
+  /* Login Section End */
+
+  /* Footer Section Start */
+  .h-line-footer-section,
+  .footer-main-section {
+    top: 680px;
+  }
+
+  .footer-left-ecosystem {
+    left: 10px;
+    top: 25px;
+  }
+  .footer-left-about {
+    left: 130px;
+    top: 25px;
+  }
+  .footer-left-developer {
+    left: 10px;
+    top: 180px;
+  }
+  .footer-right-section {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+  .footer-right-logo img {
+    right: 0px;
+  }
+  .footer-right-logo p {
+    right: 0px;
+    text-align: right;
+  }
+  .footer-right-social {
+    right: 0px;
+    text-align: right;
+  }
+  .footer-right-social a {
+    margin-left: 10px;
+  }
+  /* Footer Section End */
+}

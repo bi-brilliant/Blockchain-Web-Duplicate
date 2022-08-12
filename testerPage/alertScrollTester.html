@@ -1,0 +1,105 @@
+<head>
+  <style>
+    .slider-alert,
+    .slider-alert .slide-alert {
+      width: 900px;
+      height: 35px;
+    }
+    .slider-alert {
+      overflow: hidden;
+      margin: 0 auto;
+      font-size: 12px;
+      background: #ffd7d1;
+      position: absolute;
+      top: 0px;
+      left: 20px;
+      border-radius: 10px;
+    }
+    .slide-alert span {
+      color: #dbdbdb;
+    }
+    .logo-alert {
+      position: absolute;
+      width: 21px;
+      top: 7px;
+      left: 20px;
+    }
+    .slide-alert a {
+      text-decoration: none;
+      color: black;
+    }
+    .slide-alert a:hover {
+      color: brown;
+    }
+    .slider-alert .container-slider-alert {
+      position: relative;
+      bottom: 0;
+      right: 0;
+      animation: slide-animation 20s infinite;
+    }
+    .slider-alert .slide-alert {
+      position: relative;
+      box-sizing: border-box;
+      padding: 11px 60px;
+    }
+
+    /* [ANIMATION] */
+    @keyframes slide-animation {
+      0% {
+        opacity: 0;
+        bottom: 0;
+      }
+      11% {
+        opacity: 1;
+        bottom: 0;
+      }
+      22% {
+        bottom: 100%;
+      }
+      33% {
+        bottom: 100%;
+      }
+      44% {
+        bottom: 200%;
+      }
+      55% {
+        bottom: 200%;
+      }
+      66% {
+        bottom: 300%;
+      }
+      77% {
+        bottom: 300%;
+      }
+      88% {
+        opacity: 1;
+        bottom: 400%;
+      }
+      100% {
+        opacity: 0;
+        bottom: 400%;
+      }
+    }
+  </style>
+</head>
+
+<div class="slider-alert">
+  <img class="logo-alert" src="./assets/alertIcon.png" />
+  <div class="container-slider-alert">
+    <div class="slide-alert">
+      <a href="#"
+        >Temporarily suspend the use of interface of nile/tronex/shasta on
+        Tronscan and Trongrid <span> (01-20)</span></a
+      >
+    </div>
+    <div class="slide-alert">
+      <a href="#">
+        Temporarily suspend the use of interface of nile/tronex/shasta on
+        Tronscan and Trongrid <span> (12-14)</span>
+      </a>
+    </div>
+    <div class="slide-alert">
+      <a href="#"> TRON Crypto ETFs <span> (09-21)</span> </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,205 @@
+<head>
+  <style>
+    .tron-aside {
+      background-color: rgb(255, 255, 255);
+      width: 278px;
+      height: 267px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px #00000027;
+    }
+
+    .tron-top {
+      background-color: transparent;
+    }
+
+    .tron-logo-top {
+      width: 50px;
+      margin: 10px;
+      padding-left: 20px;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .tron-wave-chart {
+      position: absolute;
+      width: 278px;
+      height: 80px;
+      top: -2px;
+      opacity: 0.3;
+    }
+
+    .tron-top-left h4 {
+      font-size: 24px;
+      position: absolute;
+      top: -15px;
+      left: 100px;
+    }
+
+    .tron-top-left p {
+      font-size: 14px;
+      position: absolute;
+      top: 35px;
+      left: 100px;
+      color: #898989;
+    }
+
+    .tron-top-calc {
+      position: absolute;
+      top: 5px;
+      left: 190px;
+      font-size: 14px;
+      color: green;
+      background-color: rgba(0, 128, 0, 0.138);
+      padding: 3px 8px;
+      border-radius: 5px;
+    }
+
+    .tron-top-currency {
+      position: absolute;
+      top: 30px;
+      left: 180px;
+      font-size: 16px;
+    }
+
+    .tron-top-currency span {
+      font-size: 12px;
+      color: #898989;
+    }
+
+    .tron-item {
+      position: absolute;
+      background-color: transparent;
+      width: 238px;
+      height: 54px;
+      left: 25px;
+    }
+
+    .tron-cap {
+      top: 80px;
+    }
+
+    .tron-trading {
+      top: 140px;
+    }
+
+    .tron-staked {
+      top: 200px;
+    }
+
+    .tron-item-icon {
+      margin: 12px;
+    }
+
+    .color-item-tron {
+      color: #898989;
+      font-size: 12px;
+    }
+
+    .tron-item-title {
+      position: absolute;
+      top: 0px;
+      left: 50px;
+    }
+
+    .calc-tron-item {
+      position: absolute;
+      top: 13px;
+      left: 50px;
+      font-size: 16px;
+      color: black;
+    }
+
+    .rating-tron-item {
+      font-size: 12px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+    .cap-rating {
+      color: green;
+    }
+    .trading-rating {
+      color: red;
+    }
+    .staked-rating {
+      color: black;
+      top: 20px;
+    }
+    .staked-title-rating {
+      color: #898989;
+      font-size: 12px;
+      text-decoration: none;
+      position: absolute;
+      top: 0px;
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="tron-aside">
+    <div class="tron-top">
+      <img class="tron-logo-top" src="./assets/tronLogo.svg" />
+      <div class="tron-top-left">
+        <h4>TRON</h4>
+        <p>Latest Price</p>
+      </div>
+      <div class="tron-top-right">
+        <p class="tron-top-calc">
+          +2.05%
+          <img class="tron-top-calc-logo" src="./assets/upArrowIcon.svg" />
+        </p>
+        <p class="tron-top-currency">$0.0695 <span>/TRX</span></p>
+      </div>
+      <img class="tron-wave-chart" src="./assets/wavesChartAside.png" />
+    </div>
+    <div class="tron-bottom">
+      <div class="tron-cap tron-item">
+        <a href="#">
+          <div class="tron-cap-left">
+            <img class="cap-icon tron-item-icon" src="./assets/capIcon.svg" />
+            <p class="cap-title tron-item-title color-item-tron">Market Cap</p>
+            <p class="cap-calc calc-tron-item">$6,377,541,812</p>
+          </div>
+          <div class="tron-cap-right">
+            <p class="cap-rating rating-tron-item">+0.77%</p>
+          </div>
+        </a>
+      </div>
+      <div class="tron-trading tron-item">
+        <a href="#">
+          <div class="tron-trading-left">
+            <img
+              class="trading-icon tron-item-icon"
+              src="./assets/tradingIcon.svg"
+            />
+            <p class="trading-title tron-item-title color-item-tron">
+              Market Trading Volume(24h)
+            </p>
+            <p class="trading-calc calc-tron-item">$645,275,171</p>
+          </div>
+          <div class="tron-trading-right">
+            <p class="trading-rating rating-tron-item">-8.37%</p>
+          </div>
+        </a>
+      </div>
+      <div class="tron-staked tron-item">
+        <a href="#">
+          <div class="tron-staked-left">
+            <img
+              class="staked-icon tron-item-icon"
+              src="./assets/stakedIcon.svg"
+            />
+            <p class="staked-title tron-item-title color-item-tron">
+              Total TRX Staked
+            </p>
+            <p class="staked-calc calc-tron-item">44,427,695,974</p>
+          </div>
+          <div class="tron-staked-right">
+            <p class="staked-title-rating">Staking Rate</p>
+            <p class="staked-rating rating-tron-item">43.8%</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>

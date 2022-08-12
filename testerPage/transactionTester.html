@@ -1,0 +1,355 @@
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <style>
+    .transaction-section {
+      background-color: antiquewhite;
+      position: absolute;
+      height: 390px;
+      width: 1300px;
+      border-radius: 10px;
+    }
+
+    .scrollbar-transaction {
+      background-color: transparent;
+      position: absolute;
+      height: 390px;
+      width: 750px;
+      overflow-y: scroll;
+    }
+
+    .list-scrollbar-transaction-transfer-1 {
+      width: 100%;
+      height: 80px;
+      position: absolute;
+      top: 10px;
+    }
+
+    .list-scrollbar-transaction-transfer-2 {
+      width: 100%;
+      height: 80px;
+      position: absolute;
+      top: 91px;
+    }
+
+    .list-scrollbar-transaction-transfer-3 {
+      width: 100%;
+      height: 80px;
+      position: absolute;
+      top: 172px;
+    }
+
+    .list-scrollbar-transaction-transfer-4 {
+      width: 100%;
+      height: 80px;
+      position: absolute;
+      top: 253px;
+    }
+
+    .list-scrollbar-transaction-transfer-5 {
+      width: 100%;
+      height: 80px;
+      position: absolute;
+      top: 334px;
+    }
+
+    .list-scrollbar-transaction-transfer-6 {
+      width: 100%;
+      height: 80px;
+      position: absolute;
+      top: 415px;
+    }
+
+    .ellipsis-transfer {
+      position: relative;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+    .ellipsis-transfer a:hover {
+      color: brown;
+    }
+    .ellipsis-transfer a {
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+    }
+
+    .time-transfer {
+      position: relative;
+      font-size: 14px;
+      margin-bottom: 10px;
+      margin-left: 20px;
+    }
+
+    .from-transfer {
+      position: relative;
+      font-size: 14px;
+      margin-top: -62px;
+      margin-left: 200px;
+    }
+
+    .from-link-transfer {
+      text-decoration: none;
+      font-size: 14px;
+      color: black;
+      position: relative;
+      top: -32px;
+      left: 280px;
+    }
+    .from-link-transfer:hover {
+      color: brown;
+    }
+
+    .to-transfer {
+      position: relative;
+      font-size: 14px;
+      margin-left: 200px;
+      margin-top: -17px;
+    }
+
+    .to-link-transfer {
+      text-decoration: none;
+      font-size: 14px;
+      color: black;
+      position: relative;
+      top: -32px;
+      left: 280px;
+    }
+    .to-link-transfer:hover {
+      color: brown;
+    }
+
+    .trx-transfer {
+      position: relative;
+      top: -80px;
+      right: 10px;
+      float: right;
+    }
+    .trx-transfer a {
+      font-size: 14px;
+    }
+
+    .token-transfer {
+      position: relative;
+      top: -32px;
+      right: -85px;
+      float: right;
+      text-align: center;
+      background-color: rgb(218, 219, 219);
+      width: 80px;
+      height: 15px;
+      border-radius: 5px;
+    }
+    .token-transfer p {
+      font-size: 12px;
+      position: relative;
+      top: -11px;
+    }
+
+    /* ScrollBar Style */
+    .scrollbar-transaction::-webkit-scrollbar {
+      width: 4px;
+    }
+    .scrollbar-transaction::-webkit-scrollbar-track {
+      border-radius: 10px;
+    }
+    .scrollbar-transaction::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: #d2691e;
+    }
+
+    .h-line-transaction {
+      border-bottom: 1px #c2c9d1 solid;
+      width: 715px;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .h-line-t1 {
+      top: 90px;
+      left: 15px;
+    }
+
+    .h-line-t2 {
+      top: 170px;
+      left: 15px;
+    }
+
+    .h-line-t3 {
+      top: 251px;
+      left: 15px;
+    }
+
+    .h-line-t4 {
+      top: 332px;
+      left: 15px;
+    }
+
+    .h-line-t5 {
+      top: 413px;
+      left: 15px;
+    }
+
+    .chart-transaction {
+      position: relative;
+      left: 770px;
+      top: 50px;
+    }
+
+    .daily-transaction {
+      font-size: 16px;
+      font-weight: bold;
+      position: absolute;
+      top: -50px;
+      left: 10px;
+    }
+
+    .dot-transaction {
+      position: absolute;
+      top: -27px;
+      left: 470px;
+    }
+  </style>
+</head>
+<body>
+  <div class="transaction-section">
+    <div class="scrollbar-transaction">
+      <div class="list-scrollbar-transaction-transfer-1">
+        <div class="ellipsis-transfer">
+          <a href="#">028hendjhwp21...3e572</a>
+        </div>
+        <div class="time-transfer"><p>12 secs ago</p></div>
+        <p class="from-transfer">From</p>
+        <a class="from-link-transfer" href="#"
+          >TE25yFHwrm9FFLcKFzUTjgdARV6pujgAit</a
+        >
+        <p class="to-transfer">To</p>
+        <a class="to-link-transfer" href="#"
+          >TTmaAAbFPtACn1amP3FBkmmUygFh8udAvA</a
+        >
+        <div class="trx-transfer"><p>0.000006 TRX</p></div>
+        <div class="token-transfer"><p>Transfer TRX</p></div>
+      </div>
+      <div class="h-line-transaction h-line-t1"></div>
+      <div class="list-scrollbar-transaction-transfer-2">
+        <div class="ellipsis-transfer">
+          <a href="#">7bbbeobioon2...12734v</a>
+        </div>
+        <div class="time-transfer"><p>4 secs ago</p></div>
+        <p class="from-transfer">From</p>
+        <a class="from-link-transfer" href="#"
+          >TBrFj5xJtdkzANC8L6rnDGE3M1UeTduXL8</a
+        >
+        <p class="to-transfer">To</p>
+        <a class="to-link-transfer" href="#"
+          >TF1MAhwn6g2i6NiDServ4WBiVvDs1zJwNG</a
+        >
+        <div class="trx-transfer"><p>0.000001 TRX</p></div>
+        <div class="token-transfer"><p>Transfer TRX</p></div>
+      </div>
+      <div class="h-line-transaction h-line-t2"></div>
+      <div class="list-scrollbar-transaction-transfer-3">
+        <div class="ellipsis-transfer">
+          <a href="#">44wu3b939rnr...pp103m</a>
+        </div>
+        <div class="time-transfer"><p>9 secs ago</p></div>
+        <p class="from-transfer">From</p>
+        <a class="from-link-transfer" href="#"
+          >TDJ9RkUpd37TdiRWzGsExpeE5N7fmKmgyK</a
+        >
+        <p class="to-transfer">To</p>
+        <a class="to-link-transfer" href="#"
+          >TG6yUjEtGByaTekCNL9EbmjbxzLZ4jteNT</a
+        >
+        <div class="trx-transfer"><p>0.000006 TRX</p></div>
+        <div class="token-transfer"><p>Transfer TRX</p></div>
+      </div>
+      <div class="h-line-transaction h-line-t3"></div>
+      <div class="list-scrollbar-transaction-transfer-4">
+        <div class="ellipsis-transfer">
+          <a href="#">028hendjhwp21...3e572</a>
+        </div>
+        <div class="time-transfer"><p>14 secs ago</p></div>
+        <p class="from-transfer">From</p>
+        <a class="from-link-transfer" href="#"
+          >TE25yFHwrm9FFLcKFzUTjgdARV6pujgAit</a
+        >
+        <p class="to-transfer">To</p>
+        <a class="to-link-transfer" href="#"
+          >TTmaAAbFPtACn1amP3FBkmmUygFh8udAvA</a
+        >
+        <div class="trx-transfer"><p>0.000006 TRX</p></div>
+        <div class="token-transfer"><p>Transfer TRX</p></div>
+      </div>
+      <div class="h-line-transaction h-line-t4"></div>
+      <div class="list-scrollbar-transaction-transfer-5">
+        <div class="ellipsis-transfer">
+          <a href="#">028hendjhwp21...3e572</a>
+        </div>
+        <div class="time-transfer"><p>6 secs ago</p></div>
+        <p class="from-transfer">From</p>
+        <a class="from-link-transfer" href="#"
+          >TE25yFHwrm9FFLcKFzUTjgdARV6pujgAit</a
+        >
+        <p class="to-transfer">To</p>
+        <a class="to-link-transfer" href="#"
+          >TTmaAAbFPtACn1amP3FBkmmUygFh8udAvA</a
+        >
+        <div class="trx-transfer"><p>0.000006 TRX</p></div>
+        <div class="token-transfer"><p>Transfer TRX</p></div>
+      </div>
+      <div class="h-line-transaction h-line-t5"></div>
+      <div class="list-scrollbar-transaction-transfer-6">
+        <div class="ellipsis-transfer">
+          <a href="#">028hendjhwp21...3e572</a>
+        </div>
+        <div class="time-transfer"><p>1 secs ago</p></div>
+        <p class="from-transfer">From</p>
+        <a class="from-link-transfer" href="#"
+          >TE25yFHwrm9FFLcKFzUTjgdARV6pujgAit</a
+        >
+        <p class="to-transfer">To</p>
+        <a class="to-link-transfer" href="#"
+          >TTmaAAbFPtACn1amP3FBkmmUygFh8udAvA</a
+        >
+        <div class="trx-transfer"><p>0.000006 TRX</p></div>
+        <div class="token-transfer"><p>Transfer TRX</p></div>
+      </div>
+    </div>
+    <div class="chart-transaction">
+      <p class="daily-transaction">Daily Txns (14 Days)</p>
+      <canvas
+        id="chartTransaction"
+        style="width: 100%; max-width: 500px; height: 330px"
+      ></canvas>
+      <a class="dot-transaction" href="#"><img src="./assets/dotIcon.svg" /></a>
+    </div>
+  </div>
+  <script>
+    var xValues = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
+    var yValues = [
+      6.4, 6.6, 6.2, 6.1, 5.8, 5.5, 4.9, 5.3, 5.5, 6.7, 6, 5.4, 5.9, 5.3,
+    ];
+
+    new Chart("chartTransaction", {
+      type: "line",
+      data: {
+        labels: xValues,
+        datasets: [
+          {
+            fill: false,
+            lineTension: 0,
+            backgroundColor: "rgba(217, 83, 79, 1)",
+            borderColor: "rgba(217, 83, 79, 1)",
+            data: yValues,
+          },
+        ],
+      },
+      options: {
+        legend: { display: false },
+        scales: {
+          yAxes: [{ ticks: { min: 4, max: 7 } }],
+        },
+      },
+    });
+  </script>
+</body>

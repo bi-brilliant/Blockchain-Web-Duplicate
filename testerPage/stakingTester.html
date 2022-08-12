@@ -1,0 +1,203 @@
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <style>
+    body {
+      background-color: #2a3860;
+    }
+    .title-staking-section {
+      background-color: #fff;
+      width: 650px;
+      height: 495px;
+      border-radius: 10px;
+      position: absolute;
+      top: 2010px;
+      left: 780px;
+    }
+    .staking-title-sec {
+      background-color: rgb(238, 238, 238);
+      position: absolute;
+      top: 0px;
+      width: 100%;
+      height: 65px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .staking-title-sec a {
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+      font-weight: 700;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+    .staking-title-sec a:hover {
+      color: brown;
+    }
+    .staking-title-sec img {
+      position: absolute;
+      top: 29px;
+      left: 270px;
+    }
+
+    .staking-footer-sec {
+      height: 90px;
+      width: 280px;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+    }
+    .staking-footer-sec-title {
+      font-size: 12px;
+      color: #91979d;
+      position: absolute;
+      top: 25px;
+      left: 20px;
+    }
+    .staking-footer-sec-count {
+      font-size: 16px;
+      font-weight: 700;
+      position: absolute;
+      top: 40px;
+      left: 20px;
+    }
+    .staking-footer-sec-rate {
+      background-color: #2e912c37;
+      border-radius: 3px;
+      width: 43px;
+      height: 17px;
+      position: absolute;
+      top: 45px;
+      left: 140px;
+    }
+    .staking-footer-sec-rate p {
+      font-size: 12px;
+      position: absolute;
+      top: -1px;
+      left: 4px;
+      color: #2d912c;
+    }
+
+    #chartsStakingHome {
+      position: absolute;
+      top: 90px;
+      left: 10px;
+    }
+
+    .h-line-staking-charts {
+      border-bottom: 1px #c2c9d1 solid;
+      width: 590px;
+      position: absolute;
+      top: 403px;
+      left: 25px;
+    }
+
+    .staking-footer-sec-mid {
+      position: absolute;
+      left: 180px;
+    }
+
+    .staking-footer-sec-right {
+      position: absolute;
+      left: 430px;
+    }
+  </style>
+</head>
+<body>
+  <div class="staking-secction">
+    <div class="title-staking-section">
+      <div class="staking-title-sec">
+        <a href="#">TRX Circulating & Staking</a>
+        <img src="./assets/cameraIcon.svg" />
+      </div>
+      <div class="staking-charts-sec">
+        <canvas
+          id="chartsStakingHome"
+          style="width: 100%; max-width: 620px; height: 300px"
+        ></canvas>
+        <div class="h-line-staking-charts"></div>
+      </div>
+      <div class="staking-footer-sec">
+        <span class="staking-footer-sec-left">
+          <p class="staking-footer-sec-title">TRX Circulating Supply</p>
+          <p class="staking-footer-sec-count">92,425,227,483</p>
+          <div class="staking-footer-sec-rate"><p>+0.2%</p></div>
+        </span>
+        <span class="staking-footer-sec-mid">
+          <p class="staking-footer-sec-title">Total TRX Staked</p>
+          <p class="staking-footer-sec-count">44,228,691,601</p>
+          <div class="staking-footer-sec-rate"><p>+1.1%</p></div>
+        </span>
+        <span class="staking-footer-sec-right">
+          <p class="staking-footer-sec-title">Staking Rate</p>
+          <div class="staking-footer-sec-rate"><p>+1.1%</p></div>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var barChartStaking = {
+      labels: [
+        "18 Jul",
+        "19 Jul",
+        "20 Jul",
+        "21 Jul",
+        "22 Jul",
+        "23 Jul",
+        "24 Jul",
+        "25 Jul",
+        "26 Jul",
+        "27 Jul",
+        "28 Jul",
+        "29 Jul",
+        "30 Jul",
+        "31 Jul",
+      ],
+
+      datasets: [
+        {
+          label: "Total TRX Staked",
+          backgroundColor: "#d9534f",
+          data: [
+            92.4, 92.4, 92.4, 92.4, 92.4, 92.4, 92.4, 92.4, 92.4, 92.4, 92.4,
+            92.4, 92.4, 92.4,
+          ],
+        },
+        {
+          label: "TRX Circulating Supply",
+          backgroundColor: "#6610f2",
+          data: [
+            44.3, 44.4, 44.4, 44.3, 44.3, 44.3, 44.7, 47, 49, 44.2, 43, 44.2,
+            50, 39,
+          ],
+        },
+      ],
+    };
+
+    var chartOptionsStaking = {
+      responsive: true,
+      legend: {
+        position: "top",
+      },
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              beginAtZero: true,
+            },
+          },
+        ],
+      },
+    };
+
+    var chartShowStaking = document
+      .getElementById("chartsStakingHome")
+      .getContext("2d");
+    window.myBar = new Chart(chartShowStaking, {
+      type: "bar",
+      data: barChartStaking,
+      options: chartOptionsStaking,
+    });
+  </script>
+</body>

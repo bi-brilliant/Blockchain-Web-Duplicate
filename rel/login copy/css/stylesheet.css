@@ -1,0 +1,1628 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+}
+
+.bg {
+  background-image: url(../../../assets/bgBody.png);
+  background-size: cover;
+  height: 600px;
+  z-index: -999;
+}
+
+.navbar {
+  position: relative;
+  width: 100%;
+  color: black;
+  padding: 30px;
+}
+
+/* Nav After Scrolling Start*/
+.bgColor {
+  transition: all 0.5s;
+  background-color: #f6f7fa;
+  box-shadow: 0px 1px 29px rgba(128, 128, 128, 0.356);
+}
+/* Nav After Scrolling End*/
+
+.nav-container {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px;
+  z-index: 999;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.nav-container .nav-logo {
+  display: flex;
+  cursor: pointer;
+}
+
+.nav-logo .logo-tron {
+  height: 23px;
+}
+
+.nav-container .nav-link {
+  flex: 1;
+  display: inline-block;
+  justify-content: flex-start;
+  font-size: 12px;
+}
+
+.nav-link .link-list {
+  text-decoration: none;
+  color: black;
+  padding: 15px 15px;
+}
+
+.nav-link a:hover {
+  color: #c23631;
+}
+
+/* Hover Nav Blockchain Start */
+.menu-chain {
+  background-color: #fff;
+  top: 40px;
+  left: 200px;
+  padding: 5px 0px 5px 0px;
+  border-radius: 17px;
+  height: 225px;
+  width: 315px;
+  position: absolute;
+  display: none;
+  box-shadow: 0px 0px 15px rgba(172, 172, 172, 0.171);
+}
+#hovChain .list-chain:hover ~ .menu-chain {
+  display: block;
+}
+
+.menu-chain a {
+  display: block;
+}
+
+.chain-bg-hover:hover {
+  background-color: rgba(228, 228, 228, 0.425);
+}
+
+#databox-nodes {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+}
+.text-nodes {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-blocks {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+}
+.text-blocks {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-transaction {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 90px;
+  left: 0px;
+}
+.text-transaction {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-transfers {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 130px;
+  left: 0px;
+}
+.text-transfers {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-accounts {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 170px;
+  left: 0px;
+}
+.text-accounts {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-contracts {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 10px;
+  left: 160px;
+}
+.text-contracts {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-deployment {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 50px;
+  left: 160px;
+}
+.text-deployment {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-verification {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 90px;
+  left: 160px;
+}
+.text-verification {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+/* Hover Nav Blockchain End */
+
+/* Hover Nav Tokens Start */
+.menu-tokens {
+  background-color: #fff;
+  top: 40px;
+  left: 290px;
+  padding: 5px 0px 5px 0px;
+  border-radius: 17px;
+  height: 450px;
+  width: 200px;
+  position: absolute;
+  display: none;
+  box-shadow: 0px 0px 15px rgba(172, 172, 172, 0.171);
+}
+#hovTokens:hover ~ .menu-tokens {
+  display: block;
+}
+
+.tokens-bg-hover:hover {
+  background-color: rgba(228, 228, 228, 0.425);
+}
+
+#databox-tracker {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+}
+.text-tracker {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-tokens {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+}
+.text-tokens {
+  text-decoration: none;
+  color: #b4b4b4;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  cursor: default;
+  font-size: 12px;
+}
+
+.text-databox {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 6px;
+  left: 45px;
+}
+.capt-databox {
+  color: #b4b4b4;
+  font-size: 10px;
+  position: absolute;
+  top: 29px;
+  left: 45px;
+}
+.logo-databox {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+}
+
+#databox-usdt {
+  width: 190px;
+  height: 50px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 90px;
+  left: 0px;
+}
+
+#databox-usdd {
+  width: 190px;
+  height: 50px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 140px;
+  left: 0px;
+}
+
+#databox-usdc {
+  width: 190px;
+  height: 50px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 190px;
+  left: 0px;
+}
+
+#databox-tusd {
+  width: 190px;
+  height: 50px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 240px;
+  left: 0px;
+}
+
+#databox-usdj {
+  width: 190px;
+  height: 50px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 290px;
+  left: 0px;
+}
+
+#databox-jst {
+  width: 190px;
+  height: 50px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 340px;
+  left: 0px;
+}
+
+#databox-btt {
+  width: 190px;
+  height: 50px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 390px;
+  left: 0px;
+}
+/* Hover Nav Tokens End */
+
+/* Hover Nav Data Start */
+.menu-data {
+  background-color: #fff;
+  top: 40px;
+  left: 350px;
+  padding: 5px 0px 5px 0px;
+  border-radius: 17px;
+  height: 106px;
+  width: 120px;
+  position: absolute;
+  display: none;
+  box-shadow: 0px 0px 15px rgba(172, 172, 172, 0.171);
+}
+
+#hovData:hover ~ .menu-data {
+  display: block;
+}
+
+.text-chart {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-chart {
+  width: 109px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+}
+#databox-chart:hover {
+  background-color: rgba(228, 228, 228, 0.425);
+}
+
+.text-stats {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-stats {
+  width: 109px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+}
+
+#databox-stats:hover {
+  background-color: rgba(228, 228, 228, 0.425);
+}
+/* Hover Nav Data End */
+
+/* Hover Nav Governace Start */
+.menu-gov {
+  background-color: #fff;
+  top: 40px;
+  left: 415px;
+  padding: 5px 0px 5px 0px;
+  border-radius: 17px;
+  height: 145px;
+  width: 150px;
+  position: absolute;
+  display: none;
+  box-shadow: 0px 0px 15px rgba(172, 172, 172, 0.171);
+}
+#hovGov:hover ~ .menu-gov {
+  display: block;
+}
+
+#databox-representative {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+}
+#databox-representative:hover {
+  background-color: rgba(228, 228, 228, 0.425);
+}
+.text-representative {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-votes {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+}
+#databox-votes:hover {
+  background-color: rgba(228, 228, 228, 0.425);
+}
+.text-votes {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-proposals {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 90px;
+  left: 0px;
+}
+#databox-proposals:hover {
+  background-color: rgba(228, 228, 228, 0.425);
+}
+.text-proposals {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+/* Hover Nav Governace End */
+
+/* Hover Nav Ecosystem Start */
+.menu-eco {
+  background-color: #fff;
+  top: 40px;
+  left: 500px;
+  padding: 5px 0px 5px 0px;
+  border-radius: 17px;
+  height: 266px;
+  width: 150px;
+  position: absolute;
+  display: none;
+  box-shadow: 0px 0px 15px rgba(172, 172, 172, 0.171);
+}
+#hovEco:hover ~ .menu-eco {
+  display: block;
+}
+
+#databox-sun {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+}
+#databox-sun:hover {
+  background-color: rgba(228, 228, 228, 0.425);
+}
+.text-sun {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-justlend {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+}
+#databox-justlend:hover {
+  background-color: rgba(228, 228, 228, 0.425);
+}
+.text-justlend {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-bttc {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 90px;
+  left: 0px;
+}
+#databox-bttc:hover {
+  background-color: rgba(228, 228, 228, 0.425);
+}
+.text-bttc {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-apenft {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 130px;
+  left: 0px;
+}
+#databox-apenft:hover {
+  background-color: rgba(228, 228, 228, 0.425);
+}
+.text-apenft {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+.apenft-icon {
+  background-image: url(../assets/apenft.svg);
+  background-size: 100% 100%;
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+  vertical-align: text-bottom;
+  display: inline-block;
+}
+
+#databox-winklink {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 170px;
+  left: 0px;
+}
+#databox-winklink:hover {
+  background-color: rgba(228, 228, 228, 0.425);
+}
+.text-winklink {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-juststable {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 210px;
+  left: 0px;
+}
+#databox-juststable:hover {
+  background-color: rgba(228, 228, 228, 0.425);
+}
+.text-juststable {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+/* Hover Nav Ecosystem End */
+
+/* Hover Nav More Start */
+.menu-more {
+  background-color: #fff;
+  top: 40px;
+  left: 290px;
+  padding: 5px 0px 5px 0px;
+  border-radius: 17px;
+  height: 305px;
+  width: 635px;
+  position: absolute;
+  display: none;
+  box-shadow: 0px 0px 15px rgba(172, 172, 172, 0.171);
+}
+#hovMore:hover ~ .menu-more {
+  display: block;
+}
+
+.chain-bg-hover:hover {
+  background-color: rgba(228, 228, 228, 0.425);
+}
+
+#databox-resource {
+  width: 160px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  cursor: text;
+}
+.text-resource {
+  color: #b4b4b4;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-whitepaper {
+  width: 160px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+}
+.text-whitepaper {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-arch {
+  width: 160px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 90px;
+  left: 0px;
+}
+.text-arch {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-api {
+  width: 160px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 130px;
+  left: 0px;
+}
+.text-api {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-network {
+  width: 160px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 170px;
+  left: 0px;
+}
+.text-network {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-trongrid {
+  width: 160px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 210px;
+  left: 5px;
+}
+.text-trongrid {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-tools {
+  width: 160px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 10px;
+  left: 160px;
+}
+.text-tools {
+  color: #b4b4b4;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-viewtransaction {
+  width: 160px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 50px;
+  left: 160px;
+}
+.text-viewtransaction {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-encode {
+  width: 160px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 90px;
+  left: 160px;
+}
+.text-encode {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-record {
+  width: 160px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 130px;
+  left: 160px;
+}
+.text-record {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-sign {
+  width: 160px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 170px;
+  left: 160px;
+}
+.text-sign {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-support {
+  width: 160px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 10px;
+  left: 320px;
+}
+.text-support {
+  color: #b4b4b4;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-guide {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 50px;
+  left: 320px;
+}
+.text-guide {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-faq {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 90px;
+  left: 320px;
+}
+.text-faq {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-forum {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 130px;
+  left: 320px;
+}
+.text-forum {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-service {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 10px;
+  left: 480px;
+}
+.text-service {
+  color: #b4b4b4;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-markets {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 50px;
+  left: 480px;
+}
+.text-markets {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-btfs {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 90px;
+  left: 480px;
+}
+.text-btfs {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-etf {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 130px;
+  left: 480px;
+}
+.text-etf {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-tronlending {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 170px;
+  left: 480px;
+}
+.text-tronlending {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-dappradar {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 210px;
+  left: 480px;
+}
+.text-dappradar {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+#databox-trx {
+  width: 140px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 250px;
+  left: 480px;
+}
+.text-trx {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+/* Hover Nav More End */
+
+.nav-active {
+  color: #c23631;
+  border-bottom: 3px solid #c23631;
+}
+
+.nav-container .nav-login {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-login a {
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s ease 0s;
+}
+
+.nav-login .btn-connect {
+  padding: 8px 10px;
+  transition: all 0.3s ease 0s;
+  background-color: #333;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  display: block;
+  right: 200px;
+  top: 11px;
+  font-size: 12px;
+}
+
+.btn-connect:hover {
+  background-color: #c43127;
+}
+
+.nav-login .btn-reg {
+  padding: 8px 10px;
+  position: absolute;
+  right: 110px;
+  top: 11px;
+  font-size: 12px;
+}
+
+.nav-login .btn-reg:hover {
+  color: #c23631;
+}
+
+.nav-login .v-line {
+  border-left: 1px #c2c9d1 solid;
+  height: 20px;
+  margin: 10px 0;
+  position: absolute;
+  top: 9px;
+  right: 109px;
+}
+
+.nav-login .btn-login {
+  padding: 8px 10px;
+  position: absolute;
+  right: 60px;
+  top: 11px;
+  font-size: 12px;
+}
+
+.nav-login .btn-login:hover {
+  color: #c23631;
+}
+
+.nav-login .btn-net {
+  border-radius: 50%;
+  border: 1px solid #b4b4b4;
+  padding: 4px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 14px;
+  right: 15px;
+}
+
+.btn-net:hover {
+  border: 1px solid #c23631;
+}
+
+.nav-login .btn-net .net-logo {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+}
+
+.net-logo:hover {
+  opacity: 0;
+}
+
+.net-logo-hov {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+}
+
+/* Hover Nav Net Start */
+.menu-net {
+  background-color: #fff;
+  top: 50px;
+  right: 17px;
+  padding: 5px 0px 5px 0px;
+  border-radius: 17px;
+  height: 106px;
+  width: 120px;
+  position: absolute;
+  display: none;
+  box-shadow: 0px 0px 15px rgba(172, 172, 172, 0.171);
+}
+
+#hovNet:hover ~ .menu-net {
+  display: block;
+}
+
+.text-nile {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  font-size: 12px;
+}
+.text-nile:hover {
+  color: #c23631;
+}
+
+#databox-nile {
+  width: 109px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+}
+#databox-nile:hover {
+  background-color: rgba(228, 228, 228, 0.425);
+}
+
+.text-shasta {
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  font-size: 12px;
+}
+.text-shasta:hover {
+  color: #c23631;
+}
+
+#databox-shasta {
+  width: 109px;
+  height: 40px;
+  margin: 2px 5px;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+}
+
+#databox-shasta:hover {
+  background-color: rgba(228, 228, 228, 0.425);
+}
+/* Hover Nav Net End */
+
+/* Menu Toggle Start */
+.menu-toggle {
+  display: none;
+  padding: 4px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 5px;
+  right: 15px;
+}
+/* Menu Toggle End */
+
+/* Search Section Start */
+.form {
+  position: absolute;
+  display: inline-block;
+  width: 1000px;
+  top: 80px;
+}
+.logo-search {
+  position: absolute;
+  left: 90px;
+  width: 50px;
+  height: 55px;
+  padding: 15px 15px;
+  position: absolute;
+  color: black;
+  background: rgb(255, 255, 255);
+  border: 0px solid #dbdbdb;
+  border-top-left-radius: 13px;
+  border-bottom-left-radius: 13px;
+}
+.logo-search-inline {
+  position: absolute;
+  top: 18px;
+  left: 15px;
+}
+.search {
+  margin-left: 50px;
+  width: 1170px;
+  padding: 15px 15px;
+  position: absolute;
+  left: 90px;
+  color: black;
+  background: rgb(255, 255, 255);
+  border: 0px solid #dbdbdb;
+  border-radius: 0px;
+}
+.v-line-search {
+  border-left: 1px #c2c9d1 solid;
+  height: 30px;
+  position: absolute;
+  top: 13px;
+  left: 1309px;
+}
+.select-dropdown:hover {
+  color: #c23631;
+}
+
+.selector {
+  position: absolute;
+  top: 0px;
+  left: 1310px;
+  height: 55px;
+  padding: 15px 10px;
+  text-align: center;
+  border: none;
+  border-top-right-radius: 13px;
+  border-bottom-right-radius: 13px;
+  background: rgb(255, 255, 255);
+  color: #000000;
+}
+
+.selector select {
+  display: none; /*sembunyikan elemen SELECT asli:*/
+}
+
+.select-selected {
+  background-color: transparent;
+}
+
+/*beri style panah di dalam elemen select:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 25px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 4px solid transparent;
+  border-color: rgb(0, 0, 0) transparent transparent transparent;
+}
+
+/*arahkan panah ke atas saat kotak select terbuka (aktif):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent rgb(0, 0, 0) transparent;
+  top: 20px;
+}
+
+/*style item (opsi), termasuk item yang dipilih:*/
+.select-items div,
+.select-selected {
+  color: #000000;
+  padding: 0px 10px;
+  width: 100px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: #ffffff;
+  width: 120px;
+  height: 170px;
+  padding: 10px 10px;
+  margin-top: 3px;
+  margin-right: 800px;
+  top: 100%;
+  left: 0px;
+  z-index: 99;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px #0000001c;
+}
+
+/*sembunyikan item saat kotak pilih ditutup:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+  color: #c23631;
+}
+/* Search Section End */
+
+/* Footer Section Start */
+.h-line-footer-section {
+  border-bottom: 1px #c2c9d1 solid;
+  width: 100%;
+  position: absolute;
+  top: 1000px;
+}
+
+.footer-main-section {
+  position: absolute;
+  top: 1030px;
+  width: 100%;
+  height: 100px;
+}
+
+.footer-left-section {
+  background-color: #2d912c;
+  float: left;
+  width: 700px;
+}
+.footer-left-section p {
+  font-size: 14px;
+  margin-left: 10px;
+}
+.footer-left-section a:hover {
+  color: #000000;
+}
+.footer-left-ecosystem {
+  position: absolute;
+  top: 10px;
+  left: 100px;
+  width: 170px;
+}
+.footer-left-ecosystem a {
+  text-decoration: none;
+  color: #91979d;
+  font-size: 12px;
+  margin: 10px;
+  display: block;
+}
+.footer-left-developer {
+  position: absolute;
+  top: 10px;
+  left: 280px;
+  width: 170px;
+}
+.footer-left-developer a {
+  text-decoration: none;
+  color: #91979d;
+  font-size: 12px;
+  margin: 10px;
+  display: block;
+}
+.footer-left-about {
+  position: absolute;
+  top: 10px;
+  left: 460px;
+  width: 170px;
+}
+.footer-left-about a {
+  text-decoration: none;
+  color: #91979d;
+  font-size: 12px;
+  margin: 10px;
+  display: block;
+}
+
+.footer-right-section {
+  float: right;
+  width: 500px;
+  height: 200px;
+}
+
+.footer-right-logo img {
+  height: 23px;
+  position: absolute;
+  top: 10px;
+  right: 120px;
+}
+.footer-right-logo p {
+  position: absolute;
+  top: 40px;
+  right: 120px;
+  font-size: 12px;
+  color: #91979d;
+}
+
+.footer-right-social {
+  position: absolute;
+  right: 120px;
+  top: 130px;
+}
+
+.footer-right-social a {
+  margin-left: 20px;
+}
+/* Footer Section End */

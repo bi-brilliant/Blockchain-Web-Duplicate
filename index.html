@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="./css/stylesheet.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+
+    <link rel="icon" href="./assets/icon.png" />
+    <title>TRONSCAN | TRON BlockChain Explorer | 波场区块链浏览器</title>
+  </head>
+  <body>
+    <div class="bg"></div>
+
+    <!-- Nav Start -->
+      <div class="nav-container sticky navbar" id="navbar">
+        <div class="nav-logo">
+          <a href="./index.html">
+            <img src="./assets/logo.svg" alt="Logo Tron" class="logo-tron" />
+          </a>
+        </div>
+        <div class="nav-link">
+          <a class="link-list nav-active" href="./index.html">Home</a>
+          <a class="link-list list-chain" id="hovChain" href="./rel/blockchain/nodes/index.html"
+            >Blockchain
+            <div class="menu-chain">
+              <div>
+                <div id="databox-nodes" class="chain-bg-hover">
+                  <a href="#" class="text-nodes">Nodes</a>
+                </div>
+                <div id="databox-blocks" class="chain-bg-hover">
+                  <a href="#" class="text-blocks">Blocks</a>
+                </div>
+                <div id="databox-transaction" class="chain-bg-hover">
+                  <a href="#" class="text-transaction">Transaction</a>
+                </div>
+                <div id="databox-transfers" class="chain-bg-hover">
+                  <a href="#" class="text-transfers">Transfers</a>
+                </div>
+                <div id="databox-accounts" class="chain-bg-hover">
+                  <a href="#" class="text-accounts">Accounts</a>
+                </div>
+                <div id="databox-contracts" class="chain-bg-hover">
+                  <a href="#" class="text-contracts">Contracts</a>
+                </div>
+                <div id="databox-deployment" class="chain-bg-hover">
+                  <a href="#" class="text-juststable">Contract Deployment</a>
+                </div>
+                <div id="databox-verification" class="chain-bg-hover">
+                  <a href="#" class="text-verification"
+                    >Contract Verification</a
+                  >
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="link-list list-token" id="hovTokens" href="#"
+            >Tokens
+            <div class="menu-tokens">
+              <div>
+                <div id="databox-tracker" class="tokens-bg-hover">
+                  <a href="#" class="text-tracker">Token Tracker</a>
+                </div>
+                <div id="databox-tokens">
+                  <p class="text-tokens">Hot Tokens</p>
+                </div>
+                <div id="databox-usdt" class="tokens-bg-hover">
+                  <img class="logo-databox" src="./assets/usdtlogo.png" />
+                  <a href="#" class="text-databox">USDT </a>
+                  <p class="capt-databox">Tehter Stablecoin On TRON</p>
+                </div>
+                <div id="databox-usdd" class="tokens-bg-hover">
+                  <img class="logo-databox" src="./assets/usddlogo.png" />
+                  <a href="#" class="text-databox">USDD </a>
+                  <p class="capt-databox">Decentralized USD</p>
+                </div>
+                <div id="databox-usdc" class="tokens-bg-hover">
+                  <img class="logo-databox" src="./assets/usdclogo.png" />
+                  <a href="#" class="text-databox">USDC </a>
+                  <p class="capt-databox">USD Coin Stablecoin</p>
+                </div>
+                <div id="databox-tusd" class="tokens-bg-hover">
+                  <img class="logo-databox" src="./assets/tusdlogo.png" />
+                  <a href="#" class="text-databox">TUSD </a>
+                  <p class="capt-databox">TrueUSD Stablecoin</p>
+                </div>
+                <div id="databox-usdj" class="tokens-bg-hover">
+                  <img class="logo-databox" src="./assets/usdjlogo.png" />
+                  <a href="#" class="text-databox">USDJ</a>
+                  <p class="capt-databox">JustDeFi Stablecoin</p>
+                </div>
+                <div id="databox-jst" class="tokens-bg-hover">
+                  <img class="logo-databox" src="./assets/jstlogo.png" />
+                  <a href="#" class="text-databox">JST</a>
+                  <p class="capt-databox">JustDeFi Governance Token</p>
+                </div>
+                <div id="databox-btt" class="tokens-bg-hover">
+                  <img class="logo-databox" src="./assets/jstlogo.png" />
+                  <a href="#" class="text-databox">BTT</a>
+                  <p class="capt-databox">Official BitTorrent Token</p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="link-list list-data" id="hovData" href="#"
+            >Data
+            <div class="menu-data">
+              <div>
+                <div id="databox-chart">
+                  <a href="#" class="text-chart">Charts</a>
+                </div>
+                <div id="databox-stats">
+                  <a href="#" class="text-stats">Top Statistic</a>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="link-list list-governace" id="hovGov" href="#"
+            >Governace
+            <div class="menu-gov">
+              <div>
+                <div id="databox-representative">
+                  <a href="#" class="text-representative">Representative</a>
+                </div>
+                <div id="databox-votes">
+                  <a href="#" class="text-votes">Votes</a>
+                </div>
+                <div id="databox-proposals">
+                  <a href="#" class="text-proposals">Proposals</a>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="link-list list-eco" id="hovEco" href="#"
+            >TRON Ecosystem
+            <div class="menu-eco">
+              <div>
+                <div id="databox-sun">
+                  <a href="#" class="text-sun">SUN</a>
+                </div>
+                <div id="databox-justlend">
+                  <a href="#" class="text-justlend">JustLend</a>
+                </div>
+                <div id="databox-bttc">
+                  <a href="#" class="text-bttc">BTTC</a>
+                </div>
+                <div id="databox-apenft">
+                  <a href="#" class="text-apenft"
+                    >APENFT<i class="apenft-icon"></i
+                  ></a>
+                </div>
+                <div id="databox-winklink">
+                  <a href="#" class="text-winklink">WINKLink</a>
+                </div>
+                <div id="databox-juststable">
+                  <a href="#" class="text-juststable">JustStable</a>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="link-list list-more" id="hovMore" href="#"
+            >More
+            <div class="menu-more">
+              <div>
+                <div id="databox-resource">
+                  <p class="text-resource">Development Resources</p>
+                </div>
+                <div id="databox-whitepaper" class="chain-bg-hover">
+                  <a href="#" class="text-whitepaper">TRON Whitepaper V2.O</a>
+                </div>
+                <div id="databox-arch" class="chain-bg-hover">
+                  <a href="#" class="text-arch">TRON Architecture</a>
+                </div>
+                <div id="databox-api" class="chain-bg-hover">
+                  <a href="#" class="text-api">TRONSCAN API</a>
+                </div>
+                <div id="databox-network" class="chain-bg-hover">
+                  <a href="#" class="text-network">SUN Network</a>
+                </div>
+                <div id="databox-trongrid" class="chain-bg-hover">
+                  <a href="#" class="text-trongrid">TronGrid</a>
+                </div>
+                <div id="databox-tools">
+                  <p class="text-tools">Tools</p>
+                </div>
+                <div id="databox-viewtransaction" class="chain-bg-hover">
+                  <a href="#" class="text-viewtransaction">View Transaction</a>
+                </div>
+                <div id="databox-encode" class="chain-bg-hover">
+                  <a href="#" class="text-encode">Encode Convert Tool</a>
+                </div>
+                <div id="databox-record" class="chain-bg-hover">
+                  <a href="#" class="text-record">Record Token</a>
+                </div>
+                <div id="databox-sign" class="chain-bg-hover">
+                  <a href="#" class="text-sign">Sign & Verify</a>
+                </div>
+                <div id="databox-support">
+                  <p class="text-support">Support & Help</p>
+                </div>
+                <div id="databox-guide" class="chain-bg-hover">
+                  <a href="#" class="text-guide">Beginner's Guide</a>
+                </div>
+                <div id="databox-faq" class="chain-bg-hover">
+                  <a href="#" class="text-faq">FAQ</a>
+                </div>
+                <div id="databox-forum" class="chain-bg-hover">
+                  <a href="#" class="text-forum">TRONDAO Forum</a>
+                </div>
+                <div id="databox-service">
+                  <p class="text-service">Service</p>
+                </div>
+                <div id="databox-markets" class="chain-bg-hover">
+                  <a href="#" class="text-markets">Markets</a>
+                </div>
+                <div id="databox-btfs" class="chain-bg-hover">
+                  <a href="#" class="text-btfs">BTFS</a>
+                </div>
+                <div id="databox-etf" class="chain-bg-hover">
+                  <a href="#" class="text-etf">TRON ETF</a>
+                </div>
+                <div id="databox-tronlending" class="chain-bg-hover">
+                  <a href="#" class="text-tronlending">TronLending</a>
+                </div>
+                <div id="databox-dappradar" class="chain-bg-hover">
+                  <a href="#" class="text-dappradar">Dappradar</a>
+                </div>
+                <div id="databox-trx" class="chain-bg-hover">
+                  <a href="#" class="text-trx">List TRX On Exchange</a>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="nav-login">
+          <a class="btn-connect" href="#">Connect Wallet</a>
+          <a class="btn-reg" href="./rel/login/index.html">Register</a>
+          <div class="v-line"></div>
+          <a class="btn-login" href="./rel/login/index.html">Login</a>
+          <div class="btn-net" id="hovNet">
+            <a href="#">
+              <img class="net-logo-hov" src="./assets/netlogoHover.png" />
+              <img class="net-logo" src="./assets/netlogo.png" />
+            </a>
+          </div>
+          <div class="menu-net">
+            <div>
+              <div id="databox-nile">
+                <a href="#" class="text-nile">NILE TESTNET</a>
+              </div>
+              <div id="databox-shasta">
+                <a href="#" class="text-shasta">SHASTA TESTNET</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-toggle-phone">
+          <div class="btn-toggle">
+            <button>
+              <img src="./assets/dragWrapper.svg"/>
+            </button>
+            <div class="menu-dropdown-toggle">
+              <ul class="sub-wrapper-toggle">
+                <li class="sub-dropdown-toggle">Home</li>
+                <li class="sub-dropdown-toggle">Blockchain
+                  <img class="dropdown-icon-toggle" src="./assets/dropDwonIcon.svg">
+                  <ul class="subrel-wrapper-toggle">
+                    <li class="subrel-dropdown-toggle"><a href="./rel/blockchain/nodes/index.html">Nodes</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">Blocks</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">Transactions</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">Transfers</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">Accounts</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">Contracts</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">Contract Deployment</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">Contract Verification</a></li>
+                  </ul>
+                </li>
+                <li class="sub-dropdown-toggle">Tokens
+                  <img class="dropdown-icon-toggle" src="./assets/dropDwonIcon.svg">
+                  <ul class="subrel-wrapper-toggle">
+                    <li class="subrel-dropdown-toggle"><a href="#">Token Tracker</a></li>
+                    <li class="subrel-dropdown-toggle sdt-token"><a href="#">Hot Tokens</a></li>
+                    <li class="subrel-dropdown-toggle"><img class="sdt-token-img" src="./assets/usdtlogo.png"><a href="#">USDT</a><p class="sdt-token-p">Tether Stablecoin On TRON</p></li>
+                    <li class="subrel-dropdown-toggle"><img class="sdt-token-img" src="./assets/usddlogo.png"><a href="#">USDD</a><p class="sdt-token-p">Decentralized USD</p></li>
+                    <li class="subrel-dropdown-toggle"><img class="sdt-token-img" src="./assets/usdclogo.png"><a href="#">USDC</a><p class="sdt-token-p">USD Coin Stablecoin</p></li>
+                    <li class="subrel-dropdown-toggle"><img class="sdt-token-img" src="./assets/tusdlogo.png"><a href="#">TUSD</a><p class="sdt-token-p">TrueUSD Stablecoin</p></li>
+                    <li class="subrel-dropdown-toggle"><img class="sdt-token-img" src="./assets/usdjlogo.png"><a href="#">USDJ</a><p class="sdt-token-p">JustDeFi Stablecoin</p></li>
+                    <li class="subrel-dropdown-toggle"><img class="sdt-token-img" src="./assets/jstlogo.png"><a href="#">JST</a><p class="sdt-token-p">JustDefi Governance Token</p></li>
+                    <li class="subrel-dropdown-toggle"><img class="sdt-token-img" src="./assets/bttlogo.png"><a href="#">BTT</a><p class="sdt-token-p">Official BitTorrent Token</p></li>
+                  </ul>
+                </li>
+                <li class="sub-dropdown-toggle">Data
+                  <img class="dropdown-icon-toggle" src="./assets/dropDwonIcon.svg">
+                  <ul class="subrel-wrapper-toggle">
+                    <li class="subrel-dropdown-toggle"><a href="#">Charts</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">Top Statistics</a></li>
+                  </ul>
+                </li>
+                <li class="sub-dropdown-toggle">Governance
+                  <img class="dropdown-icon-toggle" src="./assets/dropDwonIcon.svg">
+                  <ul class="subrel-wrapper-toggle">
+                    <li class="subrel-dropdown-toggle"><a href="#">Representatives</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">Votes</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">Proposals</a></li>
+                  </ul>
+                </li>
+                <li class="sub-dropdown-toggle">TRON Ecosystem
+                  <img class="dropdown-icon-toggle" src="./assets/dropDwonIcon.svg">
+                  <ul class="subrel-wrapper-toggle">
+                    <li class="subrel-dropdown-toggle"><a href="#">SUN</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">JustLend DAO</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">BTTC</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">APENFT</a><img class="apenft-subrel" src="./assets/apenft.svg"></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">WINKLink</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">JustStable</a></li>
+                  </ul>
+                </li>
+                <li class="sub-dropdown-toggle">More
+                  <img class="dropdown-icon-toggle" src="./assets/dropDwonIcon.svg">
+                  <ul class="subrel-wrapper-toggle swt-more">
+                    <li class="subrel-dropdown-toggle sdt-more"><a href="#">Development Resources</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">TRON Whitepaper V2.O</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">TRON Architecture</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">TRONSCAN API</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">SUN Network</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">TronGrid</a></li>
+                    <li class="subrel-dropdown-toggle sdt-more"><a href="#">Tools</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">View Transaction</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">Encode Convert Tool</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">Record Token</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">Sign & Verify</a></li>
+                    <li class="subrel-dropdown-toggle sdt-more"><a href="#">Support & Help</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">Beginner's Guide</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">FAQ</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">TRONDAO Forum</a></li>
+                    <li class="subrel-dropdown-toggle sdt-more"><a href="#">Service</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">Markets</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">BTFS</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">TRON ETF</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">TronLending</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">Dappradar</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">List TRX On Exchanges</a></li>
+                  </ul>
+                </li>
+                <div class="h-line-dropdown-toggle"></div>
+                <li class="sub-dropdown-toggle">Explorers
+                  <img class="dropdown-icon-toggle" src="./assets/dropDwonIcon.svg">
+                  <ul class="subrel-wrapper-toggle">
+                    <li class="subrel-dropdown-toggle"><a href="#">NILE TESTNET</a></li>
+                    <li class="subrel-dropdown-toggle"><a href="#">SHASTA TESTNET</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- Nav End -->
+
+    <!-- Search Start -->
+    <form class="form">
+      <span class="logo-search">
+        <img class="logo-search-inline" src="./assets/searchLogo.svg" alt="" />
+      </span>
+      <input
+        class="search"
+        type="text"
+        placeholder=" Search by Account / TXN Hash / Token / Block"
+        required
+      />
+      <div class="v-line-search"></div>
+      <div class="selector">
+        <select>
+          <option class="filter-title-search">All Filters</option>
+          <option class="filter-dropdown-search" value="0">Tokens</option>
+          <option class="filter-dropdown-search" value="1">Accounts</option>
+          <option class="filter-dropdown-search" value="2">Contracts</option>
+          <option class="filter-dropdown-search" value="3">Txn Hashes</option>
+          <option class="filter-dropdown-search" value="4">Blocks</option>
+          <option class="filter-dropdown-search" value="5">Websites</option>
+        </select>
+      </div>
+    </form>
+    <!-- Search End -->
+
+    <!-- Trending Search Start -->
+    <div class="trending-section">
+      <ul>
+        <li><p class="trending-title">Trending Search :</p></li>
+        <li>
+          <img
+            class="logo-trending usdt-trending"
+            src="./assets/usdtlogo.png"
+          />
+          <a href="#">USDT</a>
+        </li>
+        <li>
+          <img
+            class="logo-trending btt-trending"
+            src="./assets/bttlogo.png"
+          /><a href="#">BTTOLD</a>
+        </li>
+        <li>
+          <img
+            class="logo-trending usdc-trending"
+            src="./assets/usdclogo.png"
+          /><a href="">USDC</a>
+        </li>
+        <li>
+          <img
+            class="logo-trending usdd-trending"
+            src="./assets/usddlogo.png"
+          /><a href="#">USDD</a>
+        </li>
+        <li>
+          <img
+            class="logo-trending nac-trending"
+            src="./assets/nacLogo.jpeg"
+          /><a href="#">NAC</a>
+        </li>
+        <li>
+          <img
+            class="logo-trending tusd-trending"
+            src="./assets/tusdlogo.png"
+          /><a href="#">TUSD</a>
+        </li>
+        <li>
+          <img
+            class="logo-trending usdj-trending"
+            src="./assets/usdjlogo.png"
+          /><a href="#">USDJ</a>
+        </li>
+        <li>
+          <a class="more-trending" href="#">more <img src="./assets/rightArrowIcon.svg" alt=""></a>
+        </li>
+      </ul>
+    </div>
+    <!-- Trending Search End -->
+
+    <!-- Alert Slider Start -->
+    <div class="slider-alert">
+      <img class="logo-alert" src="./assets/alertIcon.png" />
+      <div class="container-slider-alert">
+        <div class="slide-alert">
+          <a href="#"
+            >Temporarily suspend the use of...<span> (01-20)</span></a
+          >
+        </div>
+        <div class="slide-alert">
+          <a href="#">
+            Temporarily suspend the use of...<span> (12-14)</span>
+          </a>
+        </div>
+        <div class="slide-alert">
+          <a href="#"> TRON Crypto ETFs <span> (09-21)</span> </a>
+        </div>
+      </div>
+      <span class="more-alert"><a href="#">more <img src="./assets/rightArrowIcon.svg" alt=""></a></span>
+    </div>
+    <!-- Alert Slider End -->
+
+    <!-- Data Wrapper Start -->
+    <div class="data-wrapper">
+      <div class="account-wrapper">
+        <a href="#">
+          <div class="account-item-wrapper">
+            <img class="account-icon" src="./assets/accountIcon.png" />
+            <p class="account-title">Total Account</p>
+            <h2 class="account-calc">18,012,004</h2>
+          </div>
+          <div class="account-item-wrapper-right">
+            <p class="account-time data-time">24h</p>
+            <p class="account-rating">+291,443</p>
+          </div>
+        </a>
+      </div>
+      <div class="v-line-data v-line-account"></div>
+      <div class="h-line-data h-line-account"></div>
+      <div class="tvl-wrapper">
+        <a href="#">
+          <div class="tvl-item-wrapper">
+            <img class="tvl-icon" src="./assets/tvlIcon.png" />
+            <p class="tvl-title">TVL</p>
+            <h2 class="tvl-calc">$ 11,812,984,866</h3>
+          </div>
+          <div class="tvl-item-wrapper-right">
+            <p class="tvl-time data-time">24h</p>
+            <p class="tvl-rating">-1.6%</p>
+          </div>
+        </a>
+      </div>
+      <div class="txns-wrapper">
+        <a href="#">
+          <div class="txns-item-wrapper">
+            <img class="txns-icon" src="./assets/txnsIcon.png" />
+            <p class="txns-title">Total Txns</p>
+            <h2 class="txns-calc">7,942,112,007</h2>
+          </div>
+          <div class="txns-item-wrapper-right">
+            <p class="txns-time data-time">24h</p>
+            <p class="txns-rating">+4,907,008</p>
+          </div>
+        </a>
+      </div>
+      <div class="v-line-data v-line-txns"></div>
+      <div class="h-line-data h-line-txns" id="readMoreData"></div>
+      <div id="dots"></div>
+      <button onclick="myFunction()" class="drop-down-data-btn" id="myBtn">
+        <img src="./assets/dropDwonIcon.svg" />
+      </button>
+      <div class="transfer-wrapper">
+        <a href="#">
+          <div class="transfer-item-wrapper">
+            <img class="transfer-icon" src="./assets/transferIcon.png" />
+            <p class="transfer-title">Total Transfer Value</p>
+            <h2 class="transfer-calc">$ 94,119,476</h2>
+          </div>
+          <div class="transfer-item-wrapper-right">
+            <p class="transfer-time data-time">24h</p>
+            <p class="transfer-rating">+$8,576,456</p>
+          </div>
+        </a>
+      </div>
+      <div class="data-wrapper-bottom" id="readMoreData"></div>
+      <div id="readMoreData">
+        <div class="contract-wrapper">
+          <a href="#">
+            <div class="contract-item-wrapper">
+              <img class="contract-icon" src="./assets/contractIcon.png" />
+              <p class="contract-title">Contracts</p>
+              <h2 class="contract-calc">1,610,325</h2>
+            </div>
+            <div class="contract-item-wrapper-right">
+              <p class="contract-time data-time">24h</p>
+              <p class="contract-rating">+2,200</p>
+            </div>
+          </a>
+        </div>
+        <div class="v-line-data v-line-contract"></div>
+        <div class="h-line-data h-line-contract"></div>
+        <div class="token-wrapper">
+          <a href="#">
+            <div class="token-item-wrapper">
+              <img class="token-icon" src="./assets/tokenIcon.png" />
+              <p class="token-title">Tokens</p>
+              <h2 class="token-calc">81,977</h2>
+            </div>
+            <div class="token-item-wrapper-right">
+              <p class="token-time data-time">24h</p>
+              <p class="token-rating">+22</p>
+            </div>
+          </a>
+        </div>
+        <div class="current-wrapper">
+          <a href="#">
+            <div class="current-item-wrapper">
+              <img class="current-icon" src="./assets/tpsIcon.png" />
+              <p class="current-title">Current/Max TPS</p>
+              <h2 class="current-calc">42/748</h2>
+            </div>
+            <div class="current-item-wrapper-right">
+              <p class="current-time data-time">Peak(24h)</p>
+              <p class="current-rating">570</p>
+            </div>
+          </a>
+        </div>
+        <div class="v-line-data v-line-current"></div>
+        <div class="nodes-wrapper">
+          <a href="#">
+            <div class="nodes-item-wrapper">
+              <img class="nodes-icon" src="./assets/nodeIcon.png" />
+              <p class="nodes-title">Nodes</p>
+              <h2 class="nodes-calc">6,518</h2>
+            </div>
+            <div class="nodes-item-wrapper-right">
+              <p class="nodes-time data-time">Region with the m...</p>
+              <p class="nodes-rating">United States</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Data Wrapper End -->
+
+    <!-- TRON Aside Start -->
+    <div class="tron-aside">
+      <div class="tron-top">
+        <img class="tron-logo-top" src="./assets/tronLogo.svg" />
+        <div class="tron-top-left">
+          <h4>TRON</h4>
+          <p>Latest Price</p>
+        </div>
+        <div class="tron-top-right">
+          <p class="tron-top-calc">
+            +2.05%
+            <img class="tron-top-calc-logo" src="./assets/upArrowIcon.svg" />
+          </p>
+          <p class="tron-top-currency">$0.0695 <span>/TRX</span></p>
+        </div>
+        <img class="tron-wave-chart" src="./assets/wavesChartAside.png" />
+      </div>
+      <div class="tron-bottom">
+        <div class="tron-cap tron-item">
+          <a href="#">
+            <div class="tron-cap-left">
+              <img class="cap-icon tron-item-icon" src="./assets/capIcon.svg" />
+              <p class="cap-title tron-item-title color-item-tron">Market Cap</p>
+              <p class="cap-calc calc-tron-item">$6,377,541,812</p>
+            </div>
+            <div class="tron-cap-right tron-sec-right">
+              <p class="cap-rating rating-tron-item">+0.77%</p>
+            </div>
+          </a>
+        </div>
+        <div class="tron-trading tron-item">
+          <a href="#">
+            <div class="tron-trading-left">
+              <img
+                class="trading-icon tron-item-icon"
+                src="./assets/tradingIcon.svg"
+              />
+              <p class="trading-title tron-item-title color-item-tron">
+                Market Trading Volume(24h)
+              </p>
+              <p class="trading-calc calc-tron-item">$645,275,171</p>
+            </div>
+            <div class="tron-trading-right tron-sec-right">
+              <p class="trading-rating rating-tron-item">-8.37%</p>
+            </div>
+          </a>
+        </div>
+        <div class="tron-staked tron-item">
+          <a href="#">
+            <div class="tron-staked-left">
+              <img
+                class="staked-icon tron-item-icon"
+                src="./assets/stakedIcon.svg"
+              />
+              <p class="staked-title tron-item-title color-item-tron">
+                Total TRX Staked
+              </p>
+              <p class="staked-calc calc-tron-item">44,427,695,974</p>
+            </div>
+            <div class="tron-staked-right tron-sec-right">
+              <p class="staked-title-rating">Staking Rate</p>
+              <p class="staked-rating rating-tron-item">43.8%</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- TRON Aside End -->
+
+    <!-- Block Section Start -->
+    <div class="blocks-section">
+      <div class="blocks-title">
+        <div class="block-title-left"><a href="#">Blocks</a></div>
+        <div class="block-title-right"><a href="#">more <img src="./assets/rightArrowIcon.svg" alt=""></a></div>
+      </div>
+      <div class="slider-block">
+        <div class="slider-block-inner">
+          <div class="slider-shadow-inner"></div>
+          <marquee class="slider-block-marquee" direction="right" scrollamount="30"
+            ><img src="./assets/sliderBlock.svg"
+          /></marquee>
+        </div>
+      </div>
+      <div class="item-slider-block">
+      <div class="slider-block-1 item-slider-block-hover">
+        <div class="title-slider-block"><a href="#">#42604094</a></div>
+        <div class="time-slider-block">9 secs ago</div>
+        <div class="reward-slider-block">Reward <span>176 TRX</span></div>
+        <div class="producer-slider-block">
+          <a class="right-arrow-block" href="#">TRONGrid<img src="./assets/blockArrowIcon.svg" /></a>
+        </div>
+        <div class="sum-slider-block">143 Txns</div>
+        <div class="total-slider-block">
+          <img src="./assets/burnBlockLogo.svg" />203.4274 TRX
+        </div>
+      </div>
+      <div class="slider-block-2 item-slider-block-hover">
+        <div class="title-slider-block"><a href="#">#42604095</a></div>
+        <div class="time-slider-block">12 secs ago</div>
+        <div class="reward-slider-block">Reward <span>176 TRX</span></div>
+        <div class="producer-slider-block">
+          <a class="right-arrow-block" href="#">Chain Cloud<img src="./assets/blockArrowIcon.svg" /></a>
+        </div>
+        <div class="sum-slider-block">218 Txns</div>
+        <div class="total-slider-block">
+          <img src="./assets/burnBlockLogo.svg" />982.3461 TRX
+        </div>
+      </div>
+      <div class="slider-block-3 item-slider-block-hover">
+        <div class="title-slider-block"><a href="#">#42604096</a></div>
+        <div class="time-slider-block">7 secs ago</div>
+        <div class="reward-slider-block">Reward <span>176 TRX</span></div>
+        <div class="producer-slider-block">
+          <a class="right-arrow-block" href="#">TRX Market<img src="./assets/blockArrowIcon.svg" /></a>
+        </div>
+        <div class="sum-slider-block">339 Txns</div>
+        <div class="total-slider-block">
+          <img src="./assets/burnBlockLogo.svg" />130.119 TRX
+        </div>
+      </div>
+      <div class="slider-block-4 item-slider-block-hover">
+        <div class="title-slider-block"><a href="#">#42604097</a></div>
+        <div class="time-slider-block">4 secs ago</div>
+        <div class="reward-slider-block">Reward <span>176 TRX</span></div>
+        <div class="producer-slider-block">
+          <a class="right-arrow-block" href="#">StakedTRON<img src="./assets/blockArrowIcon.svg" /></a>
+        </div>
+        <div class="sum-slider-block">212 Txns</div>
+        <div class="total-slider-block">
+          <img src="./assets/burnBlockLogo.svg" />217.8822 TRX
+        </div>
+      </div>
+      </div>
+    </div>
+    <!-- Block Section Start -->
+
+    <!-- Transaction Section Start -->
+    <div class="trans-title">
+      <div class="trans-title-left"><a href="#">Transactions</a></div>
+      <div class="trans-title-right"><a href="#">more <img src="./assets/rightArrowIcon.svg" alt=""></a></div>
+    </div>
+    <div class="transaction-section">
+      <div class="scrollbar-transaction">
+        <div class="list-scrollbar-transaction-transfer-1">
+          <div class="ellipsis-transfer">
+            <a href="#">028hendjhwp21...3e572</a>
+          </div>
+          <div class="time-transfer"><p>12 secs ago</p></div>
+          <p class="from-transfer">From</p>
+          <a class="from-link-transfer" href="#"
+            >TE25yFHwrm9FFLcKFzUTjgdARV6pujgAit</a
+          >
+          <p class="to-transfer">To</p>
+          <a class="to-link-transfer" href="#"
+            >TTmaAAbFPtACn1amP3FBkmmUygFh8udAvA</a
+          >
+          <div class="trx-transfer"><p>0.000006 TRX</p></div>
+          <div class="token-transfer"><p>Transfer TRX</p></div>
+        </div>
+        <div class="h-line-transaction h-line-t1"></div>
+        <div class="list-scrollbar-transaction-transfer-2">
+          <div class="ellipsis-transfer">
+            <a href="#">7bbbeobioon2...12734v</a>
+          </div>
+          <div class="time-transfer"><p>4 secs ago</p></div>
+          <p class="from-transfer">From</p>
+          <a class="from-link-transfer" href="#"
+            >TBrFj5xJtdkzANC8L6rnDGE3M1UeTduXL8</a
+          >
+          <p class="to-transfer">To</p>
+          <a class="to-link-transfer" href="#"
+            >TF1MAhwn6g2i6NiDServ4WBiVvDs1zJwNG</a
+          >
+          <div class="trx-transfer"><p>0.000001 TRX</p></div>
+          <div class="token-transfer"><p>Transfer TRX</p></div>
+        </div>
+        <div class="h-line-transaction h-line-t2"></div>
+        <div class="list-scrollbar-transaction-transfer-3">
+          <div class="ellipsis-transfer">
+            <a href="#">44wu3b939rnr...pp103m</a>
+          </div>
+          <div class="time-transfer"><p>9 secs ago</p></div>
+          <p class="from-transfer">From</p>
+          <a class="from-link-transfer" href="#"
+            >TDJ9RkUpd37TdiRWzGsExpeE5N7fmKmgyK</a
+          >
+          <p class="to-transfer">To</p>
+          <a class="to-link-transfer" href="#"
+            >TG6yUjEtGByaTekCNL9EbmjbxzLZ4jteNT</a
+          >
+          <div class="trx-transfer"><p>0.000006 TRX</p></div>
+          <div class="token-transfer"><p>Transfer TRX</p></div>
+        </div>
+        <div class="h-line-transaction h-line-t3"></div>
+        <div class="list-scrollbar-transaction-transfer-4">
+          <div class="ellipsis-transfer">
+            <a href="#">028hendjhwp21...3e572</a>
+          </div>
+          <div class="time-transfer"><p>14 secs ago</p></div>
+          <p class="from-transfer">From</p>
+          <a class="from-link-transfer" href="#"
+            >TE25yFHwrm9FFLcKFzUTjgdARV6pujgAit</a
+          >
+          <p class="to-transfer">To</p>
+          <a class="to-link-transfer" href="#"
+            >TTmaAAbFPtACn1amP3FBkmmUygFh8udAvA</a
+          >
+          <div class="trx-transfer"><p>0.000006 TRX</p></div>
+          <div class="token-transfer"><p>Transfer TRX</p></div>
+        </div>
+        <div class="h-line-transaction h-line-t4"></div>
+        <div class="list-scrollbar-transaction-transfer-5">
+          <div class="ellipsis-transfer">
+            <a href="#">028hendjhwp21...3e572</a>
+          </div>
+          <div class="time-transfer"><p>6 secs ago</p></div>
+          <p class="from-transfer">From</p>
+          <a class="from-link-transfer" href="#"
+            >TE25yFHwrm9FFLcKFzUTjgdARV6pujgAit</a
+          >
+          <p class="to-transfer">To</p>
+          <a class="to-link-transfer" href="#"
+            >TTmaAAbFPtACn1amP3FBkmmUygFh8udAvA</a
+          >
+          <div class="trx-transfer"><p>0.000006 TRX</p></div>
+          <div class="token-transfer"><p>Transfer TRX</p></div>
+        </div>
+        <div class="h-line-transaction h-line-t5"></div>
+        <div class="list-scrollbar-transaction-transfer-6">
+          <div class="ellipsis-transfer">
+            <a href="#">028hendjhwp21...3e572</a>
+          </div>
+          <div class="time-transfer"><p>1 secs ago</p></div>
+          <p class="from-transfer">From</p>
+          <a class="from-link-transfer" href="#"
+            >TE25yFHwrm9FFLcKFzUTjgdARV6pujgAit</a
+          >
+          <p class="to-transfer">To</p>
+          <a class="to-link-transfer" href="#"
+            >TTmaAAbFPtACn1amP3FBkmmUygFh8udAvA</a
+          >
+          <div class="trx-transfer"><p>0.000006 TRX</p></div>
+          <div class="token-transfer"><p>Transfer TRX</p></div>
+        </div>
+      </div>
+      <div class="chart-transaction">
+        <p class="daily-transaction">Daily Txns (14 Days)</p>
+        <canvas
+          id="chartTransaction"
+        ></canvas>
+        <a class="dot-transaction" href="#"><img src="./assets/dotIcon.svg" /></a>
+      </div>
+    </div>
+    <!-- Transaction Section End -->
+
+    <!-- TVL/TVC Section Start -->
+    <!-- TVL Element -->
+    <div id="tvl-section" class="tvl-section">
+    <div class="tvl-title-sec">
+      <button onclick=""><p>TVL</p></button>
+    </div>
+    <p class="slash-title-sec">/</p>
+    <div class="tvc-title-sec">
+      <button onclick="showTVC()"><p>TVC</p></button>
+    </div>
+    <a href="#" class="more-title-sec"
+      >more <img src="./assets/rightArrowIcon.svg"
+    /></a>
+      <div class="tvl-chart-sec">
+        <div class="tvl-faq-sec">
+          <p>TVL</p>
+          <img src="./assets/questionLogo.svg" />
+          <div class="show-question-sec">
+            <p>
+              An indicator for TRON ecosystem, which equals the total value of
+              <br />
+              tokens staked in smart contracts
+            </p>
+          </div>
+        </div>
+        <p class="ammount-chart-sec">$10,724,066,299</p>
+        <canvas
+          id="chartTVL"
+        ></canvas>
+      </div>
+      <div class="tvl-scroll-sec">
+        <div class="title-scroll-tvl">
+          <p class="sharp-title-tvl">#</p>
+          <p class="project-title-tvl">Project</p>
+          <p class="type-title-tvl">Type</p>
+          <p class="sum-title-tvl">TVL</p>
+          <img class="quest-title-tvl" src="./assets/questionLogo.svg" />
+          <p class="change-title-tvl">Change (24h)</p>
+          <div class="show-question-scroll-tvl">
+            <p>Comparison between the current TVL and that 24 hours ago</p>
+          </div>
+        </div>
+        <div class="item-scroll-tvl">
+          <img class="number-scroll-tvl" src="./assets/firstIcon.png" alt="" />
+          <a class="item-project-tvl" href="#"
+            ><img src="./assets/justLendDAOLogo.png" />
+            <p>JustLend DAO</p></a
+          >
+          <div class="item-type-tvl ist-1"><p>Lending</p></div>
+          <p class="item-sum-tvl">$3,445,261,225</p>
+          <p class="item-change-tvl">-0.98%</p>
+        </div>
+        <div class="h-line-tvl-sec tesec-2"></div>
+        <div class="item-scroll-tvl ist-2">
+          <img class="number-scroll-tvl" src="./assets/secondIcon.png" alt="" />
+          <a class="item-project-tvl" href="#"
+            ><img src="./assets/stakingIcon.png" />
+            <p>TRX Staking Governance</p></a
+          >
+          <div class="item-type-tvl"><p>Governance</p></div>
+          <p class="item-sum-tvl">$2,821,447,329</p>
+          <p class="item-change-tvl">-2.92%</p>
+        </div>
+        <div class="h-line-tvl-sec tesec-3"></div>
+        <div class="item-scroll-tvl ist-3">
+          <img class="number-scroll-tvl" src="./assets/thirdIcon.png" alt="" />
+          <a class="item-project-tvl" href="#"
+            ><img src="./assets/sunLogo.png" />
+            <p>SUN.io</p></a
+          >
+          <div class="item-type-tvl"><p>DEX</p></div>
+          <p class="item-sum-tvl">$2,100,247,358</p>
+          <p class="item-change-tvl">-1.26%</p>
+        </div>
+        <div class="h-line-tvl-sec tesec-4"></div>
+        <div class="item-scroll-tvl ist-4">
+          <p class="item-num-scroll">4</p>
+          <a class="item-project-tvl" href="#"
+            ><img src="./assets/jstlogo.png" />
+            <p>Just Cryptos</p></a
+          >
+          <div class="item-type-tvl"><p>Cross Chain</p></div>
+          <p class="item-sum-tvl">$1,237,604,944</p>
+          <p class="item-change-tvl">-4.65%</p>
+        </div>
+        <div class="h-line-tvl-sec tesec-5"></div>
+        <div class="item-scroll-tvl ist-5">
+            <p class="item-num-scroll">5</p>
+          <a class="item-project-tvl" href="#"
+            ><img src="./assets/justableIcon.png" />
+            <p>JustStable</p></a
+          >
+          <div class="item-type-tvl"><p>Stablecoin</p></div>
+          <p class="item-sum-tvl">$1,122,446,973</p>
+          <p class="item-change-tvl">-2.88%</p>
+        </div>
+        <div class="h-line-tvl-sec tesec-6"></div>
+        <div class="item-scroll-tvl ist-6">
+            <p class="item-num-scroll">6</p>
+          <a class="item-project-tvl" href="#"
+            ><img src="./assets/bttlogo.png" />
+            <p>BTT Staking Governance</p></a
+          >
+          <div class="item-type-tvl"><p>Governance</p></div>
+          <p class="item-sum-tvl">$32,728,407</p>
+          <p class="item-change-tvl">-4.78%</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TVC Element -->
+    <div id="tvc2-section" class="tvc2-section">
+    <div class="tvl2-title-sec">
+      <button onclick="hideTVC()"><p>TVL</p></button>
+    </div>
+    <p class="slash2-title-sec">/</p>
+    <div class="tvc2-title-sec">
+      <button onclick=""><p>TVC</p></button>
+    </div>
+    <a href="#" class="more2-title-sec"
+      >more <img src="./assets/rightArrowIcon.svg"
+    /></a>
+      <div class="tvc2-chart-sec">
+        <div class="tvc2-faq-sec">
+          <p>Total Value on Chain</p>
+          <img src="./assets/questionLogo.svg" />
+          <div class="show2-question-sec">
+            <p>
+              Only tokens with a 24-hour trading volume of over $1 million are
+              <br />
+              recorded.
+            </p>
+          </div>
+        </div>
+        <p class="ammount2-chart-sec">$46,890,874,544</p>
+        <canvas
+          id="chartTVC"
+        ></canvas>
+      </div>
+      <div class="tvc2-scroll-sec">
+        <div class="title-scroll-tvc2">
+          <p class="sharp-title-tvc2">#</p>
+          <p class="project-title-tvc2">Token</p>
+          <p class="type-title-tvc2">Market Cap</p>
+          <p class="sum-title-tvc2">Number of Hol</p>
+          <img class="quest-title-tvc2" src="./assets/questionLogo.svg" />
+          <p class="change-title-tvc2">Trading Volume</p>
+          <div class="show-question-scroll-tvc2">
+            <p>Comparison between the current TVL and that 24 hours ago</p>
+          </div>
+        </div>
+        <div class="item-scroll-tvc2">
+          <img class="number-scroll-tvc2" src="./assets/firstIcon.png" alt="" />
+          <a class="item-project-tvc2" href="#"
+            ><img src="./assets/usdtlogo.png" />
+            <p>Tether USD (USDT)</p></a
+          >
+          <div class="item-type-tvc2 ist-12"><p>$ 32,155,792,444</p></div>
+          <p class="item-sum-tvc2">14,982,876</p>
+          <p class="item-change-tvc2">$ 45,887,958,507</p>
+        </div>
+        <div class="h-line-tvc2-sec tesec-22"></div>
+        <div class="item-scroll-tvc2 ist-22">
+          <img class="number-scroll-tvc2" src="./assets/secondIcon.png" alt="" />
+          <a class="item-project-tvc2" href="#"
+            ><img src="./assets/stakingIcon.png" />
+            <p>TRX (TRX)</p></a
+          >
+          <div class="item-type-tvc2"><p>$ 6,046,919,298</p></div>
+          <p class="item-sum-tvc2">61,449,658</p>
+          <p class="item-change-tvc2">$ 457,366,933</p>
+        </div>
+        <div class="h-line-tvc2-sec tesec-32"></div>
+        <div class="item-scroll-tvc2 ist-32">
+          <img class="number-scroll-tvc2" src="./assets/thirdIcon.png" alt="" />
+          <a class="item-project-tvc2" href="#"
+            ><img src="./assets/usdclogo.png" />
+            <p>USD Coin (USDC)</p></a
+          >
+          <div class="item-type-tvc2"><p>$ 3,201,003,416</p></div>
+          <p class="item-sum-tvc2">353,077</p>
+          <p class="item-change-tvc2">$ 455,990,993</p>
+        </div>
+        <div class="h-line-tvc2-sec tesec-42"></div>
+        <div class="item-scroll-tvc2 ist-42">
+          <p class="item-num-scroll2">4</p>
+          <a class="item-project-tvc2" href="#"
+            ><img src="./assets/btcLogo.png" />
+            <p>Bitcoin (BTC)</p></a
+          >
+          <div class="item-type-tvc2"><p>$ 1,143,283,164</p></div>
+          <p class="item-sum-tvc2">33,188</p>
+          <p class="item-change-tvc2">$ 27,110,214,022</p>
+        </div>
+        <div class="h-line-tvc2-sec tesec-52"></div>
+        <div class="item-scroll-tvc2 ist-52">
+            <p class="item-num-scroll2">5</p>
+          <a class="item-project-tvc2" href="#"
+            ><img src="./assetS/bttlogo.png" />
+            <p>BitTorrent Old (BTTOLD)</p></a
+          >
+          <div class="item-type-tvc2"><p>$ 885,095,413</p></div>
+          <p class="item-sum-tvc2">15,793,001</p>
+          <p class="item-change-tvc2">$ 941</p>
+        </div>
+        <div class="h-line-tvc2-sec tesec-62"></div>
+        <div class="item-scroll-tvc2 ist-62">
+            <p class="item-num-scroll2">6</p>
+          <a class="item-project-tvc2" href="#"
+            ><img src="./assets/bttlogo.png" />
+            <p>BitTorrent (BTT)</p></a
+          >
+          <div class="item-type-tvc2"><p>$ 856,639,682</p></div>
+          <p class="item-sum-tvc2">168,949</p>
+          <p class="item-change-tvc2">$ 21,918,551</p>
+        </div>
+        <div class="h-line-tvc2-sec tesec-72"></div>
+        <div class="item-scroll-tvc2 ist-72">
+            <p class="item-num-scroll2">7</p>
+          <a class="item-project-tvc2" href="#"
+            ><img src="./assets/usddlogo.png" />
+            <p>Decentralized USD (USDD)</p></a
+          >
+          <div class="item-type-tvc2"><p>$ 725,523,373</p></div>
+          <p class="item-sum-tvc2">70,040</p>
+          <p class="item-change-tvc2">$ 42,789,819</p>
+        </div>
+        <div class="h-line-tvc2-sec tesec-82"></div>
+        <div class="item-scroll-tvc2 ist-82">
+            <p class="item-num-scroll2">8</p>
+          <a class="item-project-tvc2" href="#"
+            ><img src="./assets/apeNftLogo.png" />
+            <p>APENFT (NFT)</p></a
+          >
+          <div class="item-type-tvc2"><p>$ 581,028,365</p></div>
+          <p class="item-sum-tvc2">2,292,284</p>
+          <p class="item-change-tvc2">$ 20,063,767</p>
+        </div>
+        <div class="h-line-tvc2-sec tesec-92"></div>
+        <div class="item-scroll-tvc2 ist-92">
+            <p class="item-num-scroll2">9</p>
+          <a class="item-project-tvc2" href="#"
+            ><img src="./assets/tusdlogo.png" />
+            <p>TrueUSD (TUSD)</p></a
+          >
+          <div class="item-type-tvc2"><p>$ 329,402,397</p></div>
+          <p class="item-sum-tvc2">307,558</p>
+          <p class="item-change-tvc2">$ 314,425,478</p>
+        </div>
+        <div class="h-line-tvc2-sec tesec-102"></div>
+        <div class="item-scroll-tvc2 ist-102">
+            <p class="item-num-scroll2">10</p>
+          <a class="item-project-tvc2" href="#"
+            ><img src="./assets/jstlogo.png" />
+            <p>JUST (JST)</p></a
+          >
+          <div class="item-type-tvc2"><p>$ 277,876,080</p></div>
+          <p class="item-sum-tvc2">451,751</p>
+          <p class="item-change-tvc2">$ 26,781,264</p>
+        </div>
+        <div class="h-line-tvc2-sec tesec-112"></div>
+        <div class="item-scroll-tvc2 ist-112">
+        <a class="item-project-tvc2-bot" href="#"
+          >
+          <p>more <img src="./assets/rightArrowIcon.svg"></p></a
+        >
+      </div>
+      </div>
+    </div>
+    </div>
+    <!-- TVL/TVC Section End -->
+
+    <!-- Stablecoins Section Start -->
+    <div class="stablecoins-section">
+      <div class="stablecoins-title-sec">
+        <button><p>Stablecoins</p></button>
+      </div>
+      <a href="#" class="more-title-stablecoins"
+        >more <img src="./assets/rightArrowIcon.svg"
+      /></a>
+        <div class="stablecoins-scroll-table">
+          <div class="title-scroll-stablecoins">
+            <p class="project-title-stablecoins">Stablecoin</p>
+            <p class="type-title-stablecoins">Circulating Supply</p>
+            <p class="sum-title-stablecoins">Transfer Count (24h)</p>
+            <img class="quest-title-stablecoins" src="./assets/questionLogo.svg" />
+            <p class="change-title-stablecoins">Transfer Volume (24h)</p>
+            <div class="show-question-scroll-stablecoins">
+              <p>Comparison between the current TVL and that 24 hours ago</p>
+            </div>
+          </div>
+          <div class="item-scroll-stablecoins">
+            <a class="item-project-stablecoins" href="#"
+              ><img src="./assets/usdtlogo.png" />
+              <p>Tether USD</p></a
+            >
+            <div class="item-circulating-stablecoins icstablecoins-12"><p>32,130,268,679</p></div>
+            <p class="item-count-stablecoins">1,274,681</p>
+            <p class="item-volume-stablecoins">$7,191,358,261</p>
+          </div>
+          <div class="h-line-stablecoins testablecoins-22"></div>
+          <div class="item-scroll-stablecoins icstablecoins-22">
+            <a class="item-project-stablecoins" href="#"
+              ><img src="./assets/usdclogo.png" />
+              <p>USD Coin</p></a
+            >
+            <div class="item-circulating-stablecoins"><p>3,187,916,435</p></div>
+            <p class="item-count-stablecoins">3,925</p>
+            <p class="item-volume-stablecoins">$207,201,683</p>
+          </div>
+          <div class="h-line-stablecoins testablecoins-32"></div>
+          <div class="item-scroll-stablecoins icstablecoins-32">
+            <a class="item-project-stablecoins" href="#"
+              ><img src="./assets/usddlogo.png" />
+              <p>Decentralized USD</p></a
+            >
+            <div class="item-circulating-stablecoins"><p>725,332,038</p></div>
+            <p class="item-count-stablecoins">4,646</p>
+            <p class="item-volume-stablecoins">$41,971,711</p>
+          </div>
+          <div class="h-line-stablecoins testablecoins-42"></div>
+          <div class="item-scroll-stablecoins icstablecoins-42">
+            <a class="item-project-stablecoins" href="#"
+              ><img src="./assets/tusdlogo.png" />
+              <p>TrueUSD</p></a
+            >
+            <div class="item-circulating-stablecoins"><p>329,715,971</p></div>
+            <p class="item-count-stablecoins">720</p>
+            <p class="item-volume-stablecoins">$29,966,334</p>
+          </div>
+          <div class="h-line-stablecoins testablecoins-52"></div>
+          <div class="item-scroll-stablecoins icstablecoins-52">
+            <a class="item-project-stablecoins" href="#"
+              ><img src="./assets/usdjlogo.png" />
+              <p>JUST Stablecoin</p></a
+            >
+            <div class="item-circulating-stablecoins"><p>265,608,031</p></div>
+            <p class="item-count-stablecoins">570</p>
+            <p class="item-volume-stablecoins">$2,074,119</p>
+          </div>
+  
+        </div>
+        <div class="stablecoins-chart-sec">
+          <div class="stablecoins-faq-sec">
+            <p>Stablecoin Transfer Volume</p>
+            <img src="./assets/questionLogo.svg" />
+            <div class="show-question-stablecoins">
+              <p>
+                Total transfer volume of stablecoins
+                <br />
+                on TRON network
+              </p>
+            </div>
+          </div>
+          <p class="ammount-chart-stablecoins">$7,474,194,525</p>
+          <canvas
+            id="chartStablecoins"
+          ></canvas>
+        </div>
+      </div>
+    </div>
+    <!-- Stablecoins Section End -->
+
+    <!-- Account Section Start -->
+    <div class="accounts-section">
+      <div class="total-accounts-section">
+        <div class="total-accounts-title">
+          <a href="#">Accounts</a>
+          <img src="./assets/cameraIcon.svg" />
+          <button class="new2-button-accounts-title" onclick="showNewAccount()">
+            Active & New
+          </button>
+          <button class="total2-button-accounts-title" onclick="">Total</button>
+        </div>
+        <div class="total-accounts-charts">
+          <canvas
+            id="chartAccountsTotal"
+          ></canvas>
+          <div class="h-line-accounts2-chart"></div>
+        </div>
+        <div class="active-accounts2-footer">
+          <p class="active-accounts2-footer-title">Total</p>
+          <p class="active-accounts2-footer-count">104,888,211</p>
+          <div class="rate-active-accounts2-footer"><p>+0.13%</p></div>
+        </div>
+      </div>
+      <div id="newAccountSection" class="new-accounts-section">
+        <div class="new-accounts-title">
+          <a href="#">Accounts</a>
+          <img src="./assets/cameraIcon.svg" />
+          <button class="new-button-accounts-title" onclick="">
+            Active & New
+          </button>
+          <button class="total-button-accounts-title" onclick="hideNewAccount() ">
+            Total
+          </button>
+        </div>
+        <div class="new-accounts-charts">
+          <canvas
+            id="chartAccountsNew"
+          ></canvas>
+          <div class="h-line-accounts-chart"></div>
+        </div>
+        <div class="active-accounts-footer">
+          <p class="active-accounts-footer-title">Active Accounts</p>
+          <p class="active-accounts-footer-count">2,914,143</p>
+          <div class="rate-active-accounts-footer"><p>+3.1%</p></div>
+        </div>
+        <div class="new-accounts-footer">
+          <p class="new-accounts-footer-title">New Accounts</p>
+          <p class="new-accounts-footer-count">140,389</p>
+          <div class="rate-new-accounts-footer"><p>-1.42%</p></div>
+        </div>
+      </div>
+    </div>
+    <!-- Account Section End -->
+
+    <!-- Resources Section Start -->
+    <div class="resources-section">
+      <div class="total-resources-section">
+        <div class="total-resources-title">
+          <a href="#">Resources</a>
+          <img src="./assets/cameraIcon.svg" />
+          <button
+            class="consume-button-resources-title"
+            onclick="showConsumeResources()"
+          >
+            Total Consumption
+          </button>
+          <button class="cost-button-resources-title" onclick="">
+            Resource Cost
+          </button>
+        </div>
+        <div class="total-resources-charts">
+          <canvas
+            id="chartResourcesTotal"
+          ></canvas>
+          <div class="h-line-resources2-chart"></div>
+        </div>
+        <div class="consume-resources-footer">
+          <p class="consume-resources-footer-title">Energy Cost</p>
+          <p class="consume-resources-footer-count">Stake 0.04 TRX</p>
+          <div class="rate-consume-resources-footer"><p>+0.56%</p></div>
+        </div>
+        <div class="cost-accounts-footer">
+          <p class="cost-accounts-footer-title">Bandwith Cost</p>
+          <p class="cost-accounts-footer-count">Stake 0.46 TRX</p>
+          <div class="rate-cost-accounts-footer"><p>-0.83%</p></div>
+        </div>
+      </div>
+      <div id="consumeResourcesSection" class="cost-accounts-section">
+        <div class="cost-accounts-title">
+          <a href="#">Resources</a>
+          <img src="./assets/cameraIcon.svg" />
+          <button class="new-button-resources-title" onclick="">
+            Total Consumption
+          </button>
+          <button
+            class="total-button-resources-title"
+            onclick="hideConsumeResources() "
+          >
+            Resource Cost
+          </button>
+        </div>
+        <div class="cost-accounts-charts">
+          <canvas
+            id="chartResourcesConsume"
+          ></canvas>
+          <div class="h-line-resources-chart"></div>
+        </div>
+        <div class="consumed-resources-footer">
+          <p class="consumed-resources-footer-title">Energy Consumed</p>
+          <p class="consumed-resources-footer-count">33,346,224,863</p>
+          <div class="rate-consumed-resources-footer"><p>+1.6%</p></div>
+        </div>
+        <div class="cost-accounts-footer">
+          <p class="cost-accounts-footer-title">Bandwith Consumed</p>
+          <p class="cost-accounts-footer-count">1,949,981,057</p>
+          <div class="rate-cost-accounts-footer"><p>-1.50%</p></div>
+        </div>
+      </div>
+    </div>
+    <!-- Resources Section End -->
+
+    <!-- Triggers Section Start -->
+    <div class="triggers-section">
+      <div class="accs-triggers-section">
+        <div class="accs-triggers-title">
+          <a href="#">Contract Triggers</a>
+          <img src="./assets/cameraIcon.svg" />
+          <button
+            class="calls-button-triggers-title"
+            onclick="showCallsTriggers()"
+          >
+            Number of Calls
+          </button>
+          <button class="accs-button-triggers-title">Calling Accounts</button>
+        </div>
+        <div class="accs-triggers-charts">
+          <canvas
+            id="chartTriggersAccs"
+          ></canvas>
+          <div class="h-line-triggers2-chart"></div>
+        </div>
+        <div class="accs-triggers-footer">
+          <p class="accs-triggers-footer-title">Calling Accounts</p>
+          <p class="accs-triggers-footer-count">365,687</p>
+          <div class="rate-accs-triggers-footer"><p>+4.52%</p></div>
+        </div>
+      </div>
+      <div id="callsTriggersSection" class="calls-triggers-section">
+        <div class="calls-triggers-title">
+          <a href="#">Contract Triggers</a>
+          <img src="./assets/cameraIcon.svg" />
+          <button class="calls-button2-triggers-title" onclick="">
+            Number of Calls
+          </button>
+          <button
+            class="accs-button2-triggers-title"
+            onclick="hideCallsTriggers()"
+          >
+            Calling Accounts
+          </button>
+        </div>
+        <div class="cost-triggers-charts">
+          <canvas
+            id="chartTriggersCalls"
+          ></canvas>
+          <div class="h-line-triggers-chart"></div>
+        </div>
+        <div class="calls-triggers-footer">
+          <p class="calls-triggers-footer-title">Number of Calls</p>
+          <p class="calls-triggers-footer-count">1,540,433</p>
+          <div class="rate-calls-triggers-footer"><p>+1.8%</p></div>
+        </div>
+      </div>
+    </div>
+    <!-- Triggers Section End -->
+
+    <!-- Staking Section Start -->
+    <div class="staking-secction">
+      <div class="title-staking-section">
+        <div class="staking-title-sec">
+          <a href="#">TRX Circulating & Staking</a>
+          <img src="./assets/cameraIcon.svg" />
+        </div>
+        <div class="staking-charts-sec">
+          <canvas
+            id="chartsStakingHome"
+          ></canvas>
+          <div class="h-line-staking-charts"></div>
+        </div>
+        <div class="staking-footer-sec">
+          <span class="staking-footer-sec-left">
+            <p class="staking-footer-sec-title">TRX Circulating Supply</p>
+            <p class="staking-footer-sec-count">92,425,227,483</p>
+            <div class="staking-footer-sec-rate"><p>+0.2%</p></div>
+          </span>
+          <span class="staking-footer-sec-mid">
+            <p class="staking-footer-sec-title-mid">Total TRX Staked</p>
+            <p class="staking-footer-sec-count">44,228,691,601</p>
+            <div class="staking-footer-sec-rate"><p>+1.1%</p></div>
+          </span>
+          <span class="staking-footer-sec-right">
+            <p class="staking-footer-sec-title-right">Staking Rate</p>
+            <div class="staking-footer-sec-rate-right"><p>+1.6%</p></div>
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- Staking Section End -->
+
+    <!-- Footer Section Start -->
+    <div class="h-line-footer-section"></div>
+  <div class="footer-main-section">
+    <div class="footer-left-section">
+      <div class="footer-left-ecosystem">
+        <p class="left-ecosystem-title">TRON Ecosystem</p>
+        <a class="left-ecosystem-tron" href="#">Tron.network</a>
+        <a class="left-ecosystem-wallet" href="#">Wallet</a>
+        <a class="left-ecosystem-lending" href="#">TronLending</a>
+      </div>
+      <div class="footer-left-developer">
+        <p class="left-developer-title">Developers</p>
+        <a class="left-developer-git" href="#">Github</a>
+        <a class="left-developer-java" href="#">java-tron</a>
+        <a class="left-developer-doc" href="#">Documentation</a>
+        <a class="left-developer-hub" href="#">Developer Hub</a>
+      </div>
+      <div class="footer-left-about">
+        <p class="left-about-us">About Us</p>
+        <a class="left-about-info" href="#">Team Info</a>
+        <a class="left-about-supp" href="#">Support Center</a>
+        <a class="left-about-priv" href="#">Privacy Policy</a>
+        <a class="left-about-terms" href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-right-section">
+      <div class="footer-right-logo">
+        <img src="./assets/logo.svg" />
+        <p>The best blockchain explorer of TRON</p>
+      </div>
+      <div class="footer-right-social">
+        <a class="tele-footer" href="#"
+          ><img src="./assets/telegramLogo.svg"
+        /></a>
+        <a class="twitter-footer" href="#"
+          ><img src="./assets/twitterLogo.svg"
+        /></a>
+        <a class="medium-footer" href="#"
+          ><img src="./assets/mediumLogo.svg"
+        /></a>
+        <a class="discord-footer" href="#"
+          ><img src="./assets/discordLogo.svg"
+        /></a>
+        <a class="forum-footer" href="#"
+          ><img src="./assets/forumLogo.svg"
+        /></a>
+      </div>
+    </div>
+  </div>
+    <!-- Footer Section End -->
+
+    <div class="bg-manipulation"></div>
+    <script src="./script/index.js"></script>
+  </body>
+</html>

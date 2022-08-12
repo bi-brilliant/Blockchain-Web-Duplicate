@@ -1,0 +1,1059 @@
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <style>
+body {
+  background-color: darkcyan;
+}
+
+    /* TVL Element Section */
+    .tvl-section {
+      position: absolute;
+      background-color: #f6f7fa;
+      width: 1370px;
+      height: 425px;
+      border-radius: 10px;
+    }
+
+    .tvl-title-sec {
+      position: absolute;
+    }
+    .tvl-title-sec button {
+      background-color: transparent;
+      border: none;
+    }
+    .tvl-title-sec button p {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .slash-title-sec {
+      position: absolute;
+      top: 7px;
+      left: 52px;
+      font-size: 16px;
+      color: #c2c9d1;
+      font-weight: 700;
+    }
+
+    .tvc-title-sec {
+      position: absolute;
+      top: 7px;
+      left: 55px;
+    }
+    .tvc-title-sec button {
+      background-color: transparent;
+      border: none;
+    }
+    .tvc-title-sec button p {
+      font-size: 16px;
+      font-weight: 700;
+      color: #c2c9d1;
+    }
+
+    .more-title-sec {
+      position: absolute;
+      top: 20px;
+      left: 1330px;
+      font-size: 14px;
+      text-decoration: none;
+      color: black;
+    }
+    .more-title-sec img {
+      position: absolute;
+      top: 6px;
+      left: 33px;
+    }
+    .more-title-sec:hover {
+      color: brown;
+    }
+
+    .tvl-element-sec {
+      position: absolute;
+      bottom: 0px;
+      background-color: antiquewhite;
+      width: 100%;
+      height: 380px;
+      border-radius: 10px;
+    }
+
+    .tvl-chart-sec {
+      background-color: #FFF;
+      border-top-left-radius:10px ;
+      border-bottom-left-radius:10px ;
+      position: absolute;
+      bottom: 0px;
+      width: 590px;
+      height: 370px;
+    }
+    .tvl-chart-sec canvas {
+      position: absolute;
+      top: 90px;
+      left: 10px;
+    }
+
+    .tvl-faq-sec {
+      position: absolute;
+      top: 5px;
+      left: 15px;
+    }
+    .tvl-faq-sec p {
+      font-size: 14px;
+      color: #91979d;
+    }
+    .tvl-faq-sec img {
+      position: absolute;
+      top: 15px;
+      left: 40px;
+    }
+    .show-question-sec {
+      background-color: rgba(0, 0, 0, 0.564);
+      width: 400px;
+      height: 50px;
+      border-radius: 10px;
+      position: relative;
+      top: -85px;
+      left: -15px;
+      display: none;
+    }
+    .show-question-sec p {
+      color: white;
+      font-size: 12px;
+      position: absolute;
+      top: 0px;
+      left: 35px;
+    }
+    .tvl-faq-sec img:hover + .show-question-sec {
+      display: block;
+    }
+
+    .ammount-chart-sec {
+      font-size: 24px;
+      font-weight: 700;
+      position: absolute;
+      top: 20px;
+      left: 15px;
+    }
+
+    .tvl-scroll-sec {
+      background-color: #e3e9ea61;
+      position: absolute;
+      right: 0px;
+      bottom: 10px;
+      height: 360px;
+      width: 780px;
+      overflow-y: scroll;
+    }
+
+    /* ScrollBar Style */
+    .tvl-scroll-sec::-webkit-scrollbar {
+      width: 4px;
+    }
+    .tvl-scroll-sec::-webkit-scrollbar-track {
+      border-radius: 10px;
+    }
+    .tvl-scroll-sec::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: #c2c9d135;
+    }
+
+    .title-scroll-tvl {
+      background-color: #ededed;
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      border-radius: 10px;
+      height: 41px;
+      width: 740px;
+    }
+    .sharp-title-tvl {
+      position: absolute;
+      top: 0px;
+      left: 25px;
+      color: #73787b;
+      font-size: 14px;
+    }
+    .project-title-tvl {
+      position: absolute;
+      top: 0px;
+      left: 95px;
+      color: #73787b;
+      font-size: 14px;
+    }
+    .type-title-tvl {
+      position: absolute;
+      top: 0px;
+      left: 310px;
+      color: #73787b;
+      font-size: 14px;
+    }
+    .sum-title-tvl {
+      position: absolute;
+      top: 0px;
+      left: 540px;
+      color: #73787b;
+      font-size: 14px;
+    }
+    .change-title-tvl {
+      position: absolute;
+      top: 0px;
+      left: 630px;
+      color: #73787b;
+      font-size: 14px;
+    }
+    .show-question-scroll-tvl {
+      background-color: rgba(0, 0, 0, 0.564);
+      width: 300px;
+      height: 20px;
+      border-radius: 5px;
+      position: relative;
+      top: -8px;
+      left: 450px;
+      display: none;
+    }
+    .show-question-scroll-tvl p {
+      color: white;
+      font-size: 12px;
+      position: absolute;
+      top: -10px;
+      left: 5px;
+    }
+    .quest-title-tvl {
+      position: absolute;
+      top: 15px;
+      left: 605px;
+    }
+    .quest-title-tvl:hover ~ .show-question-scroll-tvl {
+      display: block;
+    }
+
+    .item-scroll-tvl {
+      position: absolute;
+      left: 20px;
+      top: 60px;
+      width: 740px;
+      height: 50px;
+      background-color: transparent;
+    }
+    .item-scroll-tvl:hover {
+      background-color: rgba(217, 217, 217, 0.244);
+    }
+
+    .number-scroll-tvl {
+      width: 20px;
+      position: absolute;
+      top: 15px;
+      left: 15px;
+    }
+    .item-project-tvl img {
+      position: absolute;
+      width: 20px;
+      top: 15px;
+      left: 70px;
+    }
+    .item-project-tvl {
+      text-decoration: none;
+      color: black;
+    }
+    .item-project-tvl p {
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+      position: absolute;
+      top: 3px;
+      left: 100px;
+    }
+    .item-type-tvl p {
+      font-size: 12px;
+      position: absolute;
+      top: 6px;
+      left: 307px;
+    }
+    .item-sum-tvl {
+      font-size: 14px;
+      position: absolute;
+      top: 3px;
+      right: 175px;
+    }
+    .item-change-tvl {
+      font-size: 14px;
+      color: #c23631;
+      position: absolute;
+      top: 3px;
+      right: 40px;
+    }
+    .ist-2 {
+      top: 120px;
+    }
+    .ist-3 {
+      top: 180px;
+    }
+    .ist-4 {
+      top: 240px;
+    }
+    .ist-5 {
+      top: 300px;
+    }
+    .ist-6 {
+      top: 360px;
+    }
+    .h-line-tvl-sec {
+      border-bottom: 1px #c2c9d1 solid;
+      width: 740px;
+      position: absolute;
+      z-index: 1;
+      left: 20px;
+    }
+    .tesec-2{
+        top: 114px;
+    }
+    .tesec-3{
+        top: 174px;
+    }
+    .tesec-4{
+        top: 234px;
+    }
+    .tesec-5{
+        top: 294px;
+    }
+    .tesec-5{
+        top: 294px;
+    }
+    .tesec-6{
+        top: 354px;
+    }
+    
+    .item-num-scroll {
+        font-size: 14px;
+        color: #404245;
+        position: absolute;
+        top: 3px;
+        left: 20px;
+    }
+
+
+
+    /* TVC Element Section */
+    .tvc2-section {
+      position: absolute;
+      top: 8px;
+      background-color: #f6f7fa;
+      width: 1370px;
+      height: 425px;
+      border-radius: 10px;
+      z-index: 5;
+    }
+
+    .tvl2-title-sec {
+      position: absolute;
+      top: 7px;
+      left: 7px;
+    }
+    .tvl2-title-sec button {
+      background-color: transparent;
+      border: none;
+    }
+    .tvl2-title-sec button p {
+      font-size: 16px;
+      font-weight: 700;
+      color: #c2c9d1;
+    }
+
+    .slash2-title-sec {
+      position: absolute;
+      top: 7px;
+      left: 52px;
+      font-size: 16px;
+      color: #c2c9d1;
+      font-weight: 700;
+    }
+
+    .tvc2-title-sec {
+      position: absolute;
+      top: 0px;
+      left: 55px;
+    }
+    .tvc2-title-sec button {
+      background-color: transparent;
+      border: none;
+    }
+    .tvc2-title-sec button p {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .more2-title-sec {
+      position: absolute;
+      top: 20px;
+      left: 1330px;
+      font-size: 14px;
+      text-decoration: none;
+      color: black;
+    }
+    .more2-title-sec img {
+      position: absolute;
+      top: 6px;
+      left: 33px;
+    }
+    .more2-title-sec:hover {
+      color: brown;
+    }
+
+    .tvc2-element-sec {
+      position: absolute;
+      bottom: 0px;
+      background-color: antiquewhite;
+      width: 100%;
+      height: 380px;
+      border-radius: 10px;
+    }
+
+    .tvc2-chart-sec {
+      background-color: #FFF;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius:10px ;
+      position: absolute;
+      bottom: 0px;
+      width: 590px;
+      height: 370px;
+    }
+    .tvc2-chart-sec canvas {
+      position: absolute;
+      top: 90px;
+      left: 10px;
+    }
+
+    .tvc2-faq-sec {
+      position: absolute;
+      top: 5px;
+      left: 15px;
+    }
+    .tvc2-faq-sec p {
+      font-size: 14px;
+      color: #91979d;
+    }
+    .tvc2-faq-sec img {
+      position: absolute;
+      top: 15px;
+      left: 130px;
+    }
+    .show2-question-sec {
+      background-color: rgba(0, 0, 0, 0.564);
+      width: 400px;
+      height: 50px;
+      border-radius: 10px;
+      position: relative;
+      top: -85px;
+      left: -15px;
+      display: none;
+    }
+    .show2-question-sec p {
+      color: white;
+      font-size: 12px;
+      position: absolute;
+      top: 0px;
+      left: 35px;
+    }
+    .tvc2-faq-sec img:hover + .show2-question-sec {
+      display: block;
+    }
+
+    .ammount2-chart-sec {
+      font-size: 24px;
+      font-weight: 700;
+      position: absolute;
+      top: 20px;
+      left: 15px;
+    }
+
+    .tvc2-scroll-sec {
+      background-color: #e3e9ea61;
+      position: absolute;
+      right: 0px;
+      bottom: 10px;
+      height: 360px;
+      width: 780px;
+      overflow-y: scroll;
+    }
+
+    /* ScrollBar Style */
+    .tvc2-scroll-sec::-webkit-scrollbar {
+      width: 4px;
+    }
+    .tvc2-scroll-sec::-webkit-scrollbar-track {
+      border-radius: 10px;
+    }
+    .tvc2-scroll-sec::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: #c2c9d135;
+    }
+
+    .title-scroll-tvc2 {
+      background-color: #ededed;
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      border-radius: 10px;
+      height: 41px;
+      width: 740px;
+    }
+    .sharp-title-tvc2 {
+      position: absolute;
+      top: 0px;
+      left: 25px;
+      color: #73787b;
+      font-size: 14px;
+    }
+    .project-title-tvc2 {
+      position: absolute;
+      top: 0px;
+      left: 95px;
+      color: #73787b;
+      font-size: 14px;
+    }
+    .type-title-tvc2 {
+      position: absolute;
+      top: 0px;
+      left: 310px;
+      color: #73787b;
+      font-size: 14px;
+    }
+    .sum-title-tvc2 {
+      position: absolute;
+      top: 0px;
+      left: 480px;
+      color: #73787b;
+      font-size: 14px;
+    }
+    .change-title-tvc2 {
+      position: absolute;
+      top: 0px;
+      left: 630px;
+      color: #73787b;
+      font-size: 14px;
+    }
+    .show-question-scroll-tvc2 {
+      background-color: rgba(0, 0, 0, 0.564);
+      width: 300px;
+      height: 20px;
+      border-radius: 5px;
+      position: relative;
+      top: -8px;
+      left: 450px;
+      display: none;
+    }
+    .show-question-scroll-tvc2 p {
+      color: white;
+      font-size: 12px;
+      position: absolute;
+      top: -10px;
+      left: 5px;
+    }
+    .quest-title-tvc2 {
+      position: absolute;
+      top: 15px;
+      left: 605px;
+    }
+    .quest-title-tvc2:hover ~ .show-question-scroll-tvc2 {
+      display: block;
+    }
+
+    .item-scroll-tvc2 {
+      position: absolute;
+      left: 20px;
+      top: 60px;
+      width: 740px;
+      height: 50px;
+      background-color: transparent;
+    }
+    .item-scroll-tvc2:hover {
+      background-color: rgba(217, 217, 217, 0.244);
+    }
+
+    .number-scroll-tvc2 {
+      width: 20px;
+      position: absolute;
+      top: 15px;
+      left: 15px;
+    }
+    .item-project-tvc2 img {
+      position: absolute;
+      width: 20px;
+      top: 15px;
+      left: 70px;
+    }
+    .item-project-tvc2 {
+      text-decoration: none;
+      color: black;
+    }
+    .item-project-tvc2 p {
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+      position: absolute;
+      top: 3px;
+      left: 100px;
+    }
+    .item-project-tvc2-bot p {
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+      position: absolute;
+      top: 3px;
+      left: 370px;
+    }
+    .item-type-tvc2 p {
+      font-size: 14px;
+      position: absolute;
+      top: 3px;
+      right: 350px;
+    }
+    .item-sum-tvc2 {
+      font-size: 14px;
+      position: absolute;
+      top: 3px;
+      right: 175px;
+    }
+    .item-change-tvc2 {
+      font-size: 14px;
+      color: black;
+      position: absolute;
+      top: 3px;
+      right: 40px;
+    }
+    .ist-22 {
+      top: 120px;
+    }
+    .ist-32 {
+      top: 180px;
+    }
+    .ist-42 {
+      top: 240px;
+    }
+    .ist-52 {
+      top: 300px;
+    }
+    .ist-62 {
+      top: 360px;
+    }
+    .ist-72 {
+      top: 420px;
+    }
+    .ist-82 {
+      top: 480px;
+    }
+    .ist-92 {
+      top: 540px;
+    }
+    .ist-102 {
+      top: 600px;
+    }
+    .ist-112 {
+      top: 660px;
+    }
+    .h-line-tvc2-sec {
+      border-bottom: 1px #c2c9d1 solid;
+      width: 740px;
+      position: absolute;
+      z-index: 1;
+      left: 20px;
+    }
+    .tesec-22{
+        top: 114px;
+    }
+    .tesec-32{
+        top: 174px;
+    }
+    .tesec-42{
+        top: 234px;
+    }
+    .tesec-52{
+        top: 294px;
+    }
+    .tesec-62{
+        top: 354px;
+    }
+    .tesec-72{
+        top: 414px;
+    }
+    .tesec-82{
+        top: 474px;
+    }
+    .tesec-92{
+        top: 534px;
+    }
+    .tesec-102{
+        top: 594px;
+    }
+    .tesec-112{
+        top: 654px;
+    }
+    
+    .item-num-scroll2 {
+        font-size: 14px;
+        color: #404245;
+        position: absolute;
+        top: 3px;
+        left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- TVL Element -->
+  <div id="tvl-section" class="tvl-section">
+    <div class="tvl-title-sec">
+      <button onclick=""><p>TVL</p></button>
+    </div>
+    <p class="slash-title-sec">/</p>
+    <div class="tvc-title-sec">
+      <button onclick="showTVC()"><p>TVC</p></button>
+    </div>
+    <a href="#" class="more-title-sec"
+      >more <img src="./assets/rightArrowIcon.svg"
+    /></a>
+      <div class="tvl-chart-sec">
+        <div class="tvl-faq-sec">
+          <p>TVL</p>
+          <img src="./assets/questionLogo.svg" />
+          <div class="show-question-sec">
+            <p>
+              An indicator for TRON ecosystem, which equals the total value of
+              <br />
+              tokens staked in smart contracts
+            </p>
+          </div>
+        </div>
+        <p class="ammount-chart-sec">$10,724,066,299</p>
+        <canvas
+          id="chartTVL"
+          style="width: 100%; max-width: 570px; height: 280px"
+        ></canvas>
+      </div>
+      <div class="tvl-scroll-sec">
+        <div class="title-scroll-tvl">
+          <p class="sharp-title-tvl">#</p>
+          <p class="project-title-tvl">Project</p>
+          <p class="type-title-tvl">Type</p>
+          <p class="sum-title-tvl">TVL</p>
+          <img class="quest-title-tvl" src="./assets/questionLogo.svg" />
+          <p class="change-title-tvl">Change (24h)</p>
+          <div class="show-question-scroll-tvl">
+            <p>Comparison between the current TVL and that 24 hours ago</p>
+          </div>
+        </div>
+        <div class="item-scroll-tvl">
+          <img class="number-scroll-tvl" src="./assets/firstIcon.png" alt="" />
+          <a class="item-project-tvl" href="#"
+            ><img src="./assets/justLendDAOLogo.png" />
+            <p>JustLend DAO</p></a
+          >
+          <div class="item-type-tvl ist-1"><p>Lending</p></div>
+          <p class="item-sum-tvl">$3,445,261,225</p>
+          <p class="item-change-tvl">-0.98%</p>
+        </div>
+        <div class="h-line-tvl-sec tesec-2"></div>
+        <div class="item-scroll-tvl ist-2">
+          <img class="number-scroll-tvl" src="./assets/secondIcon.png" alt="" />
+          <a class="item-project-tvl" href="#"
+            ><img src="./assets/stakingIcon.png" />
+            <p>TRX Staking Governance</p></a
+          >
+          <div class="item-type-tvl"><p>Governance</p></div>
+          <p class="item-sum-tvl">$2,821,447,329</p>
+          <p class="item-change-tvl">-2.92%</p>
+        </div>
+        <div class="h-line-tvl-sec tesec-3"></div>
+        <div class="item-scroll-tvl ist-3">
+          <img class="number-scroll-tvl" src="./assets/thirdIcon.png" alt="" />
+          <a class="item-project-tvl" href="#"
+            ><img src="./assets/sunLogo.png" />
+            <p>SUN.io</p></a
+          >
+          <div class="item-type-tvl"><p>DEX</p></div>
+          <p class="item-sum-tvl">$2,100,247,358</p>
+          <p class="item-change-tvl">-1.26%</p>
+        </div>
+        <div class="h-line-tvl-sec tesec-4"></div>
+        <div class="item-scroll-tvl ist-4">
+          <p class="item-num-scroll">4</p>
+          <a class="item-project-tvl" href="#"
+            ><img src="./assets/jstlogo.png" />
+            <p>Just Cryptos</p></a
+          >
+          <div class="item-type-tvl"><p>Cross Chain</p></div>
+          <p class="item-sum-tvl">$1,237,604,944</p>
+          <p class="item-change-tvl">-4.65%</p>
+        </div>
+        <div class="h-line-tvl-sec tesec-5"></div>
+        <div class="item-scroll-tvl ist-5">
+            <p class="item-num-scroll">5</p>
+          <a class="item-project-tvl" href="#"
+            ><img src="./assets/justableIcon.png" />
+            <p>JustStable</p></a
+          >
+          <div class="item-type-tvl"><p>Stablecoin</p></div>
+          <p class="item-sum-tvl">$1,122,446,973</p>
+          <p class="item-change-tvl">-2.88%</p>
+        </div>
+        <div class="h-line-tvl-sec tesec-6"></div>
+        <div class="item-scroll-tvl ist-6">
+            <p class="item-num-scroll">6</p>
+          <a class="item-project-tvl" href="#"
+            ><img src="./assets/bttlogo.png" />
+            <p>BTT Staking Governance</p></a
+          >
+          <div class="item-type-tvl"><p>Governance</p></div>
+          <p class="item-sum-tvl">$32,728,407</p>
+          <p class="item-change-tvl">-4.78%</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TVC Element -->
+  <div id="tvc2-section" class="tvc2-section">
+    <div class="tvl2-title-sec">
+      <button onclick="hideTVC()"><p>TVL</p></button>
+    </div>
+    <p class="slash2-title-sec">/</p>
+    <div class="tvc2-title-sec">
+      <button onclick=""><p>TVC</p></button>
+    </div>
+    <a href="#" class="more2-title-sec"
+      >more <img src="./assets/rightArrowIcon.svg"
+    /></a>
+      <div class="tvc2-chart-sec">
+        <div class="tvc2-faq-sec">
+          <p>Total Value on Chain</p>
+          <img src="./assets/questionLogo.svg" />
+          <div class="show2-question-sec">
+            <p>
+              Only tokens with a 24-hour trading volume of over $1 million are
+              <br />
+              recorded.
+            </p>
+          </div>
+        </div>
+        <p class="ammount2-chart-sec">$46,890,874,544</p>
+        <canvas
+          id="chartTVC"
+          style="width: 100%; max-width: 570px; height: 280px"
+        ></canvas>
+      </div>
+      <div class="tvc2-scroll-sec">
+        <div class="title-scroll-tvc2">
+          <p class="sharp-title-tvc2">#</p>
+          <p class="project-title-tvc2">Token</p>
+          <p class="type-title-tvc2">Market Cap</p>
+          <p class="sum-title-tvc2">Number of Hol</p>
+          <img class="quest-title-tvc2" src="./assets/questionLogo.svg" />
+          <p class="change-title-tvc2">Trading Volume</p>
+          <div class="show-question-scroll-tvc2">
+            <p>Comparison between the current TVL and that 24 hours ago</p>
+          </div>
+        </div>
+        <div class="item-scroll-tvc2">
+          <img class="number-scroll-tvc2" src="./assets/firstIcon.png" alt="" />
+          <a class="item-project-tvc2" href="#"
+            ><img src="./assets/usdtlogo.png" />
+            <p>Tether USD (USDT)</p></a
+          >
+          <div class="item-type-tvc2 ist-12"><p>$ 32,155,792,444</p></div>
+          <p class="item-sum-tvc2">14,982,876</p>
+          <p class="item-change-tvc2">$ 45,887,958,507</p>
+        </div>
+        <div class="h-line-tvc2-sec tesec-22"></div>
+        <div class="item-scroll-tvc2 ist-22">
+          <img class="number-scroll-tvc2" src="./assets/secondIcon.png" alt="" />
+          <a class="item-project-tvc2" href="#"
+            ><img src="./assets/stakingIcon.png" />
+            <p>TRX (TRX)</p></a
+          >
+          <div class="item-type-tvc2"><p>$ 6,046,919,298</p></div>
+          <p class="item-sum-tvc2">61,449,658</p>
+          <p class="item-change-tvc2">$ 457,366,933</p>
+        </div>
+        <div class="h-line-tvc2-sec tesec-32"></div>
+        <div class="item-scroll-tvc2 ist-32">
+          <img class="number-scroll-tvc2" src="./assets/thirdIcon.png" alt="" />
+          <a class="item-project-tvc2" href="#"
+            ><img src="./assets/usdclogo.png" />
+            <p>USD Coin (USDC)</p></a
+          >
+          <div class="item-type-tvc2"><p>$ 3,201,003,416</p></div>
+          <p class="item-sum-tvc2">353,077</p>
+          <p class="item-change-tvc2">$ 455,990,993</p>
+        </div>
+        <div class="h-line-tvc2-sec tesec-42"></div>
+        <div class="item-scroll-tvc2 ist-42">
+          <p class="item-num-scroll2">4</p>
+          <a class="item-project-tvc2" href="#"
+            ><img src="./assets/btcLogo.png" />
+            <p>Bitcoin (BTC)</p></a
+          >
+          <div class="item-type-tvc2"><p>$ 1,143,283,164</p></div>
+          <p class="item-sum-tvc2">33,188</p>
+          <p class="item-change-tvc2">$ 27,110,214,022</p>
+        </div>
+        <div class="h-line-tvc2-sec tesec-52"></div>
+        <div class="item-scroll-tvc2 ist-52">
+            <p class="item-num-scroll2">5</p>
+          <a class="item-project-tvc2" href="#"
+            ><img src="./assetS/bttlogo.png" />
+            <p>BitTorrent Old (BTTOLD)</p></a
+          >
+          <div class="item-type-tvc2"><p>$ 885,095,413</p></div>
+          <p class="item-sum-tvc2">15,793,001</p>
+          <p class="item-change-tvc2">$ 941</p>
+        </div>
+        <div class="h-line-tvc2-sec tesec-62"></div>
+        <div class="item-scroll-tvc2 ist-62">
+            <p class="item-num-scroll2">6</p>
+          <a class="item-project-tvc2" href="#"
+            ><img src="./assets/bttlogo.png" />
+            <p>BitTorrent (BTT)</p></a
+          >
+          <div class="item-type-tvc2"><p>$ 856,639,682</p></div>
+          <p class="item-sum-tvc2">168,949</p>
+          <p class="item-change-tvc2">$ 21,918,551</p>
+        </div>
+        <div class="h-line-tvc2-sec tesec-72"></div>
+        <div class="item-scroll-tvc2 ist-72">
+            <p class="item-num-scroll2">7</p>
+          <a class="item-project-tvc2" href="#"
+            ><img src="./assets/usddlogo.png" />
+            <p>Decentralized USD (USDD)</p></a
+          >
+          <div class="item-type-tvc2"><p>$ 725,523,373</p></div>
+          <p class="item-sum-tvc2">70,040</p>
+          <p class="item-change-tvc2">$ 42,789,819</p>
+        </div>
+        <div class="h-line-tvc2-sec tesec-82"></div>
+        <div class="item-scroll-tvc2 ist-82">
+            <p class="item-num-scroll2">8</p>
+          <a class="item-project-tvc2" href="#"
+            ><img src="./assets/apeNftLogo.png" />
+            <p>APENFT (NFT)</p></a
+          >
+          <div class="item-type-tvc2"><p>$ 581,028,365</p></div>
+          <p class="item-sum-tvc2">2,292,284</p>
+          <p class="item-change-tvc2">$ 20,063,767</p>
+        </div>
+        <div class="h-line-tvc2-sec tesec-92"></div>
+        <div class="item-scroll-tvc2 ist-92">
+            <p class="item-num-scroll2">9</p>
+          <a class="item-project-tvc2" href="#"
+            ><img src="./assets/tusdlogo.png" />
+            <p>TrueUSD (TUSD)</p></a
+          >
+          <div class="item-type-tvc2"><p>$ 329,402,397</p></div>
+          <p class="item-sum-tvc2">307,558</p>
+          <p class="item-change-tvc2">$ 314,425,478</p>
+        </div>
+        <div class="h-line-tvc2-sec tesec-102"></div>
+        <div class="item-scroll-tvc2 ist-102">
+            <p class="item-num-scroll2">10</p>
+          <a class="item-project-tvc2" href="#"
+            ><img src="./assets/jstlogo.png" />
+            <p>JUST (JST)</p></a
+          >
+          <div class="item-type-tvc2"><p>$ 277,876,080</p></div>
+          <p class="item-sum-tvc2">451,751</p>
+          <p class="item-change-tvc2">$ 26,781,264</p>
+        </div>
+        <div class="h-line-tvc2-sec tesec-112"></div>
+        <div class="item-scroll-tvc2 ist-112">
+        <a class="item-project-tvc2-bot" href="#"
+          >
+          <p>more <img src="./assets/rightArrowIcon.svg"></p></a
+        >
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    var xValues = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
+    var yValues = [
+      10.7, 10.8, 10.9, 11, 11.2, 11, 11.2, 11.4, 11.3, 11.3, 11.2, 11.1, 11.1,
+      10.8,
+    ];
+
+    var x2Values = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
+    var y2Values = [46.7, 46.8, 46.7, 47, 46.7, 47.2, 47, 47.1, 47.1, 47.3, 47.2, 47.3, 46.8, 46.9
+    ];
+
+    // TVL Elemenet Chart
+    new Chart("chartTVL", {
+      type: "line",
+      data: {
+        labels: xValues,
+        datasets: [
+          {
+            fill: false,
+            lineTension: 0.4,
+            borderWidth: 7,
+            pointBorderWidth: 1,
+            backgroundColor: "rgb(37, 94, 240)",
+            borderColor: "rgb(37, 94, 240)",
+            data: yValues,
+          },
+        ],
+      },
+      options: {
+        legend: { display: false },
+        scales: {
+          yAxes: [{ ticks: { min: 9.6, max: 12 } }],
+        },
+      },
+    });
+  
+    
+    // TVC Element Chart
+    new Chart("chartTVC", {
+      type: "line",
+      data: {
+        labels: x2Values,
+        datasets: [
+          {
+            fill: false,
+            lineTension: 0.4,
+            borderWidth: 7,
+            pointBorderWidth: 1,
+            backgroundColor: "rgb(217, 83, 79)",
+            borderColor: "rgb(217, 83, 79)",
+            data: y2Values,
+          },
+        ],
+      },
+      options: {
+        legend: { display: false },
+        scales: {
+          yAxes: [{ ticks: { min: 45.6, max: 48 } }],
+        },
+      },
+    });
+  
+
+    // Hide/Show Toggle TVL/TVC
+    function hideTVC() {
+    var x = document.getElementById("tvc2-section");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+     } else {
+        x.style.display = "none";
+     }
+    }
+
+  
+    function showTVC() {
+    var y = document.getElementById("tvc2-section");
+    if (y.style.display === "none") {
+        y.style.display = "block";
+      } else {
+        y.style.display = "block";
+      }
+    }
+
+  </script>
+</body>

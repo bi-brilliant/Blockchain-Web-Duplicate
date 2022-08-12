@@ -1,0 +1,569 @@
+<head>
+  <style>
+    .data-wrapper {
+      position: absolute;
+      background-color: black;
+      height: 228px;
+      width: 782px;
+      border-radius: 10px;
+    }
+
+    .v-line-data {
+      border-left: 1px #c2c9d1 dashed;
+      height: 49px;
+      position: absolute;
+      left: 391px;
+    }
+
+    .h-line-data {
+      border-bottom: 1px #c2c9d1 dashed;
+      width: 720px;
+      top: 107px;
+      position: absolute;
+      left: 30px;
+    }
+
+    .account-wrapper {
+      background-color: aquamarine;
+      margin-top: 10px;
+      margin-left: 10px;
+      height: 97px;
+      width: 380px;
+      float: left;
+    }
+    .account-wrapper a {
+      text-decoration: none;
+    }
+    .account-icon {
+      width: 40px;
+      margin: 27px 18px;
+    }
+    .account-title {
+      position: absolute;
+      color: black;
+      top: 20px;
+      left: 100px;
+    }
+    .account-calc {
+      position: absolute;
+      color: black;
+      top: 40px;
+      left: 100px;
+    }
+    .account-item-wrapper-right {
+      position: absolute;
+      top: 20px;
+      left: 300px;
+    }
+    .account-time {
+      position: absolute;
+      top: 0px;
+      left: 50px;
+    }
+    .account-rating {
+      position: absolute;
+      top: 23px;
+      left: 15px;
+      color: green;
+    }
+
+    .v-line-account {
+      top: 35px;
+    }
+
+    .tvl-wrapper {
+      background-color: aquamarine;
+      margin-top: 10px;
+      margin-right: 10px;
+      height: 97px;
+      width: 380px;
+      float: right;
+    }
+    .tvl-wrapper a {
+      text-decoration: none;
+    }
+    .tvl-icon {
+      width: 40px;
+      margin: 27px 18px;
+    }
+    .tvl-title {
+      position: absolute;
+      color: black;
+      top: 20px;
+      left: 490px;
+    }
+    .tvl-calc {
+      position: absolute;
+      color: black;
+      top: 40px;
+      left: 490px;
+    }
+    .tvl-item-wrapper-right {
+      position: absolute;
+      top: 20px;
+      left: 300px;
+    }
+    .tvl-time {
+      position: absolute;
+      top: 0px;
+      left: 440px;
+    }
+    .tvl-rating {
+      position: absolute;
+      top: 23px;
+      left: 425px;
+      color: red;
+    }
+
+    .txns-wrapper {
+      background-color: aquamarine;
+      margin-top: 2px;
+      margin-left: 10px;
+      height: 97px;
+      width: 380px;
+      float: left;
+    }
+    .txns-wrapper a {
+      text-decoration: none;
+    }
+    .txns-icon {
+      width: 40px;
+      margin: 27px 18px;
+    }
+    .txns-title {
+      position: absolute;
+      color: black;
+      top: 120px;
+      left: 100px;
+    }
+    .txns-calc {
+      position: absolute;
+      color: black;
+      top: 140px;
+      left: 100px;
+    }
+    .txns-item-wrapper-right {
+      position: absolute;
+      top: 120px;
+      left: 300px;
+    }
+    .txns-time {
+      position: absolute;
+      top: 0px;
+      left: 50px;
+    }
+    .txns-rating {
+      position: absolute;
+      top: 23px;
+      left: 2px;
+      color: green;
+    }
+
+    .v-line-txns {
+      top: 135px;
+    }
+
+    .h-line-txns {
+      top: 207px;
+    }
+
+    .transfer-wrapper {
+      background-color: aquamarine;
+      margin-top: 2px;
+      margin-right: 10px;
+      height: 97px;
+      width: 380px;
+      float: right;
+    }
+    .transfer-wrapper a {
+      text-decoration: none;
+    }
+    .transfer-icon {
+      width: 40px;
+      margin: 27px 18px;
+    }
+    .transfer-title {
+      position: absolute;
+      color: black;
+      top: 120px;
+      left: 490px;
+    }
+    .transfer-calc {
+      position: absolute;
+      color: black;
+      top: 140px;
+      left: 490px;
+    }
+    .transfer-item-wrapper-right {
+      position: absolute;
+      top: 120px;
+      left: 300px;
+    }
+    .transfer-time {
+      position: absolute;
+      top: 0px;
+      left: 440px;
+    }
+    .transfer-rating {
+      position: absolute;
+      top: 23px;
+      left: 355px;
+      color: green;
+    }
+
+    .contract-wrapper {
+      background-color: aquamarine;
+      margin-top: 2px;
+      margin-left: 10px;
+      height: 97px;
+      width: 380px;
+      float: left;
+    }
+    .contract-wrapper a {
+      text-decoration: none;
+    }
+    .contract-icon {
+      width: 40px;
+      margin: 27px 18px;
+    }
+    .contract-title {
+      position: absolute;
+      color: black;
+      top: 220px;
+      left: 100px;
+    }
+    .contract-calc {
+      position: absolute;
+      color: black;
+      top: 240px;
+      left: 100px;
+    }
+    .contract-item-wrapper-right {
+      position: absolute;
+      top: 220px;
+      left: 300px;
+    }
+    .contract-time {
+      position: absolute;
+      top: 0px;
+      left: 50px;
+    }
+    .contract-rating {
+      position: absolute;
+      top: 23px;
+      left: 30px;
+      color: green;
+    }
+
+    .v-line-contract {
+      top: 235px;
+    }
+
+    .h-line-contract {
+      top: 307px;
+    }
+
+    .token-wrapper {
+      background-color: aquamarine;
+      margin-top: 2px;
+      margin-right: 10px;
+      height: 97px;
+      width: 380px;
+      float: right;
+    }
+    .token-wrapper a {
+      text-decoration: none;
+    }
+    .token-icon {
+      width: 40px;
+      margin: 27px 18px;
+    }
+    .token-title {
+      position: absolute;
+      color: black;
+      top: 220px;
+      left: 490px;
+    }
+    .token-calc {
+      position: absolute;
+      color: black;
+      top: 240px;
+      left: 490px;
+    }
+    .token-item-wrapper-right {
+      position: absolute;
+      top: 220px;
+      left: 300px;
+    }
+    .token-time {
+      position: absolute;
+      top: 0px;
+      left: 440px;
+    }
+    .token-rating {
+      position: absolute;
+      top: 23px;
+      left: 440px;
+      color: green;
+    }
+
+    .data-wrapper-bottom {
+      background-color: blueviolet;
+      height: 220px;
+      width: 782px;
+      position: absolute;
+      top: 208px;
+      z-index: -1;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    .current-wrapper {
+      background-color: aquamarine;
+      margin-top: 2px;
+      margin-left: 10px;
+      height: 97px;
+      width: 380px;
+      float: left;
+    }
+    .current-wrapper a {
+      text-decoration: none;
+    }
+    .current-icon {
+      width: 40px;
+      margin: 27px 18px;
+    }
+    .current-title {
+      position: absolute;
+      color: black;
+      top: 320px;
+      left: 100px;
+    }
+    .current-calc {
+      position: absolute;
+      color: black;
+      top: 340px;
+      left: 100px;
+    }
+    .current-item-wrapper-right {
+      position: absolute;
+      top: 320px;
+      left: 300px;
+    }
+    .current-time {
+      position: absolute;
+      top: 0px;
+      left: 10px;
+    }
+    .current-rating {
+      position: absolute;
+      top: 23px;
+      left: 50px;
+      color: black;
+    }
+
+    .v-line-current {
+      top: 335px;
+    }
+
+    .nodes-wrapper {
+      background-color: aquamarine;
+      margin-top: 2px;
+      margin-right: 10px;
+      height: 97px;
+      width: 380px;
+      float: right;
+    }
+    .nodes-wrapper a {
+      text-decoration: none;
+    }
+    .nodes-icon {
+      width: 40px;
+      margin: 27px 18px;
+    }
+    .nodes-title {
+      position: absolute;
+      color: black;
+      top: 320px;
+      left: 490px;
+    }
+    .nodes-calc {
+      position: absolute;
+      color: black;
+      top: 340px;
+      left: 490px;
+    }
+    .nodes-item-wrapper-right {
+      position: absolute;
+      top: 320px;
+      left: 300px;
+    }
+    .nodes-time {
+      position: absolute;
+      top: 0px;
+      width: 140px;
+      left: 335px;
+    }
+    .nodes-rating {
+      position: absolute;
+      top: 23px;
+      width: 100px;
+      left: 380px;
+      color: black;
+    }
+
+    .drop-down-data-btn {
+      position: absolute;
+      top: 215px;
+      left: 380px;
+      z-index: 1;
+      background: transparent;
+      border: none;
+    }
+
+    /* Read More Data Wrapper */
+    #readMoreData {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="data-wrapper">
+    <div class="account-wrapper">
+      <a href="#">
+        <div class="account-item-wrapper">
+          <img class="account-icon" src="./assets/accountIcon.png" />
+          <p class="account-title">Total Account</p>
+          <h2 class="account-calc">18,012,004</h2>
+        </div>
+        <div class="account-item-wrapper-right">
+          <p class="account-time">24h</p>
+          <p class="account-rating">+291,443</p>
+        </div>
+      </a>
+    </div>
+    <div class="v-line-data v-line-account"></div>
+    <div class="h-line-data h-line-account"></div>
+    <div class="tvl-wrapper">
+      <a href="#">
+        <div class="tvl-item-wrapper">
+          <img class="tvl-icon" src="./assets/tvlIcon.png" />
+          <p class="tvl-title">TVL</p>
+          <h2 class="tvl-calc">$ 11,812,984,866</h2>
+        </div>
+        <div class="tvl-item-wrapper-right">
+          <p class="tvl-time">24h</p>
+          <p class="tvl-rating">-1.6%</p>
+        </div>
+      </a>
+    </div>
+    <div class="txns-wrapper">
+      <a href="#">
+        <div class="txns-item-wrapper">
+          <img class="txns-icon" src="./assets/txnsIcon.png" />
+          <p class="txns-title">Total Txns</p>
+          <h2 class="txns-calc">7,942,112,007</h2>
+        </div>
+        <div class="txns-item-wrapper-right">
+          <p class="txns-time">24h</p>
+          <p class="txns-rating">+4,907,008</p>
+        </div>
+      </a>
+    </div>
+    <div class="v-line-data v-line-txns"></div>
+    <div class="h-line-data h-line-txns" id="readMoreData"></div>
+    <div id="dots"></div>
+    <button onclick="myFunction()" class="drop-down-data-btn" id="myBtn">
+      <img src="./assets/dropDwonIcon.svg" />
+    </button>
+    <div class="transfer-wrapper">
+      <a href="#">
+        <div class="transfer-item-wrapper">
+          <img class="transfer-icon" src="./assets/transferIcon.png" />
+          <p class="transfer-title">Total Transfer Value</p>
+          <h2 class="transfer-calc">$ 4,119,476,241</h2>
+        </div>
+        <div class="transfer-item-wrapper-right">
+          <p class="transfer-time">24h</p>
+          <p class="transfer-rating">+$8,576,456,473</p>
+        </div>
+      </a>
+    </div>
+    <div class="data-wrapper-bottom" id="readMoreData"></div>
+    <div id="readMoreData">
+      <div class="contract-wrapper">
+        <a href="#">
+          <div class="contract-item-wrapper">
+            <img class="contract-icon" src="./assets/contractIcon.png" />
+            <p class="contract-title">Contracts</p>
+            <h2 class="contract-calc">1,610,325</h2>
+          </div>
+          <div class="contract-item-wrapper-right">
+            <p class="contract-time">24h</p>
+            <p class="contract-rating">+2,200</p>
+          </div>
+        </a>
+      </div>
+      <div class="v-line-data v-line-contract"></div>
+      <div class="h-line-data h-line-contract"></div>
+      <div class="token-wrapper">
+        <a href="#">
+          <div class="token-item-wrapper">
+            <img class="token-icon" src="./assets/tokenIcon.png" />
+            <p class="token-title">Tokens</p>
+            <h2 class="token-calc">81,977</h2>
+          </div>
+          <div class="token-item-wrapper-right">
+            <p class="token-time">24h</p>
+            <p class="token-rating">+22</p>
+          </div>
+        </a>
+      </div>
+      <div class="current-wrapper">
+        <a href="#">
+          <div class="current-item-wrapper">
+            <img class="current-icon" src="./assets/tpsIcon.png" />
+            <p class="current-title">Current/Max TPS</p>
+            <h2 class="current-calc">42/748</h2>
+          </div>
+          <div class="current-item-wrapper-right">
+            <p class="current-time">Peak(24h)</p>
+            <p class="current-rating">570</p>
+          </div>
+        </a>
+      </div>
+      <div class="v-line-data v-line-current"></div>
+      <div class="nodes-wrapper">
+        <a href="#">
+          <div class="nodes-item-wrapper">
+            <img class="nodes-icon" src="./assets/nodeIcon.png" />
+            <p class="nodes-title">Nodes</p>
+            <h2 class="nodes-calc">6,518</h2>
+          </div>
+          <div class="nodes-item-wrapper-right">
+            <p class="nodes-time">Region with the m...</p>
+            <p class="nodes-rating">United States</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function myFunction() {
+      var dots = document.getElementById("dots");
+      var moreData = document.getElementById("readMoreData");
+      var btnText = document.getElementById("myBtn");
+
+      if (dots.style.display === "none") {
+        dots.style.display = "block";
+        btnText.innerHTML = "Read more";
+        moreData.style.display = "none";
+      } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read less";
+        moreData.style.display = "absolute";
+      }
+    }
+  </script>
+</body>

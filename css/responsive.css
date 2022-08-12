@@ -1,0 +1,924 @@
+/* Tablet View */
+@media (min-width: 426px) and (max-width: 768px) {
+  .bg {
+    background-image: url(../assets/bgBody.png);
+    background-size: cover;
+    width: 1535px;
+    height: 600px;
+    z-index: -999;
+  }
+
+  /* Data Wrapper Section Start */
+  #readMoreData {
+    display: block;
+  }
+  .drop-down-data-btn {
+    display: none;
+  }
+
+  .data-wrapper {
+    left: 95px;
+    height: 228px;
+    width: 1335px;
+  }
+
+  .contract-wrapper {
+    position: absolute;
+    top: 205px;
+  }
+  .contract-title {
+    top: 20px;
+  }
+  .contract-calc {
+    top: 50px;
+  }
+  .contract-item-wrapper-right {
+    top: 20px;
+  }
+
+  .current-wrapper {
+    position: absolute;
+    top: 300px;
+  }
+  .current-title {
+    top: 20px;
+  }
+  .current-calc {
+    top: 50px;
+  }
+  .current-item-wrapper-right {
+    top: 20px;
+  }
+
+  .token-wrapper {
+    position: absolute;
+    height: 105px;
+    width: 900px;
+    top: 205px;
+    left: 435px;
+  }
+  .token-title {
+    top: 20px;
+    left: 85px;
+  }
+  .token-calc {
+    top: 50px;
+    left: 85px;
+  }
+  .token-item-wrapper-right {
+    top: 20px;
+    left: -130px;
+  }
+
+  .nodes-wrapper {
+    position: absolute;
+    height: 90px;
+    width: 895px;
+    top: 305px;
+    left: 440px;
+  }
+  .nodes-icon {
+    position: relative;
+    left: 10px;
+  }
+  .nodes-title {
+    top: 20px;
+    left: 85px;
+  }
+  .nodes-calc {
+    top: 50px;
+    left: 85px;
+  }
+  .nodes-item-wrapper-right {
+    top: 20px;
+    left: -55px;
+  }
+
+  .transfer-icon {
+    position: relative;
+    left: -70px;
+    top: 10px;
+  }
+
+  .txns-icon {
+    position: relative;
+    left: -390px;
+    top: 110px;
+  }
+
+  .tvl-icon {
+    position: relative;
+    left: -460px;
+    top: 5px;
+  }
+  /* Data Wrapper Section End */
+
+  /* Slide Alert Section Start */
+  .slider-alert,
+  .slider-alert .slide-alert {
+    width: 1335px;
+    height: 35px;
+  }
+  /* Slide Alert Section End */
+
+  /* Block Section Start */
+  .blocks-section {
+    position: absolute;
+    top: 1095px;
+  }
+  /* Block Section End */
+
+  /* TRON Aside Section Start */
+  .tron-aside {
+    width: 1335px;
+    height: 273px;
+    top: 660px;
+    left: 95px;
+  }
+  .tron-top {
+    width: 1335px;
+    height: 90px;
+  }
+  .tron-top-right {
+    position: relative;
+    left: 900px;
+    width: 300px;
+    height: 20px;
+  }
+  .tron-sec-right {
+    position: relative;
+    right: -900px;
+    top: -55px;
+  }
+  .tron-top-calc {
+    right: 0px;
+    width: 75px;
+  }
+  .tron-top-currency {
+    right: 0px;
+    width: 100px;
+  }
+  /* TRON Aside Section End */
+
+  /* Blocks Section Start */
+  .block-title-left {
+    top: -135px;
+  }
+  .block-title-right {
+    top: -130px;
+    left: 1375px;
+    width: 50px;
+  }
+  .slider-block {
+    position: relative;
+    top: -35px;
+  }
+  .item-slider-block {
+    position: absolute;
+    top: -630px;
+  }
+  /* Blocks Section End */
+
+  /* Transaction Section Start */
+  .trans-title {
+    position: relative;
+    top: 55px;
+  }
+  .transaction-section {
+    position: relative;
+    top: 600px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .scrollbar-transaction {
+    width: 1320px;
+  }
+  .h-line-transaction {
+    width: 1290px;
+  }
+  .daily-transaction {
+    top: 10px;
+    left: 30px;
+  }
+  .chart-transaction {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    width: 1335px;
+    height: 400px;
+    left: 0px;
+    top: 390px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .chart-transaction canvas {
+    width: 100%;
+    max-width: 1200px;
+    max-height: 330px;
+    position: relative;
+    left: 40px;
+  }
+  .dot-transaction {
+    position: absolute;
+    top: 10px;
+    left: 1265px;
+  }
+  /* Transaction Section End */
+
+  /* TVL/TVC Section */
+  .tvl-section {
+    position: relative;
+    top: 1005px;
+  }
+  .tvc2-section {
+    top: 1995px;
+  }
+  /* TVL/TVC Section End */
+
+  /* Stablecoin Section Start */
+  .stablecoins-section {
+    top: 2430px;
+  }
+  .stablecoins-scroll-table {
+    width: 1335px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .stablecoins-chart-sec {
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 10px;
+    top: 425px;
+    left: 0px;
+    width: 1335px;
+  }
+  .stablecoins-chart-sec canvas {
+    width: 100%;
+    max-width: 1100px;
+    max-height: 250px;
+    position: absolute;
+    top: 90px;
+    left: 100px;
+  }
+  /* Stablecoin Section End */
+
+  /* Accounts Section Start */
+  .accounts-section {
+    position: relative;
+    top: -150px;
+  }
+  .total-accounts-section,
+  .new-accounts-section {
+    width: 1335px;
+  }
+  #chartAccountsNew,
+  #chartAccountsTotal {
+    width: 100%;
+    max-width: 1200px;
+    max-height: 300px;
+    position: relative;
+    left: 70px;
+  }
+  .h-line-accounts-chart,
+  .h-line-accounts2-chart {
+    width: 1280px;
+  }
+  /* Accounts Section End */
+
+  /* Resources Section Start */
+  .resources-section {
+    position: relative;
+    top: 390px;
+    left: -685px;
+  }
+  .total-resources-section,
+  .cost-accounts-section {
+    width: 1335px;
+  }
+  #chartResourcesTotal,
+  #chartResourcesConsume {
+    width: 100%;
+    max-width: 1200px;
+    max-height: 300px;
+  }
+  .h-line-resources-chart,
+  .h-line-resources2-chart {
+    width: 1280px;
+  }
+  /* Resources Section End */
+
+  /* Trigger Section Start */
+  .triggers-section {
+    position: relative;
+    top: 390px;
+  }
+  .calls-triggers-section,
+  .accs-triggers-section {
+    width: 1335px;
+  }
+  #chartTriggersAccs,
+  #chartTriggersCalls {
+    width: 100%;
+    max-width: 1200px;
+    max-height: 300px;
+    position: relative;
+    left: 60px;
+  }
+  .h-line-triggers-chart,
+  .h-line-triggers2-chart {
+    width: 1280px;
+  }
+  /* Trigger Section End */
+
+  /* Staking Section Start */
+  .staking-secction {
+    position: relative;
+    top: 390px;
+    left: -685px;
+  }
+  .title-staking-section {
+    width: 1335px;
+  }
+  #chartsStakingHome {
+    width: 100%;
+    max-width: 1200px;
+    max-height: 300px;
+    position: relative;
+    left: 50px;
+  }
+  .h-line-staking-charts {
+    width: 1280px;
+  }
+  /* Staking Section End */
+
+  /* Footer Section Start */
+  .h-line-footer-section {
+    top: 5450px;
+    width: 1530px;
+  }
+  .footer-main-section {
+    top: 5490px;
+  }
+  .footer-right-section {
+    float: right;
+    width: 500px;
+    height: 200px;
+    position: relative;
+    right: -700px;
+  }
+  /* Footer Section End */
+
+  /* BG Color Manipulation Section Start */
+  /* .bg-manipulation {
+    height: 5100px;
+    width: 1530px;
+  } */
+  /* BG Color Manipulation Section End */
+}
+
+/* Mobile View */
+@media (max-width: 426px) {
+  /* Nav Toggle Section Start */
+  .btn-toggle {
+    display: block;
+  }
+  .nav-container {
+    position: fixed;
+    top: 0px;
+    z-index: 999;
+  }
+  .nav-container .nav-link {
+    display: none;
+  }
+  .nav-login .btn-connect,
+  .btn-net {
+    display: none;
+  }
+  .nav-login .btn-reg,
+  .nav-login .btn-login {
+    top: 7px;
+  }
+  .nav-login .v-line {
+    top: 5px;
+  }
+
+  /* Nav Toggle Section End */
+
+  /* Seeach Section Start */
+  .form {
+    display: none;
+  }
+  /* Searh Section End */
+
+  /* Trending Section Start */
+  .trending-section {
+    display: none;
+  }
+  /* Trending Section End */
+
+  /* Slider Alert Section Start */
+  .slider-alert,
+  .slider-alert .slide-alert {
+    width: 375px;
+    height: 35px;
+  }
+  .slider-alert {
+    top: 50px;
+    left: 20px;
+  }
+  .more-alert {
+    right: 15px;
+  }
+  /* Slider Alert Section End */
+
+  /* Data Wrapper Section Start */
+  #readMoreData {
+    display: block;
+  }
+  .drop-down-data-btn {
+    display: none;
+  }
+
+  .data-wrapper {
+    left: 20px;
+    top: 100px;
+    height: 430px;
+    width: 375px;
+    overflow-x: scroll;
+  }
+
+  .contract-wrapper {
+    position: absolute;
+    top: 205px;
+  }
+  .contract-title {
+    top: 20px;
+  }
+  .contract-calc {
+    top: 50px;
+  }
+  .contract-item-wrapper-right {
+    top: 20px;
+  }
+
+  .current-wrapper {
+    position: absolute;
+    top: 300px;
+  }
+  .current-title {
+    top: 20px;
+  }
+  .current-calc {
+    top: 50px;
+  }
+  .current-item-wrapper-right {
+    top: 20px;
+  }
+
+  .token-wrapper {
+    position: absolute;
+    height: 105px;
+    width: 440px;
+    top: 205px;
+    left: 435px;
+  }
+  .token-title {
+    top: 20px;
+    left: 85px;
+  }
+  .token-calc {
+    top: 50px;
+    left: 85px;
+  }
+  .token-item-wrapper-right {
+    top: 20px;
+    left: -135px;
+  }
+
+  .nodes-wrapper {
+    position: absolute;
+    height: 90px;
+    width: 435px;
+    top: 305px;
+    left: 440px;
+  }
+  .nodes-icon {
+    position: relative;
+    left: 10px;
+  }
+  .nodes-title {
+    top: 20px;
+    left: 85px;
+  }
+  .nodes-calc {
+    top: 50px;
+    left: 85px;
+  }
+  .nodes-item-wrapper-right {
+    top: 20px;
+    left: -55px;
+  }
+
+  .transfer-icon {
+    position: absolute;
+    left: 485px;
+    top: 115px;
+  }
+  .transfer-title {
+    width: 140px;
+  }
+  .transfer-calc {
+    width: 110px;
+  }
+
+  .txns-icon {
+    position: relative;
+    left: -390px;
+    top: 110px;
+  }
+
+  .tvl-icon {
+    position: relative;
+    left: 500px;
+    top: -105px;
+  }
+
+  .txns-icon {
+    position: absolute;
+    top: 110px;
+    left: 10px;
+  }
+  .tvl-calc {
+    width: 150px;
+  }
+  /* Data Wrapper Section End */
+
+  /* TRON Aside Section Start */
+  .tron-aside {
+    width: 375px;
+    top: 540px;
+    left: 20px;
+  }
+  .tron-top-right {
+    position: relative;
+    left: 0px;
+    height: 90px;
+  }
+  .tron-sec-right {
+    position: relative;
+    right: 90px;
+    top: -55px;
+  }
+  .tron-top-calc {
+    left: 290px;
+    padding: 3px 5px;
+  }
+  .tron-top-currency {
+    position: absolute;
+    top: 40px;
+    left: 270px;
+  }
+  .tron-sec-right {
+    position: absolute;
+    right: 60px;
+    top: 0px;
+  }
+  /* TRON Aside Section End */
+
+  /* Blocks Section Start */
+  .blocks-section {
+    position: relative;
+    top: 230px;
+    left: 20px;
+    width: 375px;
+    height: 200px;
+    z-index: 20;
+  }
+  .blocks-title {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    width: 375px;
+    height: 35px;
+  }
+  .block-title-left {
+    left: 0px;
+    position: relative;
+    top: 0px;
+  }
+  .block-title-right {
+    position: relative;
+    width: 55px;
+    height: 10px;
+    left: 325px;
+    top: -25px;
+  }
+  .item-slider-block {
+    width: 375px;
+    height: 140px;
+    position: absolute;
+    top: 25px;
+    left: 0px;
+    overflow: scroll;
+  }
+  .slider-block {
+    width: 360px;
+    left: 0px;
+    top: 85px;
+  }
+
+  .slider-block-1 {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+  }
+  .slider-block-2 {
+    position: absolute;
+    top: 10px;
+    left: 343px;
+  }
+  .slider-block-3 {
+    position: absolute;
+    top: 10px;
+    left: 690px;
+  }
+  .slider-block-4 {
+    position: absolute;
+    top: 10px;
+    left: 1030px;
+  }
+  /* Blocks Section End */
+
+  /* Transaction Section Start */
+  .trans-title {
+    top: 520px;
+    left: -80px;
+  }
+  .trans-title-right {
+    left: 435px;
+  }
+  .scrollbar-transaction {
+    background-color: transparent;
+    position: absolute;
+    height: 390px;
+    width: 750px;
+    overflow-y: scroll;
+  }
+  .transaction-section {
+    position: absolute;
+    top: 1050px;
+    left: 20px;
+    width: 375px;
+    overflow: scroll;
+  }
+  .daily-transaction {
+    width: 160px;
+  }
+  .dot-transaction {
+    padding-right: 30px;
+  }
+  #chartTransaction {
+    margin-top: 25px;
+    height: 315px;
+  }
+  /* Transaction Section End */
+
+  /* TVL/TVC Section Start */
+  .tvl-section,
+  .tvc2-section {
+    top: 1440px;
+    left: 20px;
+    width: 375px;
+    height: 425px;
+  }
+  .tvl-chart-sec,
+  .tvc2-chart-sec {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: absolute;
+    top: 425px;
+    width: 375px;
+    height: 370px;
+  }
+  .tvc2-scroll-sec,
+  .tvl-scroll-sec {
+    left: 0px;
+    width: 375px;
+    border-top-left-radius: 10px;
+  }
+  .more-title-sec,
+  .more2-title-sec {
+    left: 335px;
+  }
+  #chartTVL,
+  #chartTVC {
+    width: 100%;
+    position: relative;
+    left: 10px;
+    top: 120px;
+    max-width: 360px;
+    height: 500px;
+  }
+  /* TVL/TVC Section End */
+
+  /* Stablecoin Section Start */
+  .stablecoins-section {
+    top: 2240px;
+    left: 20px;
+    width: 375px;
+  }
+  .stablecoins-scroll-table {
+    width: 375px;
+    overflow-y: scroll;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 10px;
+  }
+  .stablecoins-chart-sec {
+    border-bottom-left-radius: 10px;
+    top: 425px;
+    left: 0px;
+    width: 375px;
+  }
+  .more-title-stablecoins {
+    position: absolute;
+    top: 17px;
+    left: 335px;
+  }
+  #chartStablecoins {
+    max-width: 350px;
+    position: relative;
+    left: 10px;
+    top: 130px;
+  }
+  /* Stablecoin Section End */
+
+  /* Accounts Section Start */
+  .accounts-section {
+    position: absolute;
+    top: 1050px;
+    left: 20px;
+  }
+  .new-accounts-section,
+  .total-accounts-section {
+    background-color: #fff;
+    width: 375px;
+    height: 370px;
+    left: 0px;
+  }
+  #chartAccountsNew,
+  #chartAccountsTotal {
+    width: 100%;
+    max-width: 360px;
+    height: 300px;
+  }
+  .h-line-accounts-chart,
+  .h-line-accounts2-chart {
+    width: 330px;
+    top: 290px;
+    left: 25px;
+  }
+  .new-accounts-footer {
+    height: 50px;
+    width: 150px;
+    bottom: 40px;
+    left: 220px;
+  }
+  /* Accounts Section End */
+
+  /* Resources Section Start */
+  .resources-section {
+    position: absolute;
+    top: 1450px;
+    left: 20px;
+  }
+  .total-resources-section,
+  .cost-accounts-section {
+    width: 375px;
+    height: 370px;
+    top: 2010px;
+    left: 0px;
+  }
+  #chartResourcesTotal,
+  #chartResourcesConsume {
+    width: 100%;
+    max-width: 360px;
+    height: 300px;
+  }
+  .h-line-resources-chart,
+  .h-line-resources2-chart {
+    width: 330px;
+    top: 290px;
+  }
+  .cost-accounts-footer {
+    height: 90px;
+    width: 150px;
+    left: 180px;
+  }
+  /* Resources Section End */
+
+  /* Triggers Section Start */
+  .triggers-section {
+    position: absolute;
+    top: 1310px;
+    left: 20px;
+  }
+  .calls-triggers-section,
+  .accs-triggers-section {
+    width: 375px;
+    height: 380px;
+    border-radius: 10px;
+    position: absolute;
+    top: 2540px;
+    left: 0px;
+  }
+  .calls-button-triggers-title,
+  .calls-button2-triggers-title {
+    position: relative;
+
+    top: 10px;
+  }
+  #chartTriggersAccs,
+  #chartTriggersCalls {
+    max-width: 350px;
+  }
+  .h-line-triggers2-chart,
+  .h-line-triggers-chart {
+    width: 330px;
+    top: 300px;
+  }
+  /* Triggers Section End */
+
+  /* Staking Section Start */
+  .staking-secction {
+    position: absolute;
+    top: 1710px;
+    left: 20px;
+  }
+  .title-staking-section {
+    width: 375px;
+    height: 380px;
+    border-radius: 10px;
+    position: absolute;
+    top: 2540px;
+    left: 0px;
+  }
+  #chartsStakingHome {
+    max-width: 350px;
+  }
+  .staking-footer-sec-mid {
+    width: 150px;
+    left: 180px;
+  }
+  .staking-footer-sec-right {
+    display: none;
+  }
+  .h-line-staking-charts {
+    width: 330px;
+    top: 300px;
+  }
+  /* Staking Section End */
+
+  /* Footer Section Start */
+  .h-line-footer-section,
+  .footer-main-section {
+    top: 4700px;
+  }
+
+  .footer-left-ecosystem {
+    left: 10px;
+    top: 25px;
+  }
+  .footer-left-about {
+    left: 130px;
+    top: 25px;
+  }
+  .footer-left-developer {
+    left: 10px;
+    top: 180px;
+  }
+  .footer-right-section {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+  .footer-right-logo img {
+    right: 0px;
+  }
+  .footer-right-logo p {
+    right: 0px;
+    text-align: right;
+  }
+  .footer-right-social {
+    right: 0px;
+    text-align: right;
+  }
+  .footer-right-social a {
+    margin-left: 10px;
+  }
+  /* Footer Section End */
+}

@@ -1,0 +1,279 @@
+/* Tablet View */
+@media (min-width: 426px) and (max-width: 768px) {
+  .bg {
+    background-image: url(../../../../assets/bgBody.png);
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    z-index: -999;
+  }
+
+  /* From Section Start */
+  .form {
+    position: relative;
+    left: 20px;
+    top: -500px;
+    width: 100px;
+    height: 70px;
+  }
+  .logo-search {
+    position: relative;
+    left: 0px;
+    padding: 15px 15px;
+    position: absolute;
+  }
+  .search {
+    margin-left: 0px;
+    left: 50px;
+    width: 560px;
+  }
+  .selector {
+    left: 610px;
+    height: 55px;
+  }
+  .v-line-search {
+    left: 609px;
+  }
+  /* Form Section End */
+
+  /* Nodes Section Start */
+  .nodes-section {
+    position: relative;
+    left: 20px;
+    top: -500px;
+    width: 600px;
+    height: 100%;
+    background-color: aquamarine;
+  }
+  .box-nodes-count {
+    position: absolute;
+    top: 50px;
+    width: 730px;
+    height: 100px;
+  }
+  .main-count-nodes-count2 {
+    left: 450px;
+  }
+  .sub-count-nodes-count2 {
+    left: 450px;
+  }
+  .nodes-distribution iframe {
+    width: 730px;
+    height: 400px;
+    position: absolute;
+    top: 220px;
+    border-radius: 10px;
+  }
+  .nodes-ranking {
+    position: relative;
+    top: 150px;
+    left: 20px;
+    width: 600px;
+    height: 100px;
+  }
+  .title-nodes-ranking {
+    position: relative;
+    top: 0px;
+    left: 0px;
+  }
+  .subtitle-nodes-ranking {
+    position: relative;
+    top: -20px;
+    left: 0px;
+  }
+  .canvas-bg {
+    position: relative;
+    top: -25px;
+    left: 0px;
+    width: 730px;
+    height: 390px;
+  }
+  .nodes-ranking canvas {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+  /* Nodes Section End */
+
+  /* Footer Section Start */
+  .h-line-footer-section {
+    top: 1400px;
+    width: 100%;
+  }
+  .footer-main-section {
+    top: 1450px;
+  }
+  .footer-right-section {
+    float: right;
+    width: 500px;
+    height: 200px;
+    position: relative;
+    right: -700px;
+  }
+  .footer-left-ecosystem {
+    left: 20px;
+    width: 130px;
+  }
+  .footer-left-developer {
+    left: 150px;
+    width: 130px;
+  }
+  .footer-left-about {
+    left: 260px;
+    width: 130px;
+  }
+  .footer-right-section {
+    float: left;
+    width: 340px;
+    height: 200px;
+    position: relative;
+    left: 400px;
+  }
+  .footer-right-logo img {
+    right: 0px;
+  }
+  .footer-right-logo p {
+    right: 0px;
+  }
+  .footer-right-social {
+    right: 0px;
+  }
+  /* Footer Section End */
+
+  /* BG Color Manipulation Section Start */
+  .bg-manipulation {
+    height: 5100px;
+    width: 1530px;
+  }
+  /* BG Color Manipulation Section End */
+}
+
+/* Mobile View */
+@media (max-width: 426px) {
+  /* Nav Toggle Section Start */
+  .btn-toggle {
+    display: block;
+  }
+  .nav-container {
+    position: fixed;
+    top: 0px;
+    z-index: 999;
+  }
+  .nav-container .nav-link {
+    display: none;
+  }
+  .nav-login .btn-connect,
+  .btn-net {
+    display: none;
+  }
+  .nav-login .btn-reg,
+  .nav-login .btn-login {
+    top: 7px;
+  }
+  .nav-login .v-line {
+    top: 5px;
+  }
+
+  /* Nav Toggle Section End */
+
+  /* Seeach Section Start */
+  .form {
+    display: none;
+  }
+  /* Searh Section End */
+
+  /* Nodes Section Start */
+  .nodes-section {
+    left: 20px;
+    top: 70px;
+    width: 375px;
+    height: 100%;
+  }
+  .box-nodes-count {
+    width: 375px;
+  }
+  .main-count-nodes-count2,
+  .sub-count-nodes-count2 {
+    left: 180px;
+  }
+  .nodes-ranking {
+    position: relative;
+    top: 325px;
+    left: 20px;
+    width: 375px;
+  }
+
+  .title-nodes-ranking {
+    position: relative;
+    top: 0px;
+    left: 0px;
+  }
+  .subtitle-nodes-ranking {
+    top: 30px;
+    left: 0px;
+  }
+  .canvas-bg {
+    position: relative;
+    top: 20px;
+    left: 0px;
+    width: 375px;
+    height: 200px;
+  }
+  .nodes-ranking canvas {
+    left: 10px;
+    top: 0px;
+  }
+  #chartRankingNodes {
+    width: 100%;
+    max-width: 350px;
+    height: 100%;
+    max-height: 400px;
+  }
+  .nodes-distribution iframe {
+    width: 375px;
+    height: 600px;
+  }
+
+  /* Nodes Section End */
+
+  /* Footer Section Start */
+  .h-line-footer-section,
+  .footer-main-section {
+    top: 1380px;
+  }
+
+  .footer-left-ecosystem {
+    left: 10px;
+    top: 25px;
+  }
+  .footer-left-about {
+    left: 130px;
+    top: 25px;
+  }
+  .footer-left-developer {
+    left: 10px;
+    top: 180px;
+  }
+  .footer-right-section {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+  .footer-right-logo img {
+    right: 0px;
+  }
+  .footer-right-logo p {
+    right: 0px;
+    text-align: right;
+  }
+  .footer-right-social {
+    right: 0px;
+    text-align: right;
+  }
+  .footer-right-social a {
+    margin-left: 10px;
+  }
+  /* Footer Section End */
+}

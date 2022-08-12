@@ -1,0 +1,409 @@
+<head>
+     <!-- Chart.js -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <style>
+  .stablecoins-section {
+    position: absolute;
+    top: 120px;
+    left: 95px;
+    background-color: #94a6dc;
+    width: 1335px;
+    height: 425px;
+    border-radius: 10px;
+    z-index: 5;
+  }
+  
+  .stablecoins-title-sec {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+  }
+  .stablecoins-title-sec button {
+    background-color: transparent;
+    border: none;
+  }
+  .stablecoins-title-sec button p {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  .more-title-stablecoins {
+    position: absolute;
+    top: 17px;
+    left: 1285px;
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+  }
+  .more-title-stablecoins img {
+    position: absolute;
+    top: 9px;
+    left: 35px;
+  }
+  .more-title-stablecoins:hover {
+    color: brown;
+  }
+  
+  .stablecoins-chart-sec {
+    background-color: #fff;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 585px;
+    height: 370px;
+  }
+  .stablecoins-chart-sec canvas {
+    position: absolute;
+    top: 80px;
+    left: 25px;
+  }
+  
+  .stablecoins-faq-sec {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+  }
+  .stablecoins-faq-sec p {
+    font-size: 14px;
+    color: #91979d;
+  }
+  .stablecoins-faq-sec img {
+    position: absolute;
+    top: 14px;
+    left: 165px;
+  }
+  .show-question-stablecoins {
+    background-color: rgba(0, 0, 0, 0.564);
+    width: 200px;
+    height: 35px;
+    border-radius: 10px;
+    position: relative;
+    top: -65px;
+    left: 65px;
+    display: none;
+  }
+  .show-question-stablecoins p {
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    top: -7px;
+    left: 10px;
+  }
+  .stablecoins-faq-sec img:hover + .show-question-stablecoins {
+    display: block;
+  }
+  
+  .ammount-chart-stablecoins {
+    font-size: 24px;
+    font-weight: 700;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+  }
+  
+  .stablecoins-scroll-table {
+    background-color: #ffffffb2;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    height: 370px;
+    width: 750px;
+    overflow-y: scroll;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+  
+  /* ScrollBar Style */
+  .stablecoins-scroll-table::-webkit-scrollbar {
+    width: 4px;
+  }
+  .stablecoins-scroll-table::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+  .stablecoins-scroll-table::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #c2c9d135;
+  }
+  
+  .title-scroll-stablecoins {
+    background-color: #ededed;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    border-radius: 10px;
+    height: 41px;
+    width: 710px;
+  }
+  .project-title-stablecoins {
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    color: #73787b;
+    font-size: 14px;
+  }
+  .type-title-stablecoins {
+    position: absolute;
+    top: 0px;
+    left: 220px;
+    color: #73787b;
+    font-size: 14px;
+  }
+  .sum-title-stablecoins {
+    position: absolute;
+    top: 0px;
+    left: 380px;
+    color: #73787b;
+    font-size: 14px;
+  }
+  .change-title-stablecoins {
+    position: absolute;
+    top: 0px;
+    left: 550px;
+    color: #73787b;
+    font-size: 14px;
+  }
+  .show-question-scroll-stablecoins {
+    background-color: rgba(0, 0, 0, 0.564);
+    width: 305px;
+    height: 30px;
+    border-radius: 5px;
+    position: relative;
+    top: 0px;
+    left: 225px;
+    display: none;
+  }
+  .show-question-scroll-stablecoins p {
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    top: -3px;
+    left: 8px;
+  }
+  .quest-title-stablecoins {
+    position: absolute;
+    top: 15px;
+    left: 530px;
+  }
+  .quest-title-stablecoins:hover ~ .show-question-scroll-stablecoins {
+    display: block;
+  }
+  
+  .item-scroll-stablecoins {
+    position: absolute;
+    left: -40px;
+    top: 60px;
+    width: 740px;
+    height: 50px;
+    background-color: transparent;
+  }
+  .item-scroll-stablecoins:hover {
+    background-color: rgba(217, 217, 217, 0.244);
+  }
+  
+  .number-scroll-tvc2 {
+    width: 20px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+  .item-project-stablecoins img {
+    position: absolute;
+    width: 20px;
+    top: 15px;
+    left: 70px;
+  }
+  .item-project-stablecoins {
+    text-decoration: none;
+    color: black;
+  }
+  .item-project-stablecoins p {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    position: absolute;
+    top: 3px;
+    left: 95px;
+  }
+  .item-project-stablecoins-bot p {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    position: absolute;
+    top: 13px;
+    left: 370px;
+  }
+  .item-circulating-stablecoins p {
+    font-size: 14px;
+    position: absolute;
+    top: 3px;
+    right: 350px;
+  }
+  .item-count-stablecoins {
+    font-size: 14px;
+    position: absolute;
+    top: 3px;
+    right: 185px;
+  }
+  .item-volume-stablecoins {
+    font-size: 14px;
+    color: black;
+    position: absolute;
+    top: 3px;
+    right: 5px;
+  }
+  .icstablecoins-22 {
+    top: 120px;
+  }
+  .icstablecoins-32 {
+    top: 180px;
+  }
+  .icstablecoins-42 {
+    top: 240px;
+  }
+  .icstablecoins-52 {
+    top: 300px;
+  }
+  .icstablecoins-62 {
+    top: 360px;
+  }
+  .h-line-stablecoins {
+    border-bottom: 1px #c2c9d1 solid;
+    width: 710px;
+    position: absolute;
+    z-index: 1;
+    left: 20px;
+  }
+  .testablecoins-22 {
+    top: 114px;
+  }
+  .testablecoins-32 {
+    top: 174px;
+  }
+  .testablecoins-42 {
+    top: 234px;
+  }
+  .testablecoins-52 {
+    top: 294px;
+  }
+  .testablecoins-62 {
+    top: 354px;
+  }
+</style>
+</head>
+<body>
+  <div class="stablecoins-section">
+    <div class="stablecoins-title-sec">
+      <button><p>TVC</p></button>
+    </div>
+    <a href="#" class="more-title-stablecoins"
+      >more <img src="./assets/rightArrowIcon.svg"
+    /></a>
+      
+      <div class="stablecoins-scroll-table">
+        <div class="title-scroll-stablecoins">
+          <p class="project-title-stablecoins">Stablecoin</p>
+          <p class="type-title-stablecoins">Circulating Supply</p>
+          <p class="sum-title-stablecoins">Transfer Count (24h)</p>
+          <img class="quest-title-stablecoins" src="./assets/questionLogo.svg" />
+          <p class="change-title-stablecoins">Transfer Volume (24h)</p>
+          <div class="show-question-scroll-stablecoins">
+            <p>Comparison between the current TVL and that 24 hours ago</p>
+          </div>
+        </div>
+        <div class="item-scroll-stablecoins">
+          <a class="item-project-stablecoins" href="#"
+            ><img src="./assets/usdtlogo.png" />
+            <p>Tether USD</p></a
+          >
+          <div class="item-circulating-stablecoins icstablecoins-12"><p>32,130,268,679</p></div>
+          <p class="item-count-stablecoins">1,274,681</p>
+          <p class="item-volume-stablecoins">$7,191,358,261</p>
+        </div>
+        <div class="h-line-stablecoins testablecoins-22"></div>
+        <div class="item-scroll-stablecoins icstablecoins-22">
+          <a class="item-project-stablecoins" href="#"
+            ><img src="./assets/usdclogo.png" />
+            <p>USD Coin</p></a
+          >
+          <div class="item-circulating-stablecoins"><p>3,187,916,435</p></div>
+          <p class="item-count-stablecoins">3,925</p>
+          <p class="item-volume-stablecoins">$207,201,683</p>
+        </div>
+        <div class="h-line-stablecoins testablecoins-32"></div>
+        <div class="item-scroll-stablecoins icstablecoins-32">
+          <a class="item-project-stablecoins" href="#"
+            ><img src="./assets/usddlogo.png" />
+            <p>Decentralized USD</p></a
+          >
+          <div class="item-circulating-stablecoins"><p>725,332,038</p></div>
+          <p class="item-count-stablecoins">4,646</p>
+          <p class="item-volume-stablecoins">$41,971,711</p>
+        </div>
+        <div class="h-line-stablecoins testablecoins-42"></div>
+        <div class="item-scroll-stablecoins icstablecoins-42">
+          <a class="item-project-stablecoins" href="#"
+            ><img src="./assets/tusdlogo.png" />
+            <p>TrueUSD</p></a
+          >
+          <div class="item-circulating-stablecoins"><p>329,715,971</p></div>
+          <p class="item-count-stablecoins">720</p>
+          <p class="item-volume-stablecoins">$29,966,334</p>
+        </div>
+        <div class="h-line-stablecoins testablecoins-52"></div>
+        <div class="item-scroll-stablecoins icstablecoins-52">
+          <a class="item-project-stablecoins" href="#"
+            ><img src="./assets/usdjlogo.png" />
+            <p>JUST Stablecoin</p></a
+          >
+          <div class="item-circulating-stablecoins"><p>265,608,031</p></div>
+          <p class="item-count-stablecoins">570</p>
+          <p class="item-volume-stablecoins">$2,074,119</p>
+        </div>
+
+      </div>
+      <div class="stablecoins-chart-sec">
+        <div class="stablecoins-faq-sec">
+          <p>Stablecoin Transfer Volume</p>
+          <img src="./assets/questionLogo.svg" />
+          <div class="show-question-stablecoins">
+            <p>
+              Total transfer volume of stablecoins
+              <br />
+              on TRON network
+            </p>
+          </div>
+        </div>
+        <p class="ammount-chart-stablecoins">$7,474,194,525</p>
+        <canvas
+          id="chartStablecoins"
+          style="width: 100%; max-width: 540px; height: 280px"
+        ></canvas>
+      </div>
+    </div>
+  </div>
+  <script>
+  var chartStablecoins = document.getElementById("chartStablecoins").getContext('2d');
+		var myChart = new Chart(chartStablecoins, {
+			type: 'bar',
+			data: {
+				labels: ["14 Jul", "15 Jul", "16 Jul", "17 Jul", "18 Jul", "19 Jul", "20 Jul", "21 Jul", "22 Jul", "23 Jul", "24 Jul", "25 Jul", "26 Jul", "27 Jul"],
+				datasets: [{
+					label: 'USDT',
+					data: [6.5, 7.1, 4.8, 4.3, 8.1, 8.1, 7.6, 7.3, 5, 4, 7.5, 7.8, 7.1, 4.9],
+					backgroundColor: 'rgb(77,191,161)',
+				}]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero:true
+						}
+					}]
+				}
+			}
+		});
+    </script>
+</body>

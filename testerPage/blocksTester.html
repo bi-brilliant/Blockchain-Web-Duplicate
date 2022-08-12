@@ -1,0 +1,216 @@
+<head>
+  <style>
+    body {
+      background-color: #f6f7fa;
+    }
+
+    .slider-block {
+      position: absolute;
+      top: 100px;
+      width: 1300px;
+      border: none;
+      height: 15px;
+      box-shadow: 0px 0px 10px #00000021;
+    }
+    .slider-block .slider-block-inner {
+      -moz-box-shadow: inset 0 0 10px rgb(255, 255, 255);
+      -webkit-box-shadow: inset 0 0 10px rgb(255, 255, 255);
+      box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.258);
+    }
+
+    .slider-shadow-inner {
+      background-color: #0000001f;
+      height: 1px;
+      width: 100%;
+      position: absolute;
+      top: 7px;
+      box-shadow: 0px 0px 5px #000000;
+    }
+
+    .slider-block-1 {
+      background-color: antiquewhite;
+      width: 305px;
+      height: 120px;
+      border-radius: 10px;
+      position: absolute;
+      top: 48px;
+    }
+
+    .slider-block-2 {
+      background-color: antiquewhite;
+      width: 305px;
+      height: 120px;
+      border-radius: 10px;
+      position: absolute;
+      top: 48px;
+      left: 350px;
+    }
+
+    .slider-block-3 {
+      background-color: antiquewhite;
+      width: 305px;
+      height: 120px;
+      border-radius: 10px;
+      position: absolute;
+      top: 48px;
+      left: 700px;
+    }
+
+    .slider-block-4 {
+      background-color: antiquewhite;
+      width: 305px;
+      height: 120px;
+      border-radius: 10px;
+      position: absolute;
+      top: 48px;
+      left: 1050px;
+    }
+
+    .item-slider-block-hover {
+      transition: all 0.3s;
+    }
+
+    .item-slider-block-hover:hover > .title-slider-block a,
+    .producer-slider-block a {
+      color: brown;
+    }
+    .item-slider-block-hover:hover > .producer-slider-block a {
+      color: brown;
+    }
+    .item-slider-block-hover:hover {
+      transform: translateY(-10px);
+    }
+
+    .title-slider-block a {
+      text-decoration: none;
+      color: black;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .title-slider-block {
+      position: relative;
+      margin-top: 20px;
+      margin-left: 15px;
+    }
+
+    .time-slider-block {
+      font-size: 12px;
+      position: relative;
+      margin-top: 5px;
+      margin-left: 15px;
+      color: #898989;
+    }
+
+    .producer-slider-block {
+      font-size: 12px;
+      background-color: #dbdbdb;
+      position: absolute;
+      top: 20px;
+      right: 15px;
+      padding: 2px 8px;
+      padding-right: 16px;
+      border-radius: 5px;
+    }
+
+    .producer-slider-block a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .producer-slider-block img {
+      position: absolute;
+      top: 5px;
+      right: 8px;
+    }
+
+    .sum-slider-block {
+      font-size: 12px;
+      font-weight: bolder;
+      position: absolute;
+      top: 43px;
+      right: 15px;
+    }
+
+    .reward-slider-block {
+      font-size: 12px;
+      position: relative;
+      margin-left: 15px;
+      margin-top: 25px;
+    }
+    .reward-slider-block span {
+      font-weight: bolder;
+    }
+
+    .total-slider-block {
+      font-size: 12px;
+      font-weight: bolder;
+      position: absolute;
+      top: 80px;
+      right: 15px;
+    }
+    .total-slider-block img {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider-block">
+    <div class="slider-block-inner">
+      <div class="slider-shadow-inner"></div>
+      <marquee direction="right" scrollamount="25"
+        ><img src="./assets/sliderBlock.svg"
+      /></marquee>
+    </div>
+  </div>
+  <div class="item-slider-block">
+    <div class="slider-block-1 item-slider-block-hover">
+      <div class="title-slider-block"><a href="#">#42604094</a></div>
+      <div class="time-slider-block">9 secs ago</div>
+      <div class="reward-slider-block">Reward <span>176 TRX</span></div>
+      <div class="producer-slider-block">
+        <a href="#">TRONGrid<img src="./assets/blockArrowIcon.svg" /></a>
+      </div>
+      <div class="sum-slider-block">143 Txns</div>
+      <div class="total-slider-block">
+        <img src="./assets/burnBlockLogo.svg" />203.4274 TRX
+      </div>
+    </div>
+    <div class="slider-block-2 item-slider-block-hover">
+      <div class="title-slider-block"><a href="#">#42604095</a></div>
+      <div class="time-slider-block">12 secs ago</div>
+      <div class="reward-slider-block">Reward <span>176 TRX</span></div>
+      <div class="producer-slider-block">
+        <a href="#">Chain Cloud<img src="./assets/blockArrowIcon.svg" /></a>
+      </div>
+      <div class="sum-slider-block">218 Txns</div>
+      <div class="total-slider-block">
+        <img src="./assets/burnBlockLogo.svg" />982.3461 TRX
+      </div>
+    </div>
+    <div class="slider-block-3 item-slider-block-hover">
+      <div class="title-slider-block"><a href="#">#42604096</a></div>
+      <div class="time-slider-block">7 secs ago</div>
+      <div class="reward-slider-block">Reward <span>176 TRX</span></div>
+      <div class="producer-slider-block">
+        <a href="#">TRX Market<img src="./assets/blockArrowIcon.svg" /></a>
+      </div>
+      <div class="sum-slider-block">339 Txns</div>
+      <div class="total-slider-block">
+        <img src="./assets/burnBlockLogo.svg" />130.119 TRX
+      </div>
+    </div>
+    <div class="slider-block-4 item-slider-block-hover">
+      <div class="title-slider-block"><a href="#">#42604097</a></div>
+      <div class="time-slider-block">4 secs ago</div>
+      <div class="reward-slider-block">Reward <span>176 TRX</span></div>
+      <div class="producer-slider-block">
+        <a href="#">StakedTRON<img src="./assets/blockArrowIcon.svg" /></a>
+      </div>
+      <div class="sum-slider-block">212 Txns</div>
+      <div class="total-slider-block">
+        <img src="./assets/burnBlockLogo.svg" />217.8822 TRX
+      </div>
+    </div>
+  </div>
+</body>

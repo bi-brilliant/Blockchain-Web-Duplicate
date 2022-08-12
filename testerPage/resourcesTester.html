@@ -1,0 +1,430 @@
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <style>
+    body {
+      background-color: #2a3860;
+    }
+    .cost-accounts-section {
+      background-color: #fff;
+      width: 650px;
+      height: 495px;
+      border-radius: 10px;
+      position: absolute;
+      top: 120px;
+      left: 95px;
+    }
+    .cost-accounts-title {
+      background-color: #f6f7fb;
+      position: absolute;
+      top: 0px;
+      width: 100%;
+      height: 65px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .cost-accounts-title a {
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+      font-weight: 700;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+    .cost-accounts-title a:hover {
+      color: brown;
+    }
+    .cost-accounts-title img {
+      position: absolute;
+      top: 23px;
+      left: 110px;
+    }
+    .cost-accounts-title button {
+      position: absolute;
+      top: 23px;
+      border: none;
+      font-size: 12px;
+      height: 23px;
+      border-radius: 4px;
+    }
+    .new-button-resources-title {
+      right: 112px;
+      color: white;
+      background-color: black;
+    }
+    .total-button-resources-title {
+      background-color: #d8dee5;
+      color: #91979d;
+      right: 20px;
+    }
+
+    .consumed-resources-footer {
+      height: 90px;
+      width: 280px;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+    }
+    .consumed-resources-footer-title {
+      font-size: 12px;
+      color: #91979d;
+      position: absolute;
+      top: 15px;
+      left: 20px;
+    }
+    .consumed-resources-footer-count {
+      font-size: 16px;
+      font-weight: 700;
+      position: absolute;
+      top: 30px;
+      left: 20px;
+    }
+    .rate-consumed-resources-footer {
+      background-color: #2e912c37;
+      border-radius: 3px;
+      width: 43px;
+      height: 17px;
+      position: absolute;
+      top: 47px;
+      left: 130px;
+    }
+    .rate-consumed-resources-footer p {
+      font-size: 12px;
+      position: absolute;
+      top: -10px;
+      left: 4px;
+      color: #2d912c;
+    }
+
+    .cost-accounts-footer {
+      height: 90px;
+      width: 280px;
+      position: absolute;
+      bottom: 0px;
+      left: 280px;
+    }
+    .cost-accounts-footer-title {
+      font-size: 12px;
+      color: #91979d;
+      position: absolute;
+      top: 15px;
+      left: 20px;
+    }
+    .cost-accounts-footer-count {
+      font-size: 16px;
+      font-weight: 700;
+      position: absolute;
+      top: 30px;
+      left: 20px;
+    }
+    .rate-cost-accounts-footer {
+      background-color: #c2363139;
+      border-radius: 3px;
+      width: 45px;
+      height: 17px;
+      position: absolute;
+      top: 47px;
+      left: 130px;
+    }
+    .rate-cost-accounts-footer p {
+      font-size: 12px;
+      position: absolute;
+      top: -10px;
+      left: 4px;
+      color: #c23631;
+    }
+    #chartResourcesConsume {
+      position: absolute;
+      top: 90px;
+      left: 10px;
+    }
+
+    /* Total Accounts Section */
+    .total-resources-section {
+      background-color: #fff;
+      width: 650px;
+      height: 495px;
+      border-radius: 10px;
+      position: absolute;
+      top: 120px;
+      left: 95px;
+    }
+    .total-resources-title {
+      background-color: #f6f7fb;
+      position: absolute;
+      top: 0px;
+      width: 100%;
+      height: 65px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .total-resources-title a {
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+      font-weight: 700;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+    .total-resources-title a:hover {
+      color: brown;
+    }
+    .total-resources-title img {
+      position: absolute;
+      top: 23px;
+      left: 110px;
+    }
+    .total-resources-title button {
+      position: absolute;
+      top: 23px;
+      border: none;
+      font-size: 12px;
+      height: 23px;
+      border-radius: 4px;
+    }
+    .consume-button-resources-title {
+      background-color: #d8dee5;
+      color: #91979d;
+      right: 111px;
+    }
+    .cost-button-resources-title {
+      color: white;
+      background-color: black;
+      right: 20px;
+    }
+
+    .consume-resources-footer {
+      height: 90px;
+      width: 280px;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+    }
+    .consume-resources-footer-title {
+      font-size: 12px;
+      color: #91979d;
+      position: absolute;
+      top: 15px;
+      left: 20px;
+    }
+    .consume-resources-footer-count {
+      font-size: 16px;
+      font-weight: 700;
+      position: absolute;
+      top: 30px;
+      left: 20px;
+    }
+    .rate-consume-resources-footer {
+      background-color: #2e912c37;
+      border-radius: 3px;
+      width: 43px;
+      height: 17px;
+      position: absolute;
+      top: 47px;
+      left: 140px;
+    }
+    .rate-consume-resources-footer p {
+      font-size: 12px;
+      position: absolute;
+      top: -10px;
+      left: 4px;
+      color: #2d912c;
+    }
+
+    #chartResourcesTotal {
+      position: absolute;
+      top: 90px;
+      left: 10px;
+    }
+    .h-line-resources-chart {
+      border-bottom: 1px #c2c9d1 solid;
+      width: 590px;
+      position: absolute;
+      top: 403px;
+      left: 25px;
+    }
+    .h-line-resources2-chart {
+      border-bottom: 1px #c2c9d1 solid;
+      width: 590px;
+      position: absolute;
+      top: 403px;
+      left: 25px;
+    }
+  </style>
+</head>
+<body>
+  <div class="resources-section">
+    <div class="total-resources-section">
+      <div class="total-resources-title">
+        <a href="#">Resources</a>
+        <img src="./assets/cameraIcon.svg" />
+        <button
+          class="consume-button-resources-title"
+          onclick="showConsumeResources()"
+        >
+          Total Consumption
+        </button>
+        <button class="cost-button-resources-title" onclick="">
+          Resource Cost
+        </button>
+      </div>
+      <div class="total-resources-charts">
+        <canvas
+          id="chartResourcesTotal"
+          style="width: 100%; max-width: 620px; height: 300px"
+        ></canvas>
+        <div class="h-line-resources2-chart"></div>
+      </div>
+      <div class="consume-resources-footer">
+        <p class="consume-resources-footer-title">Energy Cost</p>
+        <p class="consume-resources-footer-count">Stake 0.04 TRX</p>
+        <div class="rate-consume-resources-footer"><p>+0.56%</p></div>
+      </div>
+      <div class="cost-accounts-footer">
+        <p class="cost-accounts-footer-title">Bandwith Cost</p>
+        <p class="cost-accounts-footer-count">Stake 0.46 TRX</p>
+        <div class="rate-cost-accounts-footer"><p>-0.83%</p></div>
+      </div>
+    </div>
+    <div id="consumeResourcesSection" class="cost-accounts-section">
+      <div class="cost-accounts-title">
+        <a href="#">Resources</a>
+        <img src="./assets/cameraIcon.svg" />
+        <button class="new-button-resources-title" onclick="">
+          Total Consumption
+        </button>
+        <button
+          class="total-button-resources-title"
+          onclick="hideConsumeResources() "
+        >
+          Resource Cost
+        </button>
+      </div>
+      <div class="cost-accounts-charts">
+        <canvas
+          id="chartResourcesConsume"
+          style="width: 100%; max-width: 620px; height: 300px"
+        ></canvas>
+        <div class="h-line-resources-chart"></div>
+      </div>
+      <div class="consumed-resources-footer">
+        <p class="consumed-resources-footer-title">Energy Consumed</p>
+        <p class="consumed-resources-footer-count">33,346,224,863</p>
+        <div class="rate-consumed-resources-footer"><p>+1.6%</p></div>
+      </div>
+      <div class="cost-accounts-footer">
+        <p class="cost-accounts-footer-title">Bandwith Consumed</p>
+        <p class="cost-accounts-footer-count">1,949,981,057</p>
+        <div class="rate-cost-accounts-footer"><p>-1.50%</p></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Function Toggle Button Resources
+    function hideConsumeResources() {
+      var xNewResources = document.getElementById("consumeResourcesSection");
+      if (xNewResources.style.display === "block") {
+        xNewResources.style.display = "none";
+      } else {
+        xNewResources.style.display = "none";
+      }
+    }
+
+    function showConsumeResources() {
+      var xNewResources = document.getElementById("consumeResourcesSection");
+      if (xNewResources.style.display === "none") {
+        xNewResources.style.display = "block";
+      } else {
+        xNewResources.style.display = "block";
+      }
+    }
+
+    var xValuesResources = [
+      "14 Jul",
+      "15 Jul",
+      "16 Jul",
+      "17 Jul",
+      "18 Jul",
+      "19 Jul",
+      "20 Jul",
+      "21 Jul",
+      "22 Jul",
+      "23 Jul",
+      "24 Jul",
+      "25 Jul",
+      "26 Jul",
+      "27 Jul",
+    ];
+
+    // Chart Consumption Resources
+    new Chart("chartResourcesConsume", {
+      type: "line",
+      data: {
+        labels: xValuesResources,
+        datasets: [
+          {
+            data: [
+              32.6, 30.2, 28, 35.3, 34.9, 33.1, 32.7, 32.6, 30.9, 29.4, 35.8,
+              35.1, 33.9, 33.3,
+            ],
+            borderColor: "red",
+            fill: false,
+            lineTension: 0.4,
+            borderWidth: 7,
+            pointBorderWidth: 1,
+          },
+          {
+            data: [
+              2, 1.9, 1.7, 1.9, 1.9, 2.3, 2.1, 1.9, 2, 1.8, 1.9, 1.9, 1.9, 1.7,
+            ],
+            borderColor: "blue",
+            fill: false,
+            lineTension: 0.4,
+            borderWidth: 7,
+            pointBorderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        legend: { display: false },
+      },
+    });
+
+    // Chart Cost Resources
+    new Chart("chartResourcesTotal", {
+      type: "line",
+      data: {
+        labels: xValuesResources,
+        datasets: [
+          {
+            data: [
+              0.013, 0.003, 0.003, 0.003, 0.003, 0.003, 0.003, 0.003, 0.003,
+              0.003, 0.003, 0.005, 0.004, 0.004,
+            ],
+            borderColor: "red",
+            fill: false,
+            lineTension: 0.4,
+            borderWidth: 7,
+            pointBorderWidth: 1,
+          },
+          {
+            data: [
+              0.46, 0.47, 0.46, 0.46, 0.46, 0.46, 0.46, 0.46, 0.46, 0.46, 0.46,
+              0.44, 0.46, 0.46, 0.45, 0.46,
+            ],
+            borderColor: "blue",
+            fill: false,
+            lineTension: 0.4,
+            borderWidth: 7,
+            pointBorderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        legend: { display: false },
+      },
+    });
+  </script>
+</body>

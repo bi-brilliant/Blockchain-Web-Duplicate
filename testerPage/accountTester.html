@@ -1,0 +1,409 @@
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <style>
+    body {
+      background-color: #2a3860;
+    }
+    .new-accounts-section {
+      background-color: #fff;
+      width: 650px;
+      height: 495px;
+      border-radius: 10px;
+      position: absolute;
+      top: 120px;
+      left: 95px;
+    }
+    .new-accounts-title {
+      background-color: #f6f7fb;
+      position: absolute;
+      top: 0px;
+      width: 100%;
+      height: 65px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .new-accounts-title a {
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+      font-weight: 700;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+    .new-accounts-title a:hover {
+      color: brown;
+    }
+    .new-accounts-title img {
+      position: absolute;
+      top: 23px;
+      left: 110px;
+    }
+    .new-accounts-title button {
+      position: absolute;
+      top: 23px;
+      border: none;
+      font-size: 12px;
+      height: 23px;
+      border-radius: 4px;
+    }
+    .new-button-accounts-title {
+      right: 70px;
+      color: white;
+      background-color: black;
+    }
+    .total-button-accounts-title {
+      background-color: #d8dee5;
+      color: #91979d;
+      right: 20px;
+      width: 50px;
+    }
+
+    .active-accounts-footer {
+      height: 90px;
+      width: 280px;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+    }
+    .active-accounts-footer-title {
+      font-size: 12px;
+      color: #91979d;
+      position: absolute;
+      top: 15px;
+      left: 20px;
+    }
+    .active-accounts-footer-count {
+      font-size: 16px;
+      font-weight: 700;
+      position: absolute;
+      top: 30px;
+      left: 20px;
+    }
+    .rate-active-accounts-footer {
+      background-color: #2e912c37;
+      border-radius: 3px;
+      width: 43px;
+      height: 17px;
+      position: absolute;
+      top: 47px;
+      left: 90px;
+    }
+    .rate-active-accounts-footer p {
+      font-size: 12px;
+      position: absolute;
+      top: -10px;
+      left: 4px;
+      color: #2d912c;
+    }
+
+    .new-accounts-footer {
+      height: 90px;
+      width: 280px;
+      position: absolute;
+      bottom: 0px;
+      left: 280px;
+    }
+    .new-accounts-footer-title {
+      font-size: 12px;
+      color: #91979d;
+      position: absolute;
+      top: 15px;
+      left: 20px;
+    }
+    .new-accounts-footer-count {
+      font-size: 16px;
+      font-weight: 700;
+      position: absolute;
+      top: 30px;
+      left: 20px;
+    }
+    .rate-new-accounts-footer {
+      background-color: #c2363139;
+      border-radius: 3px;
+      width: 45px;
+      height: 17px;
+      position: absolute;
+      top: 47px;
+      left: 90px;
+    }
+    .rate-new-accounts-footer p {
+      font-size: 12px;
+      position: absolute;
+      top: -10px;
+      left: 4px;
+      color: #c23631;
+    }
+    #chartAccountsNew {
+      position: absolute;
+      top: 90px;
+      left: 10px;
+    }
+    .h-line-accounts-chart {
+      border-bottom: 1px #c2c9d1 solid;
+      width: 590px;
+      position: absolute;
+      top: 403px;
+      left: 25px;
+    }
+
+    /* Total Accounts Section */
+    .total-accounts-section {
+      background-color: #fff;
+      width: 650px;
+      height: 495px;
+      border-radius: 10px;
+      position: absolute;
+      top: 120px;
+      left: 95px;
+    }
+    .total-accounts-title {
+      background-color: #f6f7fb;
+      position: absolute;
+      top: 0px;
+      width: 100%;
+      height: 65px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .total-accounts-title a {
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+      font-weight: 700;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+    .total-accounts-title a:hover {
+      color: brown;
+    }
+    .total-accounts-title img {
+      position: absolute;
+      top: 23px;
+      left: 110px;
+    }
+    .total-accounts-title button {
+      position: absolute;
+      top: 23px;
+      border: none;
+      font-size: 12px;
+      height: 23px;
+      border-radius: 4px;
+    }
+    .new2-button-accounts-title {
+      background-color: #d8dee5;
+      color: #91979d;
+      right: 70px;
+    }
+    .total2-button-accounts-title {
+      color: white;
+      background-color: black;
+      width: 50px;
+      right: 20px;
+    }
+
+    .active-accounts2-footer {
+      height: 90px;
+      width: 280px;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+    }
+    .active-accounts2-footer-title {
+      font-size: 12px;
+      color: #91979d;
+      position: absolute;
+      top: 15px;
+      left: 20px;
+    }
+    .active-accounts2-footer-count {
+      font-size: 16px;
+      font-weight: 700;
+      position: absolute;
+      top: 30px;
+      left: 20px;
+    }
+    .rate-active-accounts2-footer {
+      background-color: #2e912c37;
+      border-radius: 3px;
+      width: 43px;
+      height: 17px;
+      position: absolute;
+      top: 47px;
+      left: 90px;
+    }
+    .rate-active-accounts2-footer p {
+      font-size: 12px;
+      position: absolute;
+      top: -10px;
+      left: 4px;
+      color: #2d912c;
+    }
+
+    #chartAccountsTotal {
+      position: absolute;
+      top: 90px;
+      left: 10px;
+    }
+    .h-line-accounts-chart {
+      border-bottom: 1px #c2c9d1 solid;
+      width: 590px;
+      position: absolute;
+      top: 403px;
+      left: 25px;
+    }
+  </style>
+</head>
+<body>
+  <div class="accounts-section">
+    <div class="total-accounts-section">
+      <div class="total-accounts-title">
+        <a href="#">Accounts</a>
+        <img src="./assets/cameraIcon.svg" />
+        <button class="new2-button-accounts-title" onclick="showNewAccount()">
+          Active & New
+        </button>
+        <button class="total2-button-accounts-title" onclick="">Total</button>
+      </div>
+      <div class="total-accounts-charts">
+        <canvas
+          id="chartAccountsTotal"
+          style="width: 100%; max-width: 620px; height: 300px"
+        ></canvas>
+        <div class="h-line-accounts2-chart"></div>
+      </div>
+      <div class="active-accounts2-footer">
+        <p class="active-accounts2-footer-title">Active Accounts</p>
+        <p class="active-accounts2-footer-count">2,914,143</p>
+        <div class="rate-active-accounts2-footer"><p>+3.1%</p></div>
+      </div>
+    </div>
+    <div id="newAccountSection" class="new-accounts-section">
+      <div class="new-accounts-title">
+        <a href="#">Accounts</a>
+        <img src="./assets/cameraIcon.svg" />
+        <button class="new-button-accounts-title" onclick="">
+          Active & New
+        </button>
+        <button class="total-button-accounts-title" onclick="hideNewAccount() ">
+          Total
+        </button>
+      </div>
+      <div class="new-accounts-charts">
+        <canvas
+          id="chartAccountsNew"
+          style="width: 100%; max-width: 620px; height: 300px"
+        ></canvas>
+        <div class="h-line-accounts-chart"></div>
+      </div>
+      <div class="active-accounts-footer">
+        <p class="active-accounts-footer-title">Active Accounts</p>
+        <p class="active-accounts-footer-count">2,914,143</p>
+        <div class="rate-active-accounts-footer"><p>+3.1%</p></div>
+      </div>
+      <div class="new-accounts-footer">
+        <p class="new-accounts-footer-title">New Accounts</p>
+        <p class="new-accounts-footer-count">140,389</p>
+        <div class="rate-new-accounts-footer"><p>-1.42%</p></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Function Toggle Button Accounts
+    function hideNewAccount() {
+      var xNewAccount = document.getElementById("newAccountSection");
+      if (xNewAccount.style.display === "block") {
+        xNewAccount.style.display = "none";
+      } else {
+        xNewAccount.style.display = "none";
+      }
+    }
+
+    function showNewAccount() {
+      var yNewAccount = document.getElementById("newAccountSection");
+      if (yNewAccount.style.display === "none") {
+        yNewAccount.style.display = "block";
+      } else {
+        yNewAccount.style.display = "block";
+      }
+    }
+
+    var xValuesAccounts = [
+      "14 Jul",
+      "15 Jul",
+      "16 Jul",
+      "17 Jul",
+      "18 Jul",
+      "19 Jul",
+      "20 Jul",
+      "21 Jul",
+      "22 Jul",
+      "23 Jul",
+      "24 Jul",
+      "25 Jul",
+      "26 Jul",
+      "27 Jul",
+    ];
+
+    // Chart New Accounts
+    new Chart("chartAccountsNew", {
+      type: "line",
+      data: {
+        labels: xValuesAccounts,
+        datasets: [
+          {
+            data: [
+              2.8, 2.8, 2.6, 2.3, 2.6, 2.7, 3.5, 2.8, 2.7, 2.7, 2.6, 2.9, 2.8,
+              2.9,
+            ],
+            borderColor: "red",
+            fill: false,
+            lineTension: 0.4,
+            borderWidth: 7,
+            pointBorderWidth: 1,
+          },
+          {
+            data: [
+              0.14, 0.15, 0.14, 0.15, 0.13, 0.13, 0.14, 0.144, 0.16, 0.13, 0.13,
+              0.15, 0.14, 0.14,
+            ],
+            borderColor: "blue",
+            fill: false,
+            lineTension: 0.4,
+            borderWidth: 7,
+            pointBorderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        legend: { display: false },
+      },
+    });
+
+    // Chart Total Accounts
+    new Chart("chartAccountsTotal", {
+      type: "line",
+      data: {
+        labels: xValuesAccounts,
+        datasets: [
+          {
+            data: [
+              102, 103, 103.2, 103.4, 103, 103, 103.1, 103.7, 104, 104.2, 104.4,
+              104, 104.3, 104,
+            ],
+            borderColor: "red",
+            fill: false,
+            lineTension: 0.4,
+            borderWidth: 7,
+            pointBorderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        legend: { display: false },
+      },
+    });
+  </script>
+</body>
